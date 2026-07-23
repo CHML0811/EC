@@ -8,10 +8,16 @@ Stack: **Claude** (research, copy, brand, listings) → **Higgsfield** (design +
 video creative) → **Printify** (production/fulfilment) → **Shopify / TikTok Shop**
 (storefront + demand) → **Vercel** (fast landing / link-in-bio).
 
-> Read [`playbooks/fifa-football-pod-playbook.md`](playbooks/fifa-football-pod-playbook.md)
-> for the research, the legal design rules, and the 10 product concepts.
-> Read [`prompts/design-and-marketing-prompts.md`](prompts/design-and-marketing-prompts.md)
-> for the copy-paste prompt library (design, video, website, retargeting).
+Playbooks:
+> - [`playbooks/sleepmaxxing-brand-horizontal-club.md`](playbooks/sleepmaxxing-brand-horizontal-club.md)
+>   — **the active build**: a premium rest-identity brand ("Horizontal Club") with
+>   positioning, palette, product line, pricing, and a brand-locked prompt library.
+> - [`playbooks/trending-products-2026.md`](playbooks/trending-products-2026.md)
+>   — ranked trend research: POD lane (do today) vs. gadget lane, and IP traps.
+> - [`playbooks/fifa-football-pod-playbook.md`](playbooks/fifa-football-pod-playbook.md)
+>   — the FIFA research, legal design rules, and 10 product concepts.
+> - [`prompts/design-and-marketing-prompts.md`](prompts/design-and-marketing-prompts.md)
+>   — the general copy-paste prompt library (design, video, website, retargeting).
 
 ---
 
