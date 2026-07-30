@@ -19,6 +19,14 @@ Playbooks:
 > - [`prompts/design-and-marketing-prompts.md`](prompts/design-and-marketing-prompts.md)
 >   — the general copy-paste prompt library (design, video, website, retargeting).
 
+Store & automation (deploy-ready):
+> - [`workflow/automation-blueprint.md`](workflow/automation-blueprint.md)
+>   — Shopify ↔ Printful ↔ PayPal connection steps + marketing automation + costs.
+> - [`store/product-listings.md`](store/product-listings.md)
+>   — 7 listings in brand voice, Printful setup, premium prices, email flows.
+> - [`store/landing-page.html`](store/landing-page.html)
+>   — deployable on-brand landing page (Vercel-ready).
+
 ---
 
 ## The three decisions that matter (July 2026)

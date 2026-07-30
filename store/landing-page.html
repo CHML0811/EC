@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Horizontal Club — Rest is a flex</title>
+  <meta name="description" content="Rest-wear for people who treat rest as status. Rest is a flex. Stay horizontal." />
+  <!-- Fonts load fine on Vercel. Replace REPLACE_STORE_URL and the form action before deploying. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root{
+      --cloud:#F4EEE4; --oat:#E4D8C5; --clay:#C7A78F;
+      --sage:#AEB9A4; --espresso:#3B2F27; --ink:#20263A;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{background:var(--cloud);color:var(--espresso);font-family:'Inter',system-ui,sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+    h1,h2,h3,.serif{font-family:'Fraunces',Georgia,serif;font-weight:500;line-height:1.1;letter-spacing:-.01em}
+    a{color:inherit}
+    .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+    /* nav */
+    nav{display:flex;justify-content:space-between;align-items:center;padding:28px 24px;max-width:1080px;margin:0 auto}
+    .logo{font-family:'Fraunces',serif;font-size:22px;letter-spacing:-.02em;position:relative}
+    .logo::after{content:"";display:block;height:1px;background:var(--espresso);margin-top:2px;opacity:.8}
+    .nav-cta{font-size:14px;text-decoration:none;border:1px solid var(--espresso);padding:9px 18px;border-radius:999px;transition:.2s}
+    .nav-cta:hover{background:var(--espresso);color:var(--cloud)}
+    /* hero */
+    .hero{text-align:center;padding:90px 0 70px}
+    .hero .eyebrow{text-transform:uppercase;letter-spacing:.28em;font-size:12px;color:var(--clay);margin-bottom:22px}
+    .hero h1{font-size:clamp(44px,9vw,92px)}
+    .hero p{max-width:520px;margin:22px auto 34px;color:#5b4d42;font-size:18px}
+    .btn{display:inline-block;background:var(--espresso);color:var(--cloud);text-decoration:none;padding:15px 34px;border-radius:999px;font-size:15px;letter-spacing:.02em;transition:.2s}
+    .btn:hover{background:var(--ink)}
+    .btn.ghost{background:transparent;color:var(--espresso);border:1px solid var(--espresso);margin-left:10px}
+    /* manifesto */
+    .manifesto{background:var(--oat);padding:80px 0;margin-top:40px}
+    .manifesto h2{font-size:14px;text-transform:uppercase;letter-spacing:.28em;color:var(--clay);margin-bottom:26px;text-align:center}
+    .manifesto p{font-family:'Fraunces',serif;font-size:clamp(24px,4vw,38px);text-align:center;max-width:760px;margin:0 auto;line-height:1.35}
+    /* products */
+    .products{padding:80px 0}
+    .products h2{font-size:clamp(28px,5vw,44px);text-align:center;margin-bottom:8px}
+    .products .sub{text-align:center;color:#5b4d42;margin-bottom:46px}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:26px}
+    .card{background:#fff;border-radius:14px;overflow:hidden;border:1px solid #e7ddcd}
+    .card .ph{aspect-ratio:4/5;background:linear-gradient(135deg,var(--oat),var(--clay));display:flex;align-items:center;justify-content:center;color:#fff9;font-size:13px;letter-spacing:.1em;text-transform:uppercase}
+    .card .body{padding:18px}
+    .card h3{font-size:19px;margin-bottom:4px}
+    .card .price{color:var(--clay);font-size:15px}
+    .card p{font-size:14px;color:#6b5d51;margin:8px 0 14px}
+    .card a{font-size:14px;text-decoration:none;border-bottom:1px solid var(--espresso);padding-bottom:2px}
+    /* kit banner */
+    .kit{background:var(--ink);color:var(--cloud);text-align:center;padding:64px 24px;border-radius:16px;margin:20px auto;max-width:1032px}
+    .kit h2{color:var(--cloud);font-size:clamp(26px,4vw,38px)}
+    .kit p{color:#cfd3df;max-width:520px;margin:14px auto 26px}
+    .kit .btn{background:var(--cloud);color:var(--ink)}
+    /* email */
+    .email{padding:80px 0;text-align:center}
+    .email h2{font-size:clamp(26px,4vw,38px);margin-bottom:12px}
+    .email p{color:#5b4d42;margin-bottom:26px}
+    form{display:flex;gap:10px;max-width:440px;margin:0 auto;flex-wrap:wrap;justify-content:center}
+    input[type=email]{flex:1;min-width:220px;padding:14px 18px;border:1px solid var(--clay);border-radius:999px;font-size:15px;background:#fff;color:var(--espresso)}
+    footer{border-top:1px solid #e0d5c4;padding:40px 24px;text-align:center;color:#8a7c6d;font-size:13px}
+    footer .logo{font-size:18px;margin-bottom:10px;display:inline-block}
+  </style>
+</head>
+<body>
+  <nav>
+    <span class="logo">horizontal club</span>
+    <a class="nav-cta" href="REPLACE_STORE_URL">Shop</a>
+  </nav>
+
+  <header class="hero wrap">
+    <div class="eyebrow">Rest-wear for the well-rested</div>
+    <h1>Rest is a flex.</h1>
+    <p>We don't wear tired like a medal. Rest isn't the reward for the work — it is the work. Welcome to the Club.</p>
+    <a class="btn" href="REPLACE_STORE_URL">Shop the collection</a>
+    <a class="btn ghost" href="#manifesto">Read the manifesto</a>
+  </header>
+
+  <section class="manifesto" id="manifesto">
+    <div class="wrap">
+      <h2>The Manifesto</h2>
+      <p>We don't do hustle. We don't wear tired like a medal. Rest isn't the reward for the work — it&nbsp;<em>is</em>&nbsp;the work. Sleep is self-respect. Slowness is a skill. Staying horizontal is a flex.</p>
+    </div>
+  </section>
+
+  <section class="products wrap">
+    <h2>The Collection</h2>
+    <div class="sub">Premium rest-wear. Tonal, heavyweight, quietly certain.</div>
+    <div class="grid">
+      <div class="card"><div class="ph">Rest is a flex tee</div><div class="body"><h3>Rest Is A Flex — Tee</h3><div class="price">$42</div><p>Boxy, heavyweight, tonal. For doing absolutely nothing, beautifully.</p><a href="REPLACE_STORE_URL">Shop →</a></div></div>
+      <div class="card"><div class="ph">Member crewneck</div><div class="body"><h3>Member — Crewneck</h3><div class="price">$74</div><p>Soft enough to sleep in, considered enough to be seen in.</p><a href="REPLACE_STORE_URL">Shop →</a></div></div>
+      <div class="card"><div class="ph">Do not disturb tee</div><div class="body"><h3>Do Not Disturb — Tee</h3><div class="price">$42</div><p>A boundary you can wear. The world can wait until morning.</p><a href="REPLACE_STORE_URL">Shop →</a></div></div>
+      <div class="card"><div class="ph">Professionally rested mug</div><div class="body"><h3>Professionally Rested — Mug</h3><div class="price">$22</div><p>The only credential that matters before 9am.</p><a href="REPLACE_STORE_URL">Shop →</a></div></div>
+    </div>
+  </section>
+
+  <section class="kit">
+    <h2>The Member's Kit</h2>
+    <p>Tee + Mug + Tote. Something to wear, something to sip, something to carry your Sunday in. Your induction to the Horizontally Gifted.</p>
+    <a class="btn" href="REPLACE_STORE_URL">Join for $79</a>
+  </section>
+
+  <section class="email wrap">
+    <h2>Join the Club</h2>
+    <p>Early access to drops. No noise. That's rather the point.</p>
+    <!-- Replace action with your Klaviyo/Shopify/Formspree endpoint -->
+    <form action="REPLACE_EMAIL_ENDPOINT" method="post">
+      <input type="email" name="email" placeholder="your email" required />
+      <button class="btn" type="submit">Stay horizontal</button>
+    </form>
+  </section>
+
+  <footer>
+    <span class="logo">horizontal club</span><br />
+    Rest is a flex. · Stay horizontal.<br />
+    © <span id="y"></span> Horizontal Club
+  </footer>
+  <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+</body>
+</html>
