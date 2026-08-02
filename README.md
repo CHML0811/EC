@@ -8,6 +8,9 @@ Stack: **Claude** (research, copy, brand, listings) → **Higgsfield** (design +
 video creative) → **Printify** (production/fulfilment) → **Shopify / TikTok Shop**
 (storefront + demand) → **Vercel** (fast landing / link-in-bio).
 
+▶ **START HERE:** [`workflow/operating-flow.md`](workflow/operating-flow.md) — the whole flow,
+phase by phase, with gates and a launch checklist.
+
 Playbooks:
 > - [`playbooks/sleepmaxxing-brand-horizontal-club.md`](playbooks/sleepmaxxing-brand-horizontal-club.md)
 >   — **the active build**: a premium rest-identity brand ("Horizontal Club") with
@@ -26,6 +29,8 @@ Store & automation (deploy-ready):
 >   — 7 listings in brand voice, Printful setup, premium prices, email flows.
 > - [`store/landing-page.html`](store/landing-page.html)
 >   — deployable on-brand landing page (Vercel-ready).
+> - [`marketing/content-calendar.md`](marketing/content-calendar.md)
+>   — 14 days of ready-to-post hooks + captions for TikTok / Reels.
 
 ---
 
