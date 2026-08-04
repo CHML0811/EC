@@ -1,0 +1,402 @@
+<title>Deadpan Luxury — The Gag-Gift Poster System</title>
+<style>
+  :root{
+    --ink:#17150F;
+    --paper:#E4E2D8;
+    --red:#D93B24;
+    --acid:#E4D93C;
+    --olive:#565E42;
+    --dust:#9E9A8C;
+    --card:#EFEDE5;
+    --line:#C9C6BA;
+    --body:#2A2721;
+    --muted:#5F5B50;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{
+      --paper:#12110D;
+      --ink:#EDEBE1;
+      --card:#1C1A15;
+      --line:#332F26;
+      --body:#DAD7CC;
+      --muted:#8C8778;
+      --dust:#6B6759;
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#12110D; --ink:#EDEBE1; --card:#1C1A15; --line:#332F26;
+    --body:#DAD7CC; --muted:#8C8778; --dust:#6B6759;
+  }
+  :root[data-theme="light"]{
+    --paper:#E4E2D8; --ink:#17150F; --card:#EFEDE5; --line:#C9C6BA;
+    --body:#2A2721; --muted:#5F5B50; --dust:#9E9A8C;
+  }
+
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--paper); color:var(--body);
+    font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size:16px; line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  .display{
+    font-family:Impact,Haettenschweiler,"Arial Narrow Bold","Franklin Gothic Heavy",sans-serif;
+    font-weight:400; text-transform:uppercase;
+    letter-spacing:-.01em; line-height:.92; text-wrap:balance;
+    color:var(--ink);
+  }
+  .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+  .wrap{max-width:1140px; margin:0 auto; padding:0 24px}
+
+  /* ---- hero ---- */
+  header{border-bottom:3px solid var(--ink); padding:64px 0 40px}
+  .kicker{
+    font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+    font-size:12px; letter-spacing:.22em; text-transform:uppercase;
+    color:var(--red); margin-bottom:20px;
+  }
+  h1.display{font-size:clamp(52px,11vw,124px); margin:0}
+  h1 .out{color:var(--red)}
+  .thesis{
+    max-width:60ch; margin-top:26px; font-size:19px; color:var(--body);
+  }
+  .thesis strong{color:var(--ink)}
+  .stats{
+    display:flex; flex-wrap:wrap; gap:0; margin-top:38px;
+    border-top:1px solid var(--line);
+  }
+  .stat{
+    flex:1 1 170px; padding:18px 20px 16px 0; border-right:1px solid var(--line);
+  }
+  .stat:last-child{border-right:0}
+  .stat b{
+    display:block; font-family:Impact,Haettenschweiler,"Arial Narrow Bold",sans-serif;
+    font-size:34px; color:var(--ink); line-height:1; letter-spacing:-.01em;
+    font-variant-numeric:tabular-nums;
+  }
+  .stat span{font-size:13px; color:var(--muted); display:block; margin-top:6px}
+
+  /* ---- sections ---- */
+  section{padding:60px 0 20px}
+  .sec-head{display:flex; align-items:baseline; gap:16px; margin-bottom:8px; flex-wrap:wrap}
+  .sec-head h2{font-size:clamp(30px,5vw,50px); margin:0}
+  .sec-num{
+    font-family:ui-monospace,monospace; font-size:12px; color:var(--red);
+    letter-spacing:.18em;
+  }
+  .sec-sub{max-width:62ch; color:var(--muted); margin:0 0 34px}
+
+  /* ---- poster grid ---- */
+  .grid{
+    display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:34px;
+  }
+  .item{display:flex; flex-direction:column; gap:0}
+
+  .poster{
+    aspect-ratio:4/5; position:relative; overflow:hidden;
+    background:var(--ink); color:#EDEBE1;
+    display:flex; flex-direction:column; justify-content:space-between;
+    padding:22px; border:1px solid var(--line);
+  }
+  .poster .ptext{
+    font-family:Impact,Haettenschweiler,"Arial Narrow Bold",sans-serif;
+    text-transform:uppercase; line-height:.94; letter-spacing:-.01em;
+    font-size:clamp(21px,4.4vw,30px); position:relative; z-index:3;
+    text-shadow:0 2px 0 rgba(0,0,0,.55);
+  }
+  .poster .sub{
+    font-family:ui-monospace,monospace; font-size:11px; letter-spacing:.14em;
+    text-transform:uppercase; opacity:.85; position:relative; z-index:3;
+  }
+  /* the product zone = where their real photo drops in */
+  .zone{
+    position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+    z-index:1;
+  }
+  .zone span{
+    font-family:ui-monospace,monospace; font-size:10px; letter-spacing:.2em;
+    color:rgba(237,235,225,.42); text-transform:uppercase; text-align:center;
+    border:1px dashed rgba(237,235,225,.28); padding:10px 14px; max-width:70%;
+  }
+  .scrim{position:absolute; inset:0; z-index:2; pointer-events:none}
+
+  /* per-poster art direction */
+  .p-callout{background:linear-gradient(165deg,#5C6247,#2F3325)}
+  .p-callout .scrim{background:linear-gradient(180deg,rgba(0,0,0,.5),transparent 42%,rgba(0,0,0,.55))}
+  .p-alibi{background:linear-gradient(180deg,#0C1018,#1D2430 70%,#0A0D13)}
+  .p-alibi .scrim{background:radial-gradient(ellipse at 50% 60%,rgba(228,217,60,.16),transparent 60%)}
+  .p-dare{background:linear-gradient(170deg,#1D4E63,#0E2A38)}
+  .p-dare .scrim{background:linear-gradient(180deg,rgba(0,0,0,.42),transparent 45%,rgba(0,0,0,.5))}
+  .p-gate{background:var(--ink)}
+  .p-gate .scrim{background:linear-gradient(200deg,rgba(217,59,36,.28),transparent 55%)}
+  .p-spec{background:#EFEDE5; color:#17150F; border-color:#C9C6BA}
+  .p-spec .ptext{text-shadow:none}
+  .p-spec .zone span{color:rgba(23,21,15,.4); border-color:rgba(23,21,15,.22)}
+  .p-flip{background:linear-gradient(90deg,#3A2C22 0 50%,#D93B24 50% 100%)}
+  .p-flip .scrim{background:linear-gradient(180deg,rgba(0,0,0,.35),transparent 40%,rgba(0,0,0,.45))}
+
+  .tagpill{
+    display:inline-block; background:var(--acid); color:#17150F;
+    font-family:ui-monospace,monospace; font-size:10px; letter-spacing:.16em;
+    text-transform:uppercase; padding:5px 9px; align-self:flex-start;
+    position:relative; z-index:3;
+  }
+  .pricetag{
+    position:absolute; top:16px; right:16px; z-index:4;
+    background:var(--red); color:#fff; font-family:Impact,Haettenschweiler,sans-serif;
+    font-size:19px; padding:8px 11px 6px; transform:rotate(6deg);
+    letter-spacing:.01em;
+  }
+
+  /* meta under each poster */
+  .meta{border:1px solid var(--line); border-top:0; padding:16px 18px 18px; background:var(--card)}
+  .meta h3{
+    font-family:Impact,Haettenschweiler,"Arial Narrow Bold",sans-serif;
+    text-transform:uppercase; font-size:21px; margin:0 0 3px; color:var(--ink);
+    letter-spacing:.005em;
+  }
+  .why{font-size:14px; color:var(--muted); margin:0 0 13px}
+  .label{
+    font-family:ui-monospace,monospace; font-size:10px; letter-spacing:.18em;
+    text-transform:uppercase; color:var(--red); display:block; margin-bottom:5px;
+  }
+  .formula{
+    font-family:ui-monospace,monospace; font-size:12.5px; line-height:1.55;
+    background:var(--paper); border-left:3px solid var(--olive);
+    padding:10px 12px; color:var(--body); overflow-x:auto;
+  }
+  .proof{
+    font-size:12px; color:var(--muted); margin-top:11px;
+    display:flex; align-items:center; gap:7px;
+  }
+  .proof b{color:var(--ink); font-variant-numeric:tabular-nums}
+
+  /* ---- prompt block ---- */
+  .promptbox{
+    border:1px solid var(--line); background:var(--card); padding:22px 24px; margin-top:8px;
+  }
+  .promptbox h3{
+    font-family:Impact,Haettenschweiler,sans-serif; text-transform:uppercase;
+    font-size:20px; margin:0 0 10px; color:var(--ink);
+  }
+  pre{
+    font-family:ui-monospace,monospace; font-size:12.5px; line-height:1.6;
+    background:var(--paper); border-left:3px solid var(--red); padding:14px 16px;
+    overflow-x:auto; margin:0; color:var(--body); white-space:pre-wrap;
+  }
+  .rules{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:22px; margin-top:10px}
+  .rule{border-top:2px solid var(--ink); padding-top:12px}
+  .rule b{display:block; color:var(--ink); font-size:15px; margin-bottom:4px}
+  .rule p{margin:0; font-size:14px; color:var(--muted)}
+
+  footer{
+    border-top:3px solid var(--ink); margin-top:70px; padding:30px 0 60px;
+    font-family:ui-monospace,monospace; font-size:12px; letter-spacing:.1em;
+    text-transform:uppercase; color:var(--muted);
+  }
+  @media (max-width:640px){
+    .stat{border-right:0; border-bottom:1px solid var(--line); flex:1 1 100%}
+  }
+</style>
+
+<header>
+  <div class="wrap">
+    <div class="kicker mono">The Gag-Gift Poster System · v1</div>
+    <h1 class="display">Sell stupid<br>things with a<br><span class="out">straight face.</span></h1>
+    <p class="thesis">Nobody shares an ad. They share <strong>a person</strong>. Every poster below is built to make one viewer think <em>“this is literally my uncle”</em> and hit send — because in gag gifts, the <strong>share is the ad</strong>, and it's free.</p>
+    <div class="stats">
+      <div class="stat"><b>121K</b><span>shares — comment-bait shirt post</span></div>
+      <div class="stat"><b>35.9K</b><span>shares — “if you buy one, I'll buy one”</span></div>
+      <div class="stat"><b>625</b><span>shares — “send this to an uncle”</span></div>
+      <div class="stat"><b>0</b><span>dollars of ad spend in those numbers</span></div>
+    </div>
+  </div>
+</header>
+
+<section class="wrap">
+  <div class="sec-head">
+    <span class="sec-num mono">01</span>
+    <h2 class="display">Six poster formats</h2>
+  </div>
+  <p class="sec-sub">Each one is reverse-engineered from a post that actually moved. Drop your product photo into the marked zone — the composition, the joke structure, and the caption formula are what do the work.</p>
+
+  <div class="grid">
+
+    <!-- 1 -->
+    <div class="item">
+      <div class="poster p-callout">
+        <div class="zone"><span>product photo<br>fills frame</span></div>
+        <div class="scrim"></div>
+        <span class="tagpill mono">Format 01</span>
+        <div>
+          <div class="ptext">Uncles with adult<br>money, you need<br>this…</div>
+          <div class="sub mono" style="margin-top:10px">tag him. you know the one.</div>
+        </div>
+      </div>
+      <div class="meta">
+        <h3>The Call-Out</h3>
+        <p class="why">Names a <em>type of person</em>, not a customer. The viewer casts someone they know into the role and shares to prove it.</p>
+        <span class="label mono">Caption formula</span>
+        <div class="formula">[GROUP] with [TRAIT], you NEED this…<br>↳ "Send this to a/an ___ that needs this"</div>
+        <div class="proof mono">Proven: <b>625</b> shares · 470 comments</div>
+      </div>
+    </div>
+
+    <!-- 2 -->
+    <div class="item">
+      <div class="poster p-alibi">
+        <div class="zone"><span>product in<br>real environment</span></div>
+        <div class="scrim"></div>
+        <span class="tagpill mono">Format 02</span>
+        <div>
+          <div class="ptext">“Babe, stop scaring<br>the neighbours,<br>you're 35”</div>
+          <div class="sub mono" style="margin-top:10px">me: ↓</div>
+        </div>
+      </div>
+      <div class="meta">
+        <h3>The Alibi</h3>
+        <p class="why">Someone scolds you; the product is the unrepentant answer. Sells the <em>identity of not caring</em> — the most shareable feeling there is.</p>
+        <span class="label mono">Caption formula</span>
+        <div class="formula">“[PARTNER/BOSS/MOM] said [SCOLD]”<br>Me: [PRODUCT DOING THE CRIME]</div>
+        <div class="proof mono">Best for: seasonal &amp; decor</div>
+      </div>
+    </div>
+
+    <!-- 3 -->
+    <div class="item">
+      <div class="poster p-dare">
+        <div class="zone"><span>product worn,<br>action shot</span></div>
+        <div class="scrim"></div>
+        <span class="tagpill mono">Format 03</span>
+        <div>
+          <div class="ptext">“If you buy one,<br>I'll buy one”</div>
+          <div class="sub mono" style="margin-top:10px">↳ a dare needs two people</div>
+        </div>
+      </div>
+      <div class="meta">
+        <h3>The Dare</h3>
+        <p class="why">The single best mechanic here. It can't be answered alone — the viewer <em>must</em> tag someone, and it sells <strong>two units</strong>, not one.</p>
+        <span class="label mono">Caption formula</span>
+        <div class="formula">"If you buy one, I'll buy one 🤞"<br>↳ pin a comment: "we'll be a duo"</div>
+        <div class="proof mono">Proven: <b>35.9K</b> shares · 10.3K comments</div>
+      </div>
+    </div>
+
+    <!-- 4 -->
+    <div class="item">
+      <div class="poster p-gate">
+        <div class="zone"><span>back-of-shirt /<br>text-forward product</span></div>
+        <div class="scrim"></div>
+        <span class="tagpill mono">Format 04</span>
+        <div>
+          <div class="ptext">Comment <span style="color:var(--acid)">“shark”</span><br>and I'll send<br>you the link</div>
+          <div class="sub mono" style="margin-top:10px">auto-dm does the rest</div>
+        </div>
+      </div>
+      <div class="meta">
+        <h3>The Gatekeep</h3>
+        <p class="why">Withholding the link converts buyers into commenters, and comments into reach. Wire it to auto-DM and it runs itself.</p>
+        <span class="label mono">Caption formula</span>
+        <div class="formula">Comment [WORD] and I'll send the link<br>↳ ManyChat auto-DM → product page</div>
+        <div class="proof mono">Proven: <b>121K</b> shares · 10K comments</div>
+      </div>
+    </div>
+
+    <!-- 5 -->
+    <div class="item">
+      <div class="poster p-spec">
+        <div class="zone"><span>product, centered,<br>studio lit, no props</span></div>
+        <span class="tagpill mono" style="background:var(--ink); color:#EFEDE5">Format 05</span>
+        <div class="pricetag">$39</div>
+        <div>
+          <div class="ptext" style="font-size:clamp(19px,3.6vw,26px)">The inflatable<br>shark suit</div>
+          <div class="sub mono" style="margin-top:9px; opacity:.7">100% nylon · one size · ruins weddings</div>
+        </div>
+      </div>
+      <div class="meta">
+        <h3>The Deadpan Spec Sheet</h3>
+        <p class="why">Luxury-catalog treatment on an idiotic object. The straighter the face, the funnier it lands — and it's the format that makes you look like a <em>brand</em>, not a dropshipper.</p>
+        <span class="label mono">Caption formula</span>
+        <div class="formula">[PRODUCT NAME]<br>[REAL SPEC] · [REAL SPEC] · [ABSURD SPEC]</div>
+        <div class="proof mono">Best for: hero shots &amp; paid ads</div>
+      </div>
+    </div>
+
+    <!-- 6 -->
+    <div class="item">
+      <div class="poster p-flip">
+        <div class="zone"><span>split: before | after</span></div>
+        <div class="scrim"></div>
+        <span class="tagpill mono">Format 06</span>
+        <div>
+          <div class="ptext">Wore it to the<br>family cookout.<br>No regrets.</div>
+          <div class="sub mono" style="margin-top:10px">reaction &gt; product</div>
+        </div>
+      </div>
+      <div class="meta">
+        <h3>The Reaction Flip</h3>
+        <p class="why">Show the <em>room's</em> response, not the item. Real laughter at second 3 is the proof-of-funny nothing else buys.</p>
+        <span class="label mono">Caption formula</span>
+        <div class="formula">0–3s: normal scene → 3s: product reveal<br>3–12s: real reactions → CTA</div>
+        <div class="proof mono">Best for: TikTok organic</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="sec-head">
+    <span class="sec-num mono">02</span>
+    <h2 class="display">The house rules</h2>
+  </div>
+  <p class="sec-sub">What keeps this looking like a brand instead of a clearance bin.</p>
+  <div class="rules">
+    <div class="rule"><b>Straight face, always</b><p>The product is absurd. The photography, spacing, and type never wink. That gap is the entire joke.</p></div>
+    <div class="rule"><b>One gag per poster</b><p>Two jokes cancel each other out. Pick the funnier one and cut the other.</p></div>
+    <div class="rule"><b>Name a person, not a niche</b><p>“Uncles with adult money” outsells “funny gifts for men” every single time.</p></div>
+    <div class="rule"><b>Readable at thumbnail</b><p>If the hook doesn't land at 120px wide with the sound off, it doesn't exist.</p></div>
+    <div class="rule"><b>Keep a clean cut</b><p>Profanity kills paid reach and gets TikTok Shop listings pulled. Ship an edgy organic version and a clean ad version of every winner.</p></div>
+    <div class="rule"><b>Punch at situations</b><p>Aim the joke at a scenario — cookouts, neighbours, in-laws — never at who someone is. Situational humor travels further and stays sellable.</p></div>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="sec-head">
+    <span class="sec-num mono">03</span>
+    <h2 class="display">Make the posters</h2>
+  </div>
+  <p class="sec-sub">Paste into Higgsfield (or any image model). Swap the bracketed parts per product.</p>
+
+  <div class="promptbox">
+    <h3>A · Deadpan hero (Format 05)</h3>
+    <pre>Photorealistic studio product photograph of [PRODUCT], centered on a seamless
+[warm grey] backdrop, single soft key light with a crisp falloff shadow,
+high-end catalog composition, shot on 85mm, shallow depth of field, deadpan
+serious luxury-advertising treatment of an absurd object, generous negative
+space at the top third for headline type, 4:5 vertical, 4k, no text, no logos.</pre>
+  </div>
+
+  <div class="promptbox">
+    <h3>B · In-the-wild call-out (Formats 01 / 02)</h3>
+    <pre>Candid photorealistic lifestyle photo, [PERSON TYPE] wearing/using [PRODUCT]
+at [BACKYARD COOKOUT / LAKE DOCK / FRONT PORCH AT NIGHT], other people
+visibly reacting in the background, natural available light, slight phone-camera
+imperfection and grain, unposed documentary feel, negative space at the top for
+caption text, 9:16 vertical, 4k.</pre>
+  </div>
+
+  <div class="promptbox">
+    <h3>C · Reaction-flip video (Format 06)</h3>
+    <pre>Cinematic 9:16 vertical, 15s, handheld. 0-3s: an ordinary [FAMILY COOKOUT]
+scene, nothing unusual, natural sound. At exactly 3s: hard cut — someone walks
+in wearing [PRODUCT], deadpan, no acknowledgement. 3-12s: real laughter and
+double-takes from the group, quick candid cuts. 12-15s: static hero shot of the
+product with clean space for a caption. Warm natural light, phone-camera realism.</pre>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">Deadpan Luxury · gag-gift poster system · the share is the ad</div>
+</footer>

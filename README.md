@@ -12,6 +12,11 @@ video creative) → **Printify** (production/fulfilment) → **Shopify / TikTok 
 phase by phase, with gates and a launch checklist.
 
 Playbooks:
+> - [`playbooks/gag-gift-playbook.md`](playbooks/gag-gift-playbook.md)
+>   — **the active build**: novelty/gag-gift brand — two fulfilment lanes (POD vs
+>   sourced), product shortlist, decoded viral mechanics, and auto-DM automation.
+> - [`marketing/poster-system.html`](marketing/poster-system.html)
+>   — the "Deadpan Luxury" poster system: 6 formats, house rules, image/video prompts.
 > - [`playbooks/sleepmaxxing-brand-horizontal-club.md`](playbooks/sleepmaxxing-brand-horizontal-club.md)
 >   — **the active build**: a premium rest-identity brand ("Horizontal Club") with
 >   positioning, palette, product line, pricing, and a brand-locked prompt library.
