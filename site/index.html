@@ -1,5 +1,13 @@
-<title>Deadpan Goods — Serious about stupid things</title>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Deadpan Goods — Serious about stupid things</title>
+<meta name="description" content="Gag gifts engineered for one moment: when someone sees it and thinks 'this is literally my uncle.' Shipped fast, built well, slightly indefensible." />
+<meta property="og:title" content="Deadpan Goods — Serious about stupid things" />
+<meta property="og:description" content="Gag gifts built well and shipped fast. Slightly indefensible." />
+<meta property="og:type" content="website" />
 <style>
   :root{
     --ink:#17150F; --paper:#E4E2D8; --red:#D93B24; --acid:#E4D93C;
@@ -9,9 +17,6 @@
   @media (prefers-color-scheme:dark){
     :root{--paper:#12110D; --ink:#EDEBE1; --card:#1C1A15; --line:#332F26; --body:#DAD7CC; --muted:#8C8778}
   }
-  :root[data-theme="dark"]{--paper:#12110D; --ink:#EDEBE1; --card:#1C1A15; --line:#332F26; --body:#DAD7CC; --muted:#8C8778}
-  :root[data-theme="light"]{--paper:#E4E2D8; --ink:#17150F; --card:#EFEDE5; --line:#C9C6BA; --body:#2A2721; --muted:#5F5B50}
-
   *{box-sizing:border-box}
   body{margin:0;background:var(--paper);color:var(--body);
     font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:16px;line-height:1.6;
@@ -22,14 +27,12 @@
   .wrap{max-width:1140px;margin:0 auto;padding:0 24px}
   a{color:inherit}
 
-  /* announcement */
   .ticker{background:var(--ink);color:var(--paper);padding:9px 0;overflow:hidden}
   .ticker .mono{font-size:11px;letter-spacing:.2em;text-transform:uppercase;
     white-space:nowrap;display:flex;gap:40px;animation:slide 26s linear infinite}
   @keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
   @media (prefers-reduced-motion:reduce){.ticker .mono{animation:none;justify-content:center}}
 
-  /* nav */
   nav{display:flex;justify-content:space-between;align-items:center;
     padding:20px 24px;max-width:1140px;margin:0 auto;gap:16px}
   .logo{font-family:Impact,Haettenschweiler,sans-serif;font-size:23px;text-transform:uppercase;
@@ -43,7 +46,6 @@
     letter-spacing:.1em;text-transform:uppercase}
   .cartbtn:hover{background:var(--red)}
 
-  /* hero */
   header.hero{border-top:3px solid var(--ink);border-bottom:3px solid var(--ink);padding:70px 0 56px}
   .hero h1{font-size:clamp(46px,10.5vw,116px);margin:0}
   .hero h1 .out{color:var(--red)}
@@ -52,37 +54,35 @@
   .herobtns{display:flex;gap:12px;margin-top:32px;flex-wrap:wrap}
   .btn{display:inline-block;text-decoration:none;padding:15px 30px;
     font-family:ui-monospace,monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;
-    background:var(--ink);color:var(--paper);border:2px solid var(--ink)}
+    background:var(--ink);color:var(--paper);border:2px solid var(--ink);cursor:pointer}
   .btn:hover{background:var(--red);border-color:var(--red)}
   .btn.ghost{background:transparent;color:var(--ink)}
   .btn.ghost:hover{background:var(--ink);color:var(--paper)}
 
-  /* section heads */
   section{padding:60px 0 10px}
   .sec-head{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:6px}
   .sec-head h2{font-size:clamp(28px,5vw,46px);margin:0}
   .sec-num{font-family:ui-monospace,monospace;font-size:12px;color:var(--red);letter-spacing:.18em}
   .sec-sub{max-width:60ch;color:var(--muted);margin:0 0 32px}
 
-  /* products */
   .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:28px}
   .prod{border:1px solid var(--line);background:var(--card);display:flex;flex-direction:column}
   .shot{aspect-ratio:1/1;position:relative;display:flex;align-items:center;justify-content:center;
-    overflow:hidden;border-bottom:1px solid var(--line)}
-  .shot span{font-family:ui-monospace,monospace;font-size:10px;letter-spacing:.18em;
+    overflow:hidden;border-bottom:1px solid var(--line);background-size:cover;background-position:center}
+  .shot span.ph{font-family:ui-monospace,monospace;font-size:10px;letter-spacing:.18em;
     text-transform:uppercase;color:rgba(237,235,225,.5);border:1px dashed rgba(237,235,225,.3);
     padding:9px 13px;text-align:center;z-index:2}
-  .s1{background:linear-gradient(160deg,#1D4E63,#0E2A38)}
-  .s2{background:linear-gradient(160deg,#5C6247,#2F3325)}
-  .s3{background:linear-gradient(180deg,#0C1018,#232B38)}
-  .s4{background:linear-gradient(160deg,#3A2C22,#181210)}
-  .s5{background:linear-gradient(160deg,#7A2C1E,#3A1710)}
-  .s6{background:linear-gradient(160deg,#4A4636,#232016)}
+  .s1{background-color:#123243;background-image:linear-gradient(160deg,#1D4E63,#0E2A38)}
+  .s2{background-color:#3E4331;background-image:linear-gradient(160deg,#5C6247,#2F3325)}
+  .s3{background-color:#161C26;background-image:linear-gradient(180deg,#0C1018,#232B38)}
+  .s4{background-color:#281E18;background-image:linear-gradient(160deg,#3A2C22,#181210)}
+  .s5{background-color:#5A2117;background-image:linear-gradient(160deg,#7A2C1E,#3A1710)}
+  .s6{background-color:#373426;background-image:linear-gradient(160deg,#4A4636,#232016)}
   .tag{position:absolute;top:12px;left:12px;background:var(--acid);color:#17150F;
     font-family:ui-monospace,monospace;font-size:9px;letter-spacing:.14em;
     text-transform:uppercase;padding:5px 8px;z-index:3}
   .tag.hot{background:var(--red);color:#fff}
-  .pinfo{padding:16px 17px 18px;display:flex;flex-direction:column;flex:1;gap:0}
+  .pinfo{padding:16px 17px 18px;display:flex;flex-direction:column;flex:1}
   .pinfo h3{font-family:Impact,Haettenschweiler,sans-serif;text-transform:uppercase;
     font-size:20px;margin:0 0 5px;color:var(--ink)}
   .spec{font-family:ui-monospace,monospace;font-size:11px;color:var(--muted);
@@ -94,7 +94,6 @@
     font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase}
   .add:hover{background:var(--red)}
 
-  /* bundle */
   .bundle{background:var(--ink);color:var(--paper);padding:52px 34px;margin-top:40px;
     display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:32px;align-items:center}
   .bundle h2{color:var(--paper);font-size:clamp(30px,5vw,52px);margin:0 0 12px}
@@ -109,13 +108,11 @@
     border-bottom:1px solid #332F26;padding-bottom:11px;font-size:15px;color:#DAD7CC}
   .bundlelist .n{font-family:ui-monospace,monospace;font-size:11px;color:var(--red)}
 
-  /* promise strip */
   .promises{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:24px;margin-top:12px}
   .promise{border-top:2px solid var(--ink);padding-top:13px}
   .promise b{display:block;color:var(--ink);font-size:15px;margin-bottom:4px}
   .promise p{margin:0;font-size:14px;color:var(--muted)}
 
-  /* email */
   .signup{border:3px solid var(--ink);padding:44px 30px;margin-top:56px;text-align:center}
   .signup h2{font-size:clamp(26px,4.4vw,42px);margin:0 0 10px}
   .signup p{color:var(--muted);margin:0 auto 24px;max-width:46ch}
@@ -123,7 +120,7 @@
   input[type=email]{flex:1;min-width:210px;padding:14px 16px;border:2px solid var(--ink);
     background:var(--card);color:var(--body);font-size:15px;font-family:inherit}
   input[type=email]:focus-visible{outline:3px solid var(--red);outline-offset:2px}
-  button{border:0;cursor:pointer;font-family:ui-monospace,monospace}
+  button{border:0;font-family:ui-monospace,monospace}
   .btn:focus-visible,.add:focus-visible,a:focus-visible{outline:3px solid var(--red);outline-offset:2px}
 
   footer{border-top:3px solid var(--ink);margin-top:60px;padding:34px 0 60px;
@@ -131,6 +128,30 @@
     font-family:ui-monospace,monospace;font-size:12px;letter-spacing:.08em;
     text-transform:uppercase;color:var(--muted)}
 </style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════════════════════════
+     EDIT ONLY THIS BLOCK.
+     1. domain  → your Shopify domain (keep the .myshopify.com version)
+     2. variant → each product's VARIANT ID (see store/vercel-shopify-setup.md)
+     Any product left as null keeps a placeholder link until you fill it in.
+     ══════════════════════════════════════════════════════════════════ -->
+<script>
+  const SHOP = {
+    domain: "your-store.myshopify.com",
+    email_endpoint: "REPLACE_EMAIL_ENDPOINT",
+    variants: {
+      shark:    null,   // e.g. "45123456789012"
+      shorts:   null,
+      windows:  null,
+      longslv:  null,
+      apron:    null,
+      trophy:   null,
+      unclepack:null
+    }
+  };
+</script>
 
 <div class="ticker">
   <div class="mono">
@@ -144,7 +165,7 @@
   <div class="navlinks">
     <a href="#shop">Shop</a>
     <a href="#bundle">The Uncle Pack</a>
-    <a href="REPLACE_SHOP_URL" class="cartbtn">Cart</a>
+    <a class="cartbtn" data-cart>Cart</a>
   </div>
 </nav>
 
@@ -169,56 +190,56 @@
   <div class="grid">
 
     <div class="prod">
-      <div class="shot s1"><span class="tag hot mono">Bestseller</span><span>product photo<br>1:1</span></div>
+      <div class="shot s1"><span class="tag hot mono">Bestseller</span><span class="ph">product photo<br>1:1</span></div>
       <div class="pinfo">
         <h3>The Inflatable Shark Suit</h3>
         <div class="spec mono">100% nylon · one size fits most<br>Battery fan included · Ruins weddings</div>
-        <div class="prow"><span class="price">$49</span><a class="add" href="REPLACE_SHOP_URL">Add to cart</a></div>
+        <div class="prow"><span class="price">$49</span><a class="add" data-buy="shark">Add to cart</a></div>
       </div>
     </div>
 
     <div class="prod">
-      <div class="shot s2"><span class="tag mono">Uncle-approved</span><span>product photo<br>1:1</span></div>
+      <div class="shot s2"><span class="tag mono">Uncle-approved</span><span class="ph">product photo<br>1:1</span></div>
       <div class="pinfo">
         <h3>Hairy Leg Camo Shorts</h3>
         <div class="spec mono">Quick-dry poly · Elastic waist<br>Photorealistic print · Legally distinct from real legs</div>
-        <div class="prow"><span class="price">$34</span><a class="add" href="REPLACE_SHOP_URL">Add to cart</a></div>
+        <div class="prow"><span class="price">$34</span><a class="add" data-buy="shorts">Add to cart</a></div>
       </div>
     </div>
 
     <div class="prod">
-      <div class="shot s3"><span class="tag mono">Seasonal</span><span>product photo<br>1:1</span></div>
+      <div class="shot s3"><span class="tag mono">Seasonal</span><span class="ph">product photo<br>1:1</span></div>
       <div class="pinfo">
         <h3>Creepy Window Silhouettes</h3>
         <div class="spec mono">Set of 12 · Reusable static cling<br>Visible from the street · Concerns the neighbours</div>
-        <div class="prow"><span class="price">$26</span><a class="add" href="REPLACE_SHOP_URL">Add to cart</a></div>
+        <div class="prow"><span class="price">$26</span><a class="add" data-buy="windows">Add to cart</a></div>
       </div>
     </div>
 
     <div class="prod">
-      <div class="shot s4"><span class="tag mono">Ships free</span><span>product photo<br>1:1</span></div>
+      <div class="shot s4"><span class="tag mono">Ships free</span><span class="ph">product photo<br>1:1</span></div>
       <div class="pinfo">
         <h3>The Statement Long-Sleeve</h3>
         <div class="spec mono">Heavyweight cotton · Unisex boxy fit<br>Back print · Ends conversations</div>
-        <div class="prow"><span class="price">$38</span><a class="add" href="REPLACE_SHOP_URL">Add to cart</a></div>
+        <div class="prow"><span class="price">$38</span><a class="add" data-buy="longslv">Add to cart</a></div>
       </div>
     </div>
 
     <div class="prod">
-      <div class="shot s5"><span class="tag mono">Gift-ready</span><span>product photo<br>1:1</span></div>
+      <div class="shot s5"><span class="tag mono">Gift-ready</span><span class="ph">product photo<br>1:1</span></div>
       <div class="pinfo">
         <h3>“Licensed To Grill” Apron</h3>
         <div class="spec mono">Cotton canvas · Adjustable neck<br>Two pockets · No actual licence conferred</div>
-        <div class="prow"><span class="price">$32</span><a class="add" href="REPLACE_SHOP_URL">Add to cart</a></div>
+        <div class="prow"><span class="price">$32</span><a class="add" data-buy="apron">Add to cart</a></div>
       </div>
     </div>
 
     <div class="prod">
-      <div class="shot s6"><span class="tag mono">Desk flex</span><span>product photo<br>1:1</span></div>
+      <div class="shot s6"><span class="tag mono">Desk flex</span><span class="ph">product photo<br>1:1</span></div>
       <div class="pinfo">
         <h3>World's Okayest Trophy</h3>
         <div class="spec mono">Resin &amp; metal · 8 inches tall<br>Engraved base · Damning with faint praise</div>
-        <div class="prow"><span class="price">$28</span><a class="add" href="REPLACE_SHOP_URL">Add to cart</a></div>
+        <div class="prow"><span class="price">$28</span><a class="add" data-buy="trophy">Add to cart</a></div>
       </div>
     </div>
 
@@ -231,7 +252,7 @@
       <h2 class="display">The Uncle<br>Starter Pack</h2>
       <p>He has adult money and nothing to spend it on. Fix that in one order.</p>
       <div style="margin-top:14px"><span class="was">$114 separately</span><span class="now">$89</span></div>
-      <a class="btn" href="REPLACE_SHOP_URL">Ruin his reputation →</a>
+      <a class="btn" data-buy="unclepack">Ruin his reputation →</a>
     </div>
     <ul class="bundlelist">
       <li><span class="n mono">01</span><span>Hairy Leg Camo Shorts</span></li>
@@ -260,7 +281,7 @@
   <div class="signup">
     <h2 class="display">Get the drops first</h2>
     <p>New goods, seasonal restocks, and the occasional thing we probably shouldn't have made.</p>
-    <form action="REPLACE_EMAIL_ENDPOINT" method="post">
+    <form id="signup" method="post">
       <input type="email" name="email" placeholder="your email" aria-label="Email address" required />
       <button class="btn" type="submit">Sign me up</button>
     </form>
@@ -271,4 +292,28 @@
   <span>© <span id="y"></span> Deadpan Goods</span>
   <span>Serious about stupid things</span>
 </footer>
-<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+
+<script>
+  document.getElementById('y').textContent = new Date().getFullYear();
+
+  // Wire every [data-buy] to a Shopify cart permalink:
+  //   https://STORE/cart/VARIANT_ID:1
+  // Shopify adds the item and drops the buyer straight into checkout.
+  document.querySelectorAll('[data-buy]').forEach(function (el) {
+    var id = SHOP.variants[el.getAttribute('data-buy')];
+    if (id) {
+      el.href = 'https://' + SHOP.domain + '/cart/' + id + ':1';
+    } else {
+      el.href = 'https://' + SHOP.domain;
+      el.title = 'Add this variant ID in the SHOP block to link it directly.';
+    }
+  });
+
+  var cart = document.querySelector('[data-cart]');
+  if (cart) cart.href = 'https://' + SHOP.domain + '/cart';
+
+  var form = document.getElementById('signup');
+  if (form) form.action = SHOP.email_endpoint;
+</script>
+</body>
+</html>
