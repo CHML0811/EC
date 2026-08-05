@@ -17,6 +17,10 @@ Playbooks:
 >   sourced), product shortlist, decoded viral mechanics, and auto-DM automation.
 > - [`marketing/poster-system.html`](marketing/poster-system.html)
 >   — the "Deadpan Luxury" poster system: 6 formats, house rules, image/video prompts.
+> - [`store/shopify-setup.md`](store/shopify-setup.md)
+>   — **the click-path**: Shopify store, theme colors, products, fulfilment, payments.
+> - [`store/storefront.html`](store/storefront.html)
+>   — the Deadpan Goods storefront (deployable, or lift the copy into Shopify).
 > - [`playbooks/sleepmaxxing-brand-horizontal-club.md`](playbooks/sleepmaxxing-brand-horizontal-club.md)
 >   — **the active build**: a premium rest-identity brand ("Horizontal Club") with
 >   positioning, palette, product line, pricing, and a brand-locked prompt library.

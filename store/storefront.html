@@ -1,0 +1,274 @@
+<title>Deadpan Goods — Serious about stupid things</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<style>
+  :root{
+    --ink:#17150F; --paper:#E4E2D8; --red:#D93B24; --acid:#E4D93C;
+    --olive:#565E42; --card:#EFEDE5; --line:#C9C6BA;
+    --body:#2A2721; --muted:#5F5B50;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{--paper:#12110D; --ink:#EDEBE1; --card:#1C1A15; --line:#332F26; --body:#DAD7CC; --muted:#8C8778}
+  }
+  :root[data-theme="dark"]{--paper:#12110D; --ink:#EDEBE1; --card:#1C1A15; --line:#332F26; --body:#DAD7CC; --muted:#8C8778}
+  :root[data-theme="light"]{--paper:#E4E2D8; --ink:#17150F; --card:#EFEDE5; --line:#C9C6BA; --body:#2A2721; --muted:#5F5B50}
+
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--body);
+    font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:16px;line-height:1.6;
+    -webkit-font-smoothing:antialiased}
+  .display{font-family:Impact,Haettenschweiler,"Arial Narrow Bold","Franklin Gothic Heavy",sans-serif;
+    text-transform:uppercase;letter-spacing:-.01em;line-height:.92;text-wrap:balance;color:var(--ink)}
+  .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+  a{color:inherit}
+
+  /* announcement */
+  .ticker{background:var(--ink);color:var(--paper);padding:9px 0;overflow:hidden}
+  .ticker .mono{font-size:11px;letter-spacing:.2em;text-transform:uppercase;
+    white-space:nowrap;display:flex;gap:40px;animation:slide 26s linear infinite}
+  @keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  @media (prefers-reduced-motion:reduce){.ticker .mono{animation:none;justify-content:center}}
+
+  /* nav */
+  nav{display:flex;justify-content:space-between;align-items:center;
+    padding:20px 24px;max-width:1140px;margin:0 auto;gap:16px}
+  .logo{font-family:Impact,Haettenschweiler,sans-serif;font-size:23px;text-transform:uppercase;
+    color:var(--ink);letter-spacing:.005em;text-decoration:none}
+  .logo em{color:var(--red);font-style:normal}
+  .navlinks{display:flex;gap:22px;align-items:center;font-size:14px}
+  .navlinks a{text-decoration:none;color:var(--muted)}
+  .navlinks a:hover{color:var(--ink)}
+  .cartbtn{background:var(--ink);color:var(--paper);text-decoration:none;
+    padding:9px 17px;font-family:ui-monospace,monospace;font-size:12px;
+    letter-spacing:.1em;text-transform:uppercase}
+  .cartbtn:hover{background:var(--red)}
+
+  /* hero */
+  header.hero{border-top:3px solid var(--ink);border-bottom:3px solid var(--ink);padding:70px 0 56px}
+  .hero h1{font-size:clamp(46px,10.5vw,116px);margin:0}
+  .hero h1 .out{color:var(--red)}
+  .hero .lede{max-width:56ch;margin-top:24px;font-size:19px}
+  .hero .lede strong{color:var(--ink)}
+  .herobtns{display:flex;gap:12px;margin-top:32px;flex-wrap:wrap}
+  .btn{display:inline-block;text-decoration:none;padding:15px 30px;
+    font-family:ui-monospace,monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+    background:var(--ink);color:var(--paper);border:2px solid var(--ink)}
+  .btn:hover{background:var(--red);border-color:var(--red)}
+  .btn.ghost{background:transparent;color:var(--ink)}
+  .btn.ghost:hover{background:var(--ink);color:var(--paper)}
+
+  /* section heads */
+  section{padding:60px 0 10px}
+  .sec-head{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:6px}
+  .sec-head h2{font-size:clamp(28px,5vw,46px);margin:0}
+  .sec-num{font-family:ui-monospace,monospace;font-size:12px;color:var(--red);letter-spacing:.18em}
+  .sec-sub{max-width:60ch;color:var(--muted);margin:0 0 32px}
+
+  /* products */
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:28px}
+  .prod{border:1px solid var(--line);background:var(--card);display:flex;flex-direction:column}
+  .shot{aspect-ratio:1/1;position:relative;display:flex;align-items:center;justify-content:center;
+    overflow:hidden;border-bottom:1px solid var(--line)}
+  .shot span{font-family:ui-monospace,monospace;font-size:10px;letter-spacing:.18em;
+    text-transform:uppercase;color:rgba(237,235,225,.5);border:1px dashed rgba(237,235,225,.3);
+    padding:9px 13px;text-align:center;z-index:2}
+  .s1{background:linear-gradient(160deg,#1D4E63,#0E2A38)}
+  .s2{background:linear-gradient(160deg,#5C6247,#2F3325)}
+  .s3{background:linear-gradient(180deg,#0C1018,#232B38)}
+  .s4{background:linear-gradient(160deg,#3A2C22,#181210)}
+  .s5{background:linear-gradient(160deg,#7A2C1E,#3A1710)}
+  .s6{background:linear-gradient(160deg,#4A4636,#232016)}
+  .tag{position:absolute;top:12px;left:12px;background:var(--acid);color:#17150F;
+    font-family:ui-monospace,monospace;font-size:9px;letter-spacing:.14em;
+    text-transform:uppercase;padding:5px 8px;z-index:3}
+  .tag.hot{background:var(--red);color:#fff}
+  .pinfo{padding:16px 17px 18px;display:flex;flex-direction:column;flex:1;gap:0}
+  .pinfo h3{font-family:Impact,Haettenschweiler,sans-serif;text-transform:uppercase;
+    font-size:20px;margin:0 0 5px;color:var(--ink)}
+  .spec{font-family:ui-monospace,monospace;font-size:11px;color:var(--muted);
+    line-height:1.65;margin-bottom:13px}
+  .prow{display:flex;justify-content:space-between;align-items:center;margin-top:auto;gap:10px}
+  .price{font-family:Impact,Haettenschweiler,sans-serif;font-size:24px;color:var(--ink);
+    font-variant-numeric:tabular-nums}
+  .add{background:var(--ink);color:var(--paper);text-decoration:none;padding:9px 15px;
+    font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase}
+  .add:hover{background:var(--red)}
+
+  /* bundle */
+  .bundle{background:var(--ink);color:var(--paper);padding:52px 34px;margin-top:40px;
+    display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:32px;align-items:center}
+  .bundle h2{color:var(--paper);font-size:clamp(30px,5vw,52px);margin:0 0 12px}
+  .bundle p{color:#B8B3A5;margin:0 0 8px;max-width:44ch}
+  .bundle .was{font-family:ui-monospace,monospace;font-size:13px;color:#8C8778;
+    text-decoration:line-through;margin-right:9px}
+  .bundle .now{font-family:Impact,Haettenschweiler,sans-serif;font-size:44px;color:var(--acid)}
+  .bundle .btn{background:var(--acid);color:#17150F;border-color:var(--acid);margin-top:18px}
+  .bundle .btn:hover{background:var(--paper);border-color:var(--paper)}
+  .bundlelist{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:11px}
+  .bundlelist li{display:flex;gap:12px;align-items:baseline;
+    border-bottom:1px solid #332F26;padding-bottom:11px;font-size:15px;color:#DAD7CC}
+  .bundlelist .n{font-family:ui-monospace,monospace;font-size:11px;color:var(--red)}
+
+  /* promise strip */
+  .promises{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:24px;margin-top:12px}
+  .promise{border-top:2px solid var(--ink);padding-top:13px}
+  .promise b{display:block;color:var(--ink);font-size:15px;margin-bottom:4px}
+  .promise p{margin:0;font-size:14px;color:var(--muted)}
+
+  /* email */
+  .signup{border:3px solid var(--ink);padding:44px 30px;margin-top:56px;text-align:center}
+  .signup h2{font-size:clamp(26px,4.4vw,42px);margin:0 0 10px}
+  .signup p{color:var(--muted);margin:0 auto 24px;max-width:46ch}
+  form{display:flex;gap:10px;max-width:460px;margin:0 auto;flex-wrap:wrap;justify-content:center}
+  input[type=email]{flex:1;min-width:210px;padding:14px 16px;border:2px solid var(--ink);
+    background:var(--card);color:var(--body);font-size:15px;font-family:inherit}
+  input[type=email]:focus-visible{outline:3px solid var(--red);outline-offset:2px}
+  button{border:0;cursor:pointer;font-family:ui-monospace,monospace}
+  .btn:focus-visible,.add:focus-visible,a:focus-visible{outline:3px solid var(--red);outline-offset:2px}
+
+  footer{border-top:3px solid var(--ink);margin-top:60px;padding:34px 0 60px;
+    display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
+    font-family:ui-monospace,monospace;font-size:12px;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--muted)}
+</style>
+
+<div class="ticker">
+  <div class="mono">
+    <span>Free shipping over $60 · Ships in 3–5 days · Gift-ready packaging · Nobody has to know it was you · Free shipping over $60 · Ships in 3–5 days · Gift-ready packaging · Nobody has to know it was you ·</span>
+    <span aria-hidden="true">Free shipping over $60 · Ships in 3–5 days · Gift-ready packaging · Nobody has to know it was you · Free shipping over $60 · Ships in 3–5 days · Gift-ready packaging · Nobody has to know it was you ·</span>
+  </div>
+</div>
+
+<nav>
+  <a class="logo" href="#top">Deadpan<em>.</em>Goods</a>
+  <div class="navlinks">
+    <a href="#shop">Shop</a>
+    <a href="#bundle">The Uncle Pack</a>
+    <a href="REPLACE_SHOP_URL" class="cartbtn">Cart</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <h1 class="display">We are very<br>serious about<br><span class="out">stupid things.</span></h1>
+    <p class="lede">Gag gifts engineered for one moment: the second someone sees it and thinks <strong>“this is literally my uncle.”</strong> Built well, shipped fast, and guaranteed to make a room go quiet before it goes loud.</p>
+    <div class="herobtns">
+      <a class="btn" href="#shop">Shop the goods</a>
+      <a class="btn ghost" href="#bundle">The Uncle Pack →</a>
+    </div>
+  </div>
+</header>
+
+<section class="wrap" id="shop">
+  <div class="sec-head">
+    <span class="sec-num mono">01</span>
+    <h2 class="display">The goods</h2>
+  </div>
+  <p class="sec-sub">Every item is real, wearable, and slightly indefensible. Specs are accurate. The last one on each list is also accurate.</p>
+
+  <div class="grid">
+
+    <div class="prod">
+      <div class="shot s1"><span class="tag hot mono">Bestseller</span><span>product photo<br>1:1</span></div>
+      <div class="pinfo">
+        <h3>The Inflatable Shark Suit</h3>
+        <div class="spec mono">100% nylon · one size fits most<br>Battery fan included · Ruins weddings</div>
+        <div class="prow"><span class="price">$49</span><a class="add" href="REPLACE_SHOP_URL">Add to cart</a></div>
+      </div>
+    </div>
+
+    <div class="prod">
+      <div class="shot s2"><span class="tag mono">Uncle-approved</span><span>product photo<br>1:1</span></div>
+      <div class="pinfo">
+        <h3>Hairy Leg Camo Shorts</h3>
+        <div class="spec mono">Quick-dry poly · Elastic waist<br>Photorealistic print · Legally distinct from real legs</div>
+        <div class="prow"><span class="price">$34</span><a class="add" href="REPLACE_SHOP_URL">Add to cart</a></div>
+      </div>
+    </div>
+
+    <div class="prod">
+      <div class="shot s3"><span class="tag mono">Seasonal</span><span>product photo<br>1:1</span></div>
+      <div class="pinfo">
+        <h3>Creepy Window Silhouettes</h3>
+        <div class="spec mono">Set of 12 · Reusable static cling<br>Visible from the street · Concerns the neighbours</div>
+        <div class="prow"><span class="price">$26</span><a class="add" href="REPLACE_SHOP_URL">Add to cart</a></div>
+      </div>
+    </div>
+
+    <div class="prod">
+      <div class="shot s4"><span class="tag mono">Ships free</span><span>product photo<br>1:1</span></div>
+      <div class="pinfo">
+        <h3>The Statement Long-Sleeve</h3>
+        <div class="spec mono">Heavyweight cotton · Unisex boxy fit<br>Back print · Ends conversations</div>
+        <div class="prow"><span class="price">$38</span><a class="add" href="REPLACE_SHOP_URL">Add to cart</a></div>
+      </div>
+    </div>
+
+    <div class="prod">
+      <div class="shot s5"><span class="tag mono">Gift-ready</span><span>product photo<br>1:1</span></div>
+      <div class="pinfo">
+        <h3>“Licensed To Grill” Apron</h3>
+        <div class="spec mono">Cotton canvas · Adjustable neck<br>Two pockets · No actual licence conferred</div>
+        <div class="prow"><span class="price">$32</span><a class="add" href="REPLACE_SHOP_URL">Add to cart</a></div>
+      </div>
+    </div>
+
+    <div class="prod">
+      <div class="shot s6"><span class="tag mono">Desk flex</span><span>product photo<br>1:1</span></div>
+      <div class="pinfo">
+        <h3>World's Okayest Trophy</h3>
+        <div class="spec mono">Resin &amp; metal · 8 inches tall<br>Engraved base · Damning with faint praise</div>
+        <div class="prow"><span class="price">$28</span><a class="add" href="REPLACE_SHOP_URL">Add to cart</a></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="wrap" id="bundle">
+  <div class="bundle">
+    <div>
+      <h2 class="display">The Uncle<br>Starter Pack</h2>
+      <p>He has adult money and nothing to spend it on. Fix that in one order.</p>
+      <div style="margin-top:14px"><span class="was">$114 separately</span><span class="now">$89</span></div>
+      <a class="btn" href="REPLACE_SHOP_URL">Ruin his reputation →</a>
+    </div>
+    <ul class="bundlelist">
+      <li><span class="n mono">01</span><span>Hairy Leg Camo Shorts</span></li>
+      <li><span class="n mono">02</span><span>“Licensed To Grill” Apron</span></li>
+      <li><span class="n mono">03</span><span>World's Okayest Trophy</span></li>
+      <li><span class="n mono">04</span><span>Gift box that says nothing useful</span></li>
+    </ul>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="sec-head">
+    <span class="sec-num mono">02</span>
+    <h2 class="display">The fine print</h2>
+  </div>
+  <p class="sec-sub">The jokes are dumb on purpose. Nothing else is.</p>
+  <div class="promises">
+    <div class="promise"><b>Real quality</b><p>Every item is sample-tested before it goes live. A gag that falls apart isn't funny twice.</p></div>
+    <div class="promise"><b>Ships in 3–5 days</b><p>Tracked from day one. Holiday cutoffs posted on every product page.</p></div>
+    <div class="promise"><b>Gift-ready</b><p>Arrives boxed and giftable. No invoice in the package.</p></div>
+    <div class="promise"><b>30-day returns</b><p>If it doesn't land, send it back. No interrogation.</p></div>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="signup">
+    <h2 class="display">Get the drops first</h2>
+    <p>New goods, seasonal restocks, and the occasional thing we probably shouldn't have made.</p>
+    <form action="REPLACE_EMAIL_ENDPOINT" method="post">
+      <input type="email" name="email" placeholder="your email" aria-label="Email address" required />
+      <button class="btn" type="submit">Sign me up</button>
+    </form>
+  </div>
+</section>
+
+<footer class="wrap">
+  <span>© <span id="y"></span> Deadpan Goods</span>
+  <span>Serious about stupid things</span>
+</footer>
+<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
