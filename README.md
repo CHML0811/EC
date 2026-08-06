@@ -15,6 +15,13 @@ seasonal calendar. Runs automatically every Monday.
 ▶ Setup sequence: [`workflow/operating-flow.md`](workflow/operating-flow.md) — phase by
 phase, with gates and a launch checklist.
 
+▶ 🚨 **Fix first:** [`store/us-market-setup.md`](store/us-market-setup.md) — currency to USD,
+US shipping zone, timezone. The store carries Brazilian demo defaults that charge US buyers
+~$18 shipping.
+
+▶ **Long term:** [`playbooks/long-term-brand-strategy.md`](playbooks/long-term-brand-strategy.md)
+— three horizons, the goods ladder, the retention product, and the four things worth owning.
+
 ▶ **Live campaign:** [`marketing/halloween-launch-plan.md`](marketing/halloween-launch-plan.md)
 — dated Halloween plan for the window silhouettes: hooks, posting schedule, bundle
 economics, gates, and the Oct 10 cutoff.
