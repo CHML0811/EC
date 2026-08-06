@@ -15,6 +15,10 @@ seasonal calendar. Runs automatically every Monday.
 ▶ Setup sequence: [`workflow/operating-flow.md`](workflow/operating-flow.md) — phase by
 phase, with gates and a launch checklist.
 
+▶ **Live campaign:** [`marketing/halloween-launch-plan.md`](marketing/halloween-launch-plan.md)
+— dated Halloween plan for the window silhouettes: hooks, posting schedule, bundle
+economics, gates, and the Oct 10 cutoff.
+
 Playbooks:
 > - [`playbooks/gag-gift-playbook.md`](playbooks/gag-gift-playbook.md)
 >   — **the active build**: novelty/gag-gift brand — two fulfilment lanes (POD vs
