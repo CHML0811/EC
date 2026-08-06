@@ -8,8 +8,12 @@ Stack: **Claude** (research, copy, brand, listings) → **Higgsfield** (design +
 video creative) → **Printify** (production/fulfilment) → **Shopify / TikTok Shop**
 (storefront + demand) → **Vercel** (fast landing / link-in-bio).
 
-▶ **START HERE:** [`workflow/operating-flow.md`](workflow/operating-flow.md) — the whole flow,
-phase by phase, with gates and a launch checklist.
+▶ **START HERE:** [`workflow/growth-loop.md`](workflow/growth-loop.md) — the weekly
+data-driven loop: scorecard, metric gates, stock/shipping rules, targeting matrix,
+seasonal calendar. Runs automatically every Monday.
+
+▶ Setup sequence: [`workflow/operating-flow.md`](workflow/operating-flow.md) — phase by
+phase, with gates and a launch checklist.
 
 Playbooks:
 > - [`playbooks/gag-gift-playbook.md`](playbooks/gag-gift-playbook.md)
