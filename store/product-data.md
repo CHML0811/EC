@@ -101,3 +101,22 @@ Global: Vendor `Deadpan Goods` · Track quantity **off** · Status **draft** unt
 
 **Refund policy line:** 30 days, no interrogation. If it didn't land, send it back.
 **Shipping line:** Ships in 3–5 days, tracked. Free over $60, otherwise $5.95.
+
+---
+
+## ✅ Created in Shopify (2026-08-06)
+
+Store: `fbapgj-si.myshopify.com` · All products **DRAFT** until photos + samples land.
+
+| Product | Handle | Price | Variants | First variant ID |
+|---|---|---|---|---|
+| The Inflatable Shark Suit | `the-inflatable-shark-suit` | 49.00 | 1 | 45759127126063 |
+| Hairy Leg Camo Shorts | `hairy-leg-camo-shorts` | 34.00 | 5 (S–2XL) | 45759129223215 |
+| Creepy Window Silhouettes (Set of 12) | `creepy-window-silhouettes-set-of-12` | 26.00 | 1 | 45759129485359 |
+| The Statement Long-Sleeve | `the-statement-long-sleeve` | 38.00 | 5 (S–2XL) | 45759131549743 |
+| "Licensed To Grill" Apron | `licensed-to-grill-apron` | 32.00 | 1 | 45759131713583 |
+| World's Okayest Trophy | `worlds-okayest-trophy` | 28.00 | 1 | 45759131779119 |
+| The Uncle Starter Pack | `the-uncle-starter-pack` | 89.00 | 5 (by shorts size) | 45759131877423 |
+
+⚠️ **Store currency is still HKD.** Prices are stored as plain numbers, so switching to USD
+in **Settings → General** makes them read as $49 / $34 / etc. Do this before going live.
