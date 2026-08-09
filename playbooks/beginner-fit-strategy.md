@@ -37,13 +37,47 @@ selling.
 
 ---
 
-## The goods: lead with POD
+## ⚠️ Run the margin math first — this is where beginners die
 
-**Keep and prioritise (POD — start here):**
-1. **The Statement Long-Sleeve** — $38 · already created
-2. **"Licensed To Grill" Apron** — $32 · already created
-3. **The Bureau of Minor Achievements** — certificates, department tees, mugs, plaques
-   (`playbooks/original-design-line.md`). All POD, all owned IP, 70–80% margin.
+**68% of new POD sellers miscalculate their break-even by $3.50+ per item** in their first
+three months. Etsy's headline fees look like 11%, but the real all-in load is **20–25%** of
+order value ($0.20 listing + 6.5% transaction + 3% + $0.25 processing, plus 12–15% offsite
+ads when they trigger).
+
+At ~23% all-in, here's what your current prices actually earn:
+
+| Product | Price | Etsy ~23% | POD cost | **You keep** | Verdict |
+|---|---:|---:|---:|---:|---|
+| Certificate print | $32 | $7.36 | ~$10 | **$14.64 (46%)** | ✅ Works |
+| Framed certificate | $58 | $13.34 | ~$25 | **$19.66 (34%)** | ✅ Best $ per sale |
+| Mug | $24 | $5.52 | ~$9 | **$9.48 (40%)** | ✅ Works |
+| "Licensed To Grill" Apron | $32 | $7.36 | ~$20 | **$4.64 (14%)** | ❌ Too thin |
+| Statement Long-Sleeve | $38 | $8.74 | ~$24 | **$5.26 (14%)** | ❌ Too thin |
+
+**Apparel does not work on Etsy at these prices.** Blank costs are simply too high once Etsy
+takes its cut. One refund wipes out four sales.
+
+**Paper goods do work** — low base cost, and the research is explicit that premium prints at
+$40–$120 absorb Etsy's fee load far better than $20 commodity items.
+
+**So: lead with paper, not apparel.**
+
+## The goods: certificates first
+
+**Start here — The Bureau of Minor Achievements** (`playbooks/original-design-line.md`):
+certificates, framed prints, mugs, plaques. This turns out to be the right first product for
+four reasons that all stack:
+
+1. **Best margin on Etsy** (34–46%) — low base cost
+2. **Personalisable** — a name on a certificate. Personalised gifts are one of Etsy's
+   strongest converting categories, and it's a moat competitors can't copy quickly
+3. **It's your owned IP**, not a resold SKU
+4. **I can design it right now, with zero image credits** — it's typography and layout, not
+   illustration
+
+**Fix or park the apparel:** re-price the apron to **$45** and the long-sleeve to **$52**, or
+keep them on Shopify only (no Etsy fees) and leave Etsy to the paper goods. My recommendation
+is re-price — the deadpan voice supports a premium, and thin margin is worse than fewer sales.
 
 **Park for later (sourced — needs photos + supplier):**
 Shark suit · hairy leg shorts · window silhouettes · trophy. Good products, wrong first step.
@@ -86,7 +120,8 @@ first sales come from.
 | **Timezone** | **(GMT+8) Hong Kong** | Use *your* clock so reports match your day |
 | **Supplier photos** | **Not needed** | POD generates them free |
 | **First channel** | **Etsy** | Buyer intent already exists |
-| **First products** | Apron + long-sleeve + first certificates | POD, zero upfront cost |
+| **First products** | **Bureau certificates + framed prints + mugs** | Best Etsy margin, personalisable, zero image credits needed |
+| **Apparel** | Re-price to $45 / $52, or Shopify-only | 14% margin on Etsy doesn't survive a refund |
 | **Halloween** | Park it | Christmas is the bigger season and we can make that one |
 
 ---
@@ -100,15 +135,17 @@ first sales come from.
 4. Activate payments when you're ready to take money
 
 **Me (everything else):**
-- Design files for the apron, long-sleeve, and first Bureau certificates
+- **Design the Bureau certificates as print-ready files** — typography and layout, so no
+  image credits needed. This is the part that was blocked and now isn't.
 - Push them into Printify → mockups generate automatically
 - Write every Etsy listing: titles, tags, descriptions, SEO
+- Re-price the apparel, update the Shopify catalog
 - Pinterest pin copy, TikTok Shop affiliate brief for creators
 - Weekly research and reporting via the Monday routine
 
-**One honest gap:** design generation needs an image tool. Higgsfield sits at **1.52 credits
-(free plan)**. The Bureau certificates are typography and layout — I can build those as
-print-ready files directly, no credits needed. Illustrated designs would need credits.
+**The blocker is gone.** Choosing paper goods over sourced novelty means I can build the
+actual products, not just describe them. Illustrated designs would still need Higgsfield
+credits — certificates don't.
 
 ---
 
