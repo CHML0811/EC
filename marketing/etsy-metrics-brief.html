@@ -1,0 +1,260 @@
+<title>The Numbers That Decide It — Deadpan Goods Etsy Brief</title>
+<style>
+  :root{
+    --ink:#17150F; --paper:#E4E2D8; --red:#D93B24; --acid:#E4D93C;
+    --olive:#565E42; --green:#3F7D4E; --card:#EFEDE5; --line:#C9C6BA;
+    --body:#2A2721; --muted:#5F5B50;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{--paper:#12110D;--ink:#EDEBE1;--card:#1C1A15;--line:#332F26;--body:#DAD7CC;--muted:#8C8778;--green:#5FA271}
+  }
+  :root[data-theme="dark"]{--paper:#12110D;--ink:#EDEBE1;--card:#1C1A15;--line:#332F26;--body:#DAD7CC;--muted:#8C8778;--green:#5FA271}
+  :root[data-theme="light"]{--paper:#E4E2D8;--ink:#17150F;--card:#EFEDE5;--line:#C9C6BA;--body:#2A2721;--muted:#5F5B50;--green:#3F7D4E}
+
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--body);
+    font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:16px;line-height:1.6;
+    -webkit-font-smoothing:antialiased}
+  .display{font-family:Impact,Haettenschweiler,"Arial Narrow Bold","Franklin Gothic Heavy",sans-serif;
+    text-transform:uppercase;letter-spacing:-.01em;line-height:.94;text-wrap:balance;color:var(--ink)}
+  .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+  .wrap{max-width:940px;margin:0 auto;padding:0 24px}
+
+  header{border-bottom:3px solid var(--ink);padding:60px 0 40px}
+  .kicker{font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.22em;
+    text-transform:uppercase;color:var(--red);margin-bottom:18px}
+  h1{font-size:clamp(40px,8.5vw,86px);margin:0}
+  h1 .out{color:var(--red)}
+  .thesis{max-width:58ch;margin-top:22px;font-size:18px}
+  .thesis strong{color:var(--ink)}
+
+  .finding{border-top:1px solid var(--line);padding:46px 0 10px}
+  .tagnum{display:inline-block;border:1px solid var(--red);color:var(--red);
+    font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.16em;
+    text-transform:uppercase;padding:5px 11px;border-radius:99px;margin-bottom:16px}
+  .finding h2{font-size:clamp(26px,4.6vw,44px);margin:0 0 14px}
+  .finding h2 .hl{color:var(--acid);-webkit-text-stroke:.5px var(--ink)}
+  @media (prefers-color-scheme:dark){.finding h2 .hl{-webkit-text-stroke:0}}
+  .lead{max-width:62ch;margin:0 0 22px}
+
+  .box{background:var(--card);border:1px solid var(--line);padding:18px 20px;margin:20px 0}
+  .box.alert{border-left:4px solid var(--red)}
+  .box.good{border-left:4px solid var(--green)}
+  .box b{color:var(--ink)}
+
+  .formula{background:var(--ink);color:var(--paper);padding:24px;text-align:center;margin:22px 0}
+  .formula .eq{font-family:Impact,Haettenschweiler,sans-serif;font-size:clamp(20px,3.6vw,30px);
+    text-transform:uppercase;letter-spacing:.01em}
+  .formula .eq em{color:var(--acid);font-style:normal}
+  .formula .note{font-family:ui-monospace,monospace;font-size:12px;color:#B8B3A5;margin-top:10px}
+
+  table{width:100%;border-collapse:collapse;margin:18px 0;font-size:15px}
+  th,td{text-align:left;padding:11px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.14em;
+    text-transform:uppercase;color:var(--muted);font-weight:400}
+  td.n{font-variant-numeric:tabular-nums;white-space:nowrap}
+  .tblwrap{overflow-x:auto}
+
+  .band{display:flex;align-items:center;gap:12px;margin:9px 0}
+  .band .lbl{width:120px;flex:none;font-family:ui-monospace,monospace;font-size:12px;
+    text-transform:uppercase;letter-spacing:.08em}
+  .band .bar{height:30px;display:flex;align-items:center;padding:0 11px;color:#fff;
+    font-family:Impact,Haettenschweiler,sans-serif;font-size:15px;letter-spacing:.02em}
+  .b-hit{background:var(--green)}
+  .b-mid{background:#C9962E}
+  .b-bad{background:var(--red)}
+  .band .say{font-size:13px;color:var(--muted)}
+
+  .dna{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin:20px 0}
+  .dnabox{background:var(--card);border:1px solid var(--line);padding:16px}
+  .dnabox .h{font-family:ui-monospace,monospace;font-size:10px;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--red);margin-bottom:7px}
+  .dnabox b{display:block;color:var(--ink);font-size:17px;margin-bottom:5px}
+  .dnabox p{margin:0;font-size:14px;color:var(--muted)}
+  .dnabox code{font-family:ui-monospace,monospace;font-size:12.5px;color:var(--body);
+    background:var(--paper);padding:2px 5px;display:inline-block;margin-top:7px}
+
+  .timeline{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px;margin:20px 0}
+  .tl{background:var(--card);border:1px solid var(--line);padding:14px 12px;text-align:center}
+  .tl .d{font-family:ui-monospace,monospace;font-size:10px;letter-spacing:.12em;
+    text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+  .tl .v{font-family:Impact,Haettenschweiler,sans-serif;font-size:22px;color:var(--ink)}
+  .tl .s{font-size:12px;color:var(--muted);margin-top:5px}
+  .tl.hot{border-color:var(--green);border-width:2px}
+  .tl.cold{border-color:var(--red);border-width:2px}
+
+  footer{border-top:3px solid var(--ink);margin-top:56px;padding:28px 0 54px;
+    font-family:ui-monospace,monospace;font-size:12px;color:var(--muted);line-height:1.9}
+  footer a{color:var(--muted)}
+</style>
+
+<header>
+  <div class="wrap">
+    <div class="kicker mono">Deadpan Goods · Etsy operating brief · Aug 2026</div>
+    <h1 class="display">The number<br>you'll optimise<br><span class="out">by mistake.</span></h1>
+    <p class="thesis">Etsy shows you <strong>views</strong> and <strong>favourites</strong> on the dashboard, so that's what you'll chase. Neither one is what the algorithm ranks you on, and neither one pays. Here are the numbers that actually decide it — with the thresholds, the kill lines, and the schedule.</p>
+  </div>
+</header>
+
+<section class="wrap finding">
+  <span class="tagnum mono">① The metric that lies</span>
+  <h2 class="display">Favourites are <span class="hl">“nice”</span>.<br>Orders are “I need this”.</h2>
+  <p class="lead">Etsy ranks listings by <strong>predicted likelihood of conversion</strong>. Listing Quality Score is 30–40% of ranking and is built from <strong>clicks, favourites, and purchases from search</strong>. A listing with heavy favourites and no orders isn't "warming up" — it's actively telling Etsy the listing is a bad bet.</p>
+
+  <div class="formula">
+    <div class="eq">Conversion = <em>Orders ÷ Visits</em></div>
+    <div class="note mono">The one number. Everything else is a diagnostic.</div>
+  </div>
+
+  <div class="band"><span class="lbl">Top tier</span><div class="bar b-hit" style="width:62%">&gt; 5%</div><span class="say">Scale it. Clone the formula.</span></div>
+  <div class="band"><span class="lbl">Strong</span><div class="bar b-hit" style="width:48%">3 – 5%</div><span class="say">Working. Leave it alone.</span></div>
+  <div class="band"><span class="lbl">Average</span><div class="bar b-mid" style="width:34%">2 – 3%</div><span class="say">Fine. Fix photos or price.</span></div>
+  <div class="band"><span class="lbl">New shop</span><div class="bar b-mid" style="width:24%">1 – 2%</div><span class="say">Normal for weeks 1–6.</span></div>
+  <div class="band"><span class="lbl">Kill line</span><div class="bar b-bad" style="width:16%">&lt; 2% @ 90d</div><span class="say">Rewrite or retire.</span></div>
+
+  <div class="box alert">
+    <b>The diagnostic that tells you what's broken.</b> Compare favourites to orders.
+    <b>Many favourites, few orders</b> means the thumbnail and title are doing their job and the
+    <em>offer</em> is failing — price, shipping cost, or the photos on the listing page. <b>Few
+    favourites and few views</b> is the opposite problem: nobody is finding you, so it's SEO,
+    not offer. Same low conversion, two completely different fixes.
+  </div>
+
+  <div class="box">
+    <b>Expect different rates by source.</b> Etsy search 2–4% · Etsy ads 1–3% · external traffic
+    0.5–2% · <b>repeat customers 5–15%</b>. That last figure is why the email list and the
+    Deadpan Society matter more than any ad.
+  </div>
+</section>
+
+<section class="wrap finding">
+  <span class="tagnum mono">② Where it's actually won</span>
+  <h2 class="display">The search grid,<br>not the listing.</h2>
+  <p class="lead">A buyer scrolling Etsy sees a <strong>square thumbnail and a truncated title</strong>. That's it. Everything we wrote — the specs, the deadpan joke, the FAQ — only gets read by someone who already clicked. The grid tile is our three-second hook, and it's carrying the entire funnel.</p>
+
+  <div class="dna">
+    <div class="dnabox">
+      <div class="h mono">Pattern 01</div>
+      <b>Recipient first</b>
+      <p>People search by who it's for, not what it is.</p>
+      <code>Gift For Uncle | …</code>
+    </div>
+    <div class="dnabox">
+      <div class="h mono">Pattern 02</div>
+      <b>Name the occasion</b>
+      <p>Occasion words carry the buying intent and the deadline.</p>
+      <code>Retirement · Secret Santa</code>
+    </div>
+    <div class="dnabox">
+      <div class="h mono">Pattern 03</div>
+      <b>Flag personalisation</b>
+      <p>One of Etsy's strongest converting signals, and our moat.</p>
+      <code>Personalized · Custom Name</code>
+    </div>
+    <div class="dnabox">
+      <div class="h mono">Pattern 04</div>
+      <b>Readable at thumbnail</b>
+      <p>If the joke needs zooming, it doesn't exist. Test at 200px.</p>
+      <code>Big type · high contrast</code>
+    </div>
+  </div>
+
+  <div class="box good">
+    <b>Etsy's 2026 algorithm rewards completeness.</b> Listing Quality Score now weighs
+    <b>complete attributes</b> and keyword relevance above raw sales volume. Filling in every
+    attribute field is free ranking that most sellers skip out of laziness. We fill all of them.
+  </div>
+</section>
+
+<section class="wrap finding">
+  <span class="tagnum mono">③ The expensive mistake</span>
+  <h2 class="display">Four listings<br>not worth making.</h2>
+  <p class="lead">Not "made badly" — structurally unable to convert on a marketplace. Each one costs the same effort as a winner and returns a fraction. These are the ones to refuse before designing them.</p>
+
+  <div class="tblwrap">
+  <table>
+    <tr><th>Don't make</th><th>Why it fails on Etsy</th><th>Make instead</th></tr>
+    <tr>
+      <td><b>Generic funny slogan</b></td>
+      <td>Competing with thousands of identical listings on price alone</td>
+      <td>Recipient-specific and personalised</td>
+    </tr>
+    <tr>
+      <td><b>Anything under $18</b></td>
+      <td>Etsy's 20–25% cut plus POD base cost leaves nothing. One refund erases four sales</td>
+      <td>$28–58 paper goods</td>
+    </tr>
+    <tr>
+      <td><b>Apparel at our current prices</b></td>
+      <td>Blank cost ~$20–24 → about <b>14% margin</b>. Not survivable</td>
+      <td>Re-price to $45+ or Shopify-only</td>
+    </tr>
+    <tr>
+      <td><b>Trend-chasing / licensed lookalikes</b></td>
+      <td>Takedown risk, and the trend dies before the listing ranks</td>
+      <td>Evergreen occasions: birthdays, retirement, Secret Santa</td>
+    </tr>
+  </table>
+  </div>
+
+  <div class="box alert">
+    <b>The trap specific to marketplaces.</b> Etsy needs <b>30–90 days</b> to rank a listing.
+    Anything tied to a trend with a shorter life than that cannot possibly work here — the
+    listing ranks the week the trend dies. <b>Etsy is an evergreen channel. Trends belong on
+    TikTok.</b>
+  </div>
+</section>
+
+<section class="wrap finding">
+  <span class="tagnum mono">④ The counterintuitive one</span>
+  <h2 class="display">Do not touch<br>a new listing<br>for 30 days.</h2>
+  <p class="lead">The instinct — tweak the title, swap the photo, renew for a recency bump — is the single most common way beginners kneecap themselves. Etsy studies <em>how real buyers interact</em> with a listing before deciding where to rank it. Every edit restarts that learning.</p>
+
+  <div class="timeline">
+    <div class="tl hot"><div class="d mono">Day 1–7</div><div class="v">Boost</div><div class="s">New-listing recency bump</div></div>
+    <div class="tl"><div class="d mono">Day 14–21</div><div class="v">Ends</div><div class="s">Boost expires (was 30d)</div></div>
+    <div class="tl cold"><div class="d mono">Day 21–30</div><div class="v">Dip</div><div class="s">Normal. Do not panic-edit.</div></div>
+    <div class="tl"><div class="d mono">Day 30</div><div class="v">Judged</div><div class="s">Etsy reads clicks + favs + orders</div></div>
+    <div class="tl hot"><div class="d mono">Day 30–90</div><div class="v">Real</div><div class="s">Rank settles. Now optimise.</div></div>
+  </div>
+
+  <div class="box">
+    <b>The rule.</b> Publish complete, then leave it alone for 30 days. Edits index in 24–48
+    hours but meaningful ranking change takes <b>30–90 days</b>, so anything you change inside
+    the first month is a change you can never measure. Then edit <b>one variable at a time</b> —
+    title, or thumbnail, or price. Never two.
+  </div>
+
+  <div class="box alert">
+    <b>Renewing is not a ranking hack.</b> It costs $0.20 and buys nothing but a tiny freshness
+    signal. Renewing a listing that isn't converting just pays to keep a losing bet on the table.
+  </div>
+</section>
+
+<section class="wrap finding">
+  <span class="tagnum mono">The scorecard</span>
+  <h2 class="display">What we check,<br>and when.</h2>
+  <div class="tblwrap">
+  <table>
+    <tr><th>When</th><th>Look at</th><th>Pass</th><th>If it fails</th></tr>
+    <tr><td class="n"><b>Day 7</b></td><td>Impressions &gt; 0</td><td>Any traffic</td><td>Tags/title wrong — fix now, before learning starts</td></tr>
+    <tr><td class="n"><b>Day 30</b></td><td>Visits, favourites</td><td>≥ 100 visits</td><td>SEO problem, not offer. Rewrite title + tags.</td></tr>
+    <tr><td class="n"><b>Day 60</b></td><td>Conversion</td><td>≥ 1.5%</td><td>Many favs → fix price/photos. Few favs → fix SEO.</td></tr>
+    <tr><td class="n"><b>Day 90</b></td><td>Conversion + margin</td><td>≥ 2% and profitable</td><td><b>Retire it.</b> Reuse the design elsewhere.</td></tr>
+    <tr><td class="n"><b>Ongoing</b></td><td>Review score</td><td>≥ 4.8★</td><td>Shop-wide ranking damage — fix the product or the printer</td></tr>
+  </table>
+  </div>
+  <div class="box good">
+    <b>Publish in cohorts of 5–10.</b> One listing tells you nothing — traffic is too sparse to
+    read. A cohort gives you a comparison set on the same clock, which is the only way to learn
+    which <em>pattern</em> works rather than which listing got lucky.
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    Benchmarks: Etsy conversion and ranking-weight data, Aug 2026 · Figures are category
+    averages, not guarantees — your own numbers replace them the moment you have 90 days of data.<br>
+    Deadpan Goods · serious about stupid things
+  </div>
+</footer>

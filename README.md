@@ -19,6 +19,10 @@ phase, with gates and a launch checklist.
 — the corrected plan for a beginner with no product and no content ability: switch goods to
 print-on-demand (free auto-generated photos) and lead with Etsy, not TikTok organic.
 
+▶ 📊 **The numbers:** [`marketing/etsy-metrics-brief.html`](marketing/etsy-metrics-brief.html)
+— which metric actually decides Etsy ranking, the threshold bands, the four listings not worth
+making, and the 30-day no-touch rule.
+
 ▶ 🚀 **Go live:** [`store/go-live-checklist.md`](store/go-live-checklist.md) — sell-first,
 no samples. What's done, what's blocking the first sale, and the launch sequence.
 
