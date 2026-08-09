@@ -15,6 +15,10 @@ seasonal calendar. Runs automatically every Monday.
 ▶ Setup sequence: [`workflow/operating-flow.md`](workflow/operating-flow.md) — phase by
 phase, with gates and a launch checklist.
 
+▶ ⭐ **READ FIRST:** [`playbooks/beginner-fit-strategy.md`](playbooks/beginner-fit-strategy.md)
+— the corrected plan for a beginner with no product and no content ability: switch goods to
+print-on-demand (free auto-generated photos) and lead with Etsy, not TikTok organic.
+
 ▶ 🚀 **Go live:** [`store/go-live-checklist.md`](store/go-live-checklist.md) — sell-first,
 no samples. What's done, what's blocking the first sale, and the launch sequence.
 
