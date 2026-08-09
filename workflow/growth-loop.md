@@ -81,7 +81,28 @@ FROM sales SHOW orders, total_sales GROUP BY order_referrer_source SINCE -30d UN
   Monday; if a hero product's supplier drops below ~200 units, line up a backup **before** you
   need it.
 - **Two suppliers per hero product.** One goes dark eventually — they always do.
-- **Cap the ad spend on any product whose supplier you haven't sample-tested.** No exceptions.
+
+### Selling without samples — the first-10 protocol
+
+We're testing demand with live orders instead of samples. That's a valid trade: you learn
+faster and spend nothing up front, but you're finding out about quality *in public*, on
+someone else's order. These five rules are what make that survivable — they aren't optional
+extras, they're the thing standing in for the sample.
+
+1. **Buy the sample from the reviews.** Supplier rating ≥ 4.8, ≥ 1,000 orders, and read the
+   1–3 star reviews specifically. Recent buyer photos are your product shot and your QC.
+2. **Your first 10 orders ARE the sample.** Hold ad spend flat until all 10 deliver. Track
+   every one, and email each buyer at delivery: *"Did it survive the journey? Reply honestly."*
+3. **Over-state delivery, under-state nothing else.** If the supplier says 7 days, publish 10.
+   Late arrival is the #1 chargeback cause and it's entirely self-inflicted.
+4. **Refund on the first complaint, no questions.** A $26 refund is cheaper than one bad
+   comment under a video doing 100k views. Budget ~10% of early revenue for this.
+5. **Scale only after 10 clean deliveries.** Clean = arrived on time, no damage, no "this
+   looks nothing like the photo." If 2+ of the first 10 go wrong, switch supplier before
+   spending another dollar.
+
+**One hard line:** do not send a product to a *creator or press* unseen. Customers forgive a
+disappointing gag gift. A creator with an audience does not.
 
 ## 5 · Shipping rules
 

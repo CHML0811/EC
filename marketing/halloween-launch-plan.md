@@ -22,16 +22,19 @@ That day→night flip is your 3-second hook, and it costs nothing to film.
 
 | Dates | Phase | Do |
 |---|---|---|
-| **Aug 6–12** | **Sample + fix** | Order the CJ sample **today** (this is the critical path). Fix currency/timezone/shipping. Shoot nothing yet. |
-| **Aug 13–26** | Soft organic | Sample arrives → shoot the day/night flip. Post 1–2/day. **Zero ad spend.** Find the hook that holds. |
+| **Aug 6–12** | **Go live** | No samples — we test with real orders. Pick the supplier off reviews, pull their photos, publish the products, open the store. |
+| **Aug 13–26** | Soft organic | Post 1–2/day using supplier + AI footage. **Zero ad spend.** Find the hook that holds. |
 | **Aug 27–Sep 23** | Ramp | Product ACTIVE. Paid test $20/day × 3 days on the winning hook. Scale what clears the gate. |
 | **Sep 24–Oct 12** | **Peak — spend here** | Max budget. This is ~70% of the season's revenue. Retarget hard. |
 | **Oct 10** | ⚠️ **Cutoff posted** | Banner: "Order by Oct 10 for Halloween delivery." |
 | **Oct 13–20** | Wind down | Cut spend daily. Push remaining stock. |
 | **Oct 20** | **Pivot** | Halloween is over commercially. Switch everything to Christmas / Secret Santa. |
 
-> **The sample is the critical path.** CJ to Hong Kong runs 1–3 weeks. Order it today or the
-> whole timeline slides. Do not run a single ad before you've held the product.
+> **No samples — selling straight into demand.** That buys ~3 weeks of calendar, which matters
+> a lot this close to the season. The cost is that you'll discover quality issues on live
+> orders, so the **first-10 protocol** in `workflow/growth-loop.md` §4 is doing the sample's
+> job: pick the supplier off reviews, hold spend flat until the first 10 deliver, refund on
+> first complaint. Treat those ten orders as the QC round they now are.
 
 ## ⚠️ The cutoff math
 

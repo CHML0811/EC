@@ -15,6 +15,9 @@ seasonal calendar. Runs automatically every Monday.
 ▶ Setup sequence: [`workflow/operating-flow.md`](workflow/operating-flow.md) — phase by
 phase, with gates and a launch checklist.
 
+▶ 🚀 **Go live:** [`store/go-live-checklist.md`](store/go-live-checklist.md) — sell-first,
+no samples. What's done, what's blocking the first sale, and the launch sequence.
+
 ▶ 🚨 **Fix first:** [`store/us-market-setup.md`](store/us-market-setup.md) — currency to USD,
 US shipping zone, timezone. The store carries Brazilian demo defaults that charge US buyers
 ~$18 shipping. Validated mutation ready to run:
