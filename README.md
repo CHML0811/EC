@@ -1,19 +1,22 @@
-# AI Dropshipping Workflow — Football-Culture Print-on-Demand
+# Deadpan Goods — AI-Run Print-on-Demand Gift Brand
 
-An evidence-gated, mostly-automated pipeline for launching a football/soccer
-print-on-demand brand off the back of the 2026 World Cup **without** stepping on
-FIFA's trademarks.
+Personalised joke certificates from **The Bureau of Minor Achievements** — a fictional agency
+issuing official certifications for things that don't deserve them. Deadpan voice, real
+quality, sold where gift buyers already search.
 
-Stack: **Claude** (research, copy, brand, listings) → **Higgsfield** (design +
-video creative) → **Printify** (production/fulfilment) → **Shopify / TikTok Shop**
-(storefront + demand) → **Vercel** (fast landing / link-in-bio).
+Stack: **Claude** (research, design, listings, analysis) → **Printify** (US printing, free
+auto-generated mockups) → **Etsy** (primary channel) + **Shopify** (brand home) → Pinterest
+and TikTok Shop affiliate.
 
-▶ **START HERE:** [`workflow/growth-loop.md`](workflow/growth-loop.md) — the weekly
-data-driven loop: scorecard, metric gates, stock/shipping rules, targeting matrix,
-seasonal calendar. Runs automatically every Monday.
+▶ **START HERE:** [`workflow/30-day-plan.md`](workflow/30-day-plan.md) — the dated plan,
+Aug 9 → Sep 8: what ships each week, the gates, the honest revenue target, and the budget.
 
-▶ Setup sequence: [`workflow/operating-flow.md`](workflow/operating-flow.md) — phase by
-phase, with gates and a launch checklist.
+▶ **This week's cohort:** [`marketing/etsy-cohort-1.md`](marketing/etsy-cohort-1.md) — 8
+Etsy listings with titles, 13 tags each, descriptions, and the pricing ladder.
+Artwork: `design/out/` · generator: `design/generate_certificates.py`.
+
+▶ The weekly loop: [`workflow/growth-loop.md`](workflow/growth-loop.md) — scorecard, metric
+gates, targeting matrix. Runs automatically every Monday.
 
 ▶ ⭐ **READ FIRST:** [`playbooks/beginner-fit-strategy.md`](playbooks/beginner-fit-strategy.md)
 — the corrected plan for a beginner with no product and no content ability: switch goods to
@@ -37,7 +40,7 @@ US shipping zone, timezone. The store carries Brazilian demo defaults that charg
 ▶ **Long term:** [`playbooks/long-term-brand-strategy.md`](playbooks/long-term-brand-strategy.md)
 — three horizons, the goods ladder, the retention product, and the four things worth owning.
 
-▶ **Live campaign:** [`marketing/halloween-launch-plan.md`](marketing/halloween-launch-plan.md)
+▶ Parked (needs sourced stock): [`marketing/halloween-launch-plan.md`](marketing/halloween-launch-plan.md)
 — dated Halloween plan for the window silhouettes: hooks, posting schedule, bundle
 economics, gates, and the Oct 10 cutoff.
 
