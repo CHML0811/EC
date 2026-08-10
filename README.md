@@ -17,7 +17,8 @@ then TikTok Shop affiliate.
 | | |
 |---|---|
 | 🎯 **[30-day plan](workflow/30-day-plan.md)** | Aug 9 → Sep 8. Weekly gates, honest revenue target, ~$34 budget. **Read this first.** |
-| 📦 **[Etsy cohort 1](marketing/etsy-cohort-1.md)** | The 8 live listings — titles, 13 tags each, descriptions, pricing ladder |
+| 📦 **[Etsy cohort 1](marketing/etsy-cohort-1.md)** | 8 listings — titles, 13 tags each, descriptions, pricing ladder |
+| 🎄 **[Etsy cohort 2 — Christmas](marketing/etsy-cohort-2-christmas.md)** | 8 Secret Santa / gift-exchange listings. **Publish by Oct 1** to rank for December. |
 | 🎨 **[Certificate generator](design/generate_certificates.py)** | `python3 design/generate_certificates.py` → 8 print-ready 300dpi designs in `design/out/` |
 | 📊 **[Etsy metrics brief](marketing/etsy-metrics-brief.html)** | The metric that actually decides ranking, threshold bands, the 30-day no-touch rule |
 | 🔁 **[Growth loop](workflow/growth-loop.md)** | The weekly cycle. Runs automatically every Monday. |
