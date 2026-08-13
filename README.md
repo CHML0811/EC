@@ -20,6 +20,7 @@ then TikTok Shop affiliate.
 | 📦 **[Etsy cohort 1](marketing/etsy-cohort-1.md)** | 8 listings — titles, 13 tags each, descriptions, pricing ladder |
 | 🎄 **[Etsy cohort 2 — Christmas](marketing/etsy-cohort-2-christmas.md)** | 8 Secret Santa / gift-exchange listings. **Publish by Oct 1** to rank for December. |
 | ⚡ **[Paste sheet](store/paste-sheet.html)** | Every field in the order Etsy asks, with copy buttons. **Open this while you set up.** |
+| 🔧 **[Push certs to Shopify](store/push-certificates-to-shopify.md)** | Validated runbook to upload the artwork and create the 8 products. Pending — connector unstable. |
 | 🖨️ **[Printify setup spec](store/printify-setup-spec.md)** | Exactly which blank, provider, sizes and prices. **Do this next.** |
 | 🎨 **[Certificate generator](design/generate_certificates.py)** | `python3 design/generate_certificates.py` → 8 print-ready 300dpi designs in `design/out/` |
 | 📌 **[Pinterest pins](marketing/pinterest-pins.md)** | 40 pins, 6 boards, image crops. Free traffic — a December play made in August. |
