@@ -23,6 +23,7 @@ then TikTok Shop affiliate.
 | 🔧 **[Push certs to Shopify](store/push-certificates-to-shopify.md)** | Validated runbook to upload the artwork and create the 8 products. Pending — connector unstable. |
 | 🖨️ **[Printify setup spec](store/printify-setup-spec.md)** | Exactly which blank, provider, sizes and prices. **Do this next.** |
 | 🎨 **[Certificate generator](design/generate_certificates.py)** | `python3 design/generate_certificates.py` → 8 print-ready 300dpi designs in `design/out/` |
+| 🖼️ **[Listing images](design/listing-images.md)** | 96 generated mockups in `design/mockups/` — framed, hook, detail, sizes, info, pin. **Upload 1–5 in order.** |
 | 📌 **[Pinterest pins](marketing/pinterest-pins.md)** | 40 pins, 6 boards, image crops. Free traffic — a December play made in August. |
 | 📊 **[Etsy metrics brief](marketing/etsy-metrics-brief.html)** | The metric that actually decides ranking, threshold bands, the 30-day no-touch rule |
 | 🔁 **[Growth loop](workflow/growth-loop.md)** | The weekly cycle. Runs automatically every Monday. |
@@ -59,8 +60,9 @@ rename store to *Deadpan Goods* · timezone → GMT+8. About 45 minutes, once.
 ```
 workflow/     30-day-plan · growth-loop · operating-flow · automation-blueprint
 playbooks/    beginner-fit-strategy · long-term-brand-strategy · original-design-line
-marketing/    etsy-cohort-1 · etsy-metrics-brief · poster-system · content-calendar
-design/       generate_certificates.py → out/*.png (print-ready artwork)
+marketing/    etsy-cohort-1 · etsy-cohort-2 · etsy-metrics-brief · pinterest-pins
+design/       generate_certificates.py → out/*.png       (print-ready artwork)
+              generate_mockups.py      → mockups/*.png   (96 listing images)
 store/        product-data · policies-and-pages · shopify/us-market setup · storefront
 ```
 

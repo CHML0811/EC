@@ -22,7 +22,7 @@ email us within 30 days of delivery and we'll refund you. You don't need to expl
 **Returns.** For most items under $40 we won't ask you to ship it back — keep it, or pass it
 on to someone who deserves it. For higher-value items we'll send a return label.
 
-**What we can't refund.** Personalised items where the customisation is exactly what you
+**What we can't refund.** Personalized items where the customisation is exactly what you
 asked for, and items damaged by use rather than by shipping. Custom text with a typo you
 supplied is, regrettably, a monument to your own choices.
 
@@ -69,14 +69,14 @@ We also collect basic analytics (pages viewed, device type) to understand what's
 products. Nothing else.
 
 **Who we share it with.** Only the parties needed to get your order to you: Shopify (store and
-checkout), our fulfilment partners and shipping carriers, and our email provider. **We do not
+checkout), our fulfillment partners and shipping carriers, and our email provider. **We do not
 sell your personal information.**
 
 **Marketing.** Opt-in only. Every email has an unsubscribe link that works immediately.
 
 **Your rights.** Email **privacy@deadpangoods.com** to access, correct, export, or delete your
 data. We'll respond within 30 days. If you're in California (CCPA) or the EU/UK (GDPR), you
-have additional rights and we'll honour them.
+have additional rights and we'll honor them.
 
 **Cookies.** We use cookies for the cart, checkout, and analytics. You can block them in your
 browser; the cart will stop working, which is a tradeoff you're entitled to make.
@@ -95,7 +95,7 @@ problems. If we cancel, you're refunded in full.
 **Pricing.** All prices are in **USD**. We may change prices at any time; the price at
 checkout is the price you pay.
 
-**Products.** Ours are novelty and gag items. Photos are representative and colours vary
+**Products.** Ours are novelty and gag items. Photos are representative and colors vary
 slightly between screens and batches. Item descriptions are written with intent to amuse.
 Where a description makes a claim that is obviously a joke — "ruins weddings", "no actual
 licence conferred" — that claim is not a warranty and should not be relied upon.
@@ -174,7 +174,7 @@ Send a photo and we'll replace or refund immediately. Keep the original.
 They're novelty items, not safety gear. Not flame-retardant unless stated. Adult supervision
 for children, and please don't drive in an inflatable suit.
 
-**Do you take returns on personalised items?**
+**Do you take returns on personalized items?**
 Only if we made the error. Custom text you supplied — including its typos — is yours.
 
 **Do you ship internationally?**

@@ -1,0 +1,178 @@
+{
+  "retirement": {
+    "phrase": "Funny Retirement Gift",
+    "files": [
+      "retirement-1-framed.png",
+      "retirement-2-hook.png",
+      "retirement-3-detail.png",
+      "retirement-4-sizes.png",
+      "retirement-5-info.png",
+      "retirement-6-pin.png"
+    ]
+  },
+  "coworker": {
+    "phrase": "Funny Coworker Gift",
+    "files": [
+      "coworker-1-framed.png",
+      "coworker-2-hook.png",
+      "coworker-3-detail.png",
+      "coworker-4-sizes.png",
+      "coworker-5-info.png",
+      "coworker-6-pin.png"
+    ]
+  },
+  "uncle": {
+    "phrase": "Funny Gift for Uncle",
+    "files": [
+      "uncle-1-framed.png",
+      "uncle-2-hook.png",
+      "uncle-3-detail.png",
+      "uncle-4-sizes.png",
+      "uncle-5-info.png",
+      "uncle-6-pin.png"
+    ]
+  },
+  "boss": {
+    "phrase": "Funny Boss Gift",
+    "files": [
+      "boss-1-framed.png",
+      "boss-2-hook.png",
+      "boss-3-detail.png",
+      "boss-4-sizes.png",
+      "boss-5-info.png",
+      "boss-6-pin.png"
+    ]
+  },
+  "new-home": {
+    "phrase": "Funny Housewarming Gift",
+    "files": [
+      "new-home-1-framed.png",
+      "new-home-2-hook.png",
+      "new-home-3-detail.png",
+      "new-home-4-sizes.png",
+      "new-home-5-info.png",
+      "new-home-6-pin.png"
+    ]
+  },
+  "new-parent": {
+    "phrase": "Funny New Parent Gift",
+    "files": [
+      "new-parent-1-framed.png",
+      "new-parent-2-hook.png",
+      "new-parent-3-detail.png",
+      "new-parent-4-sizes.png",
+      "new-parent-5-info.png",
+      "new-parent-6-pin.png"
+    ]
+  },
+  "graduation": {
+    "phrase": "Funny Graduation Gift",
+    "files": [
+      "graduation-1-framed.png",
+      "graduation-2-hook.png",
+      "graduation-3-detail.png",
+      "graduation-4-sizes.png",
+      "graduation-5-info.png",
+      "graduation-6-pin.png"
+    ]
+  },
+  "left-on-read": {
+    "phrase": "Funny Gift for a Friend",
+    "files": [
+      "left-on-read-1-framed.png",
+      "left-on-read-2-hook.png",
+      "left-on-read-3-detail.png",
+      "left-on-read-4-sizes.png",
+      "left-on-read-5-info.png",
+      "left-on-read-6-pin.png"
+    ]
+  },
+  "x-secret-santa": {
+    "phrase": "Secret Santa Gift Idea",
+    "files": [
+      "x-secret-santa-1-framed.png",
+      "x-secret-santa-2-hook.png",
+      "x-secret-santa-3-detail.png",
+      "x-secret-santa-4-sizes.png",
+      "x-secret-santa-5-info.png",
+      "x-secret-santa-6-pin.png"
+    ]
+  },
+  "x-white-elephant": {
+    "phrase": "White Elephant Gift",
+    "files": [
+      "x-white-elephant-1-framed.png",
+      "x-white-elephant-2-hook.png",
+      "x-white-elephant-3-detail.png",
+      "x-white-elephant-4-sizes.png",
+      "x-white-elephant-5-info.png",
+      "x-white-elephant-6-pin.png"
+    ]
+  },
+  "x-survived-year": {
+    "phrase": "Funny Office Christmas Gift",
+    "files": [
+      "x-survived-year-1-framed.png",
+      "x-survived-year-2-hook.png",
+      "x-survived-year-3-detail.png",
+      "x-survived-year-4-sizes.png",
+      "x-survived-year-5-info.png",
+      "x-survived-year-6-pin.png"
+    ]
+  },
+  "x-office-party": {
+    "phrase": "Office Party Gift Idea",
+    "files": [
+      "x-office-party-1-framed.png",
+      "x-office-party-2-hook.png",
+      "x-office-party-3-detail.png",
+      "x-office-party-4-sizes.png",
+      "x-office-party-5-info.png",
+      "x-office-party-6-pin.png"
+    ]
+  },
+  "x-okayest-gift": {
+    "phrase": "Funny Christmas Gift",
+    "files": [
+      "x-okayest-gift-1-framed.png",
+      "x-okayest-gift-2-hook.png",
+      "x-okayest-gift-3-detail.png",
+      "x-okayest-gift-4-sizes.png",
+      "x-okayest-gift-5-info.png",
+      "x-okayest-gift-6-pin.png"
+    ]
+  },
+  "x-mom": {
+    "phrase": "Funny Gift for Mom",
+    "files": [
+      "x-mom-1-framed.png",
+      "x-mom-2-hook.png",
+      "x-mom-3-detail.png",
+      "x-mom-4-sizes.png",
+      "x-mom-5-info.png",
+      "x-mom-6-pin.png"
+    ]
+  },
+  "x-dad": {
+    "phrase": "Funny Gift for Dad",
+    "files": [
+      "x-dad-1-framed.png",
+      "x-dad-2-hook.png",
+      "x-dad-3-detail.png",
+      "x-dad-4-sizes.png",
+      "x-dad-5-info.png",
+      "x-dad-6-pin.png"
+    ]
+  },
+  "x-stocking": {
+    "phrase": "Funny Stocking Stuffer",
+    "files": [
+      "x-stocking-1-framed.png",
+      "x-stocking-2-hook.png",
+      "x-stocking-3-detail.png",
+      "x-stocking-4-sizes.png",
+      "x-stocking-5-info.png",
+      "x-stocking-6-pin.png"
+    ]
+  }
+}

@@ -188,11 +188,11 @@ def build_html(c: dict) -> str:
     font-family:"Liberation Serif","Times New Roman",serif;color:{INK};
     -webkit-font-smoothing:antialiased}}
   /* three blocks, spread down the full sheet so there is no dead middle */
-  .sheet{{position:relative;width:{W}px;height:{H}px;padding:250px 190px 660px;
+  .sheet{{position:relative;width:{W}px;height:{H}px;padding:250px 190px 500px;
     display:flex;flex-direction:column;align-items:center;text-align:center;
     justify-content:center}}
   .block{{width:100%;display:flex;flex-direction:column;align-items:center}}
-  .block+.block{{margin-top:120px}}
+  .block+.block{{margin-top:190px}}
   .frame-outer{{position:absolute;inset:78px;border:7px solid {INK}}}
   .frame-inner{{position:absolute;inset:104px;border:2px solid {INK}}}
   .corner{{position:absolute;width:64px;height:64px;border:5px solid {RED}}}
@@ -216,7 +216,7 @@ def build_html(c: dict) -> str:
   .name{{font-size:112px;font-style:italic;line-height:1.1}}
   .namehint{{margin-top:18px;font-size:26px;letter-spacing:7px;opacity:.42;
     text-transform:uppercase}}
-  .citation{{margin-top:78px;width:1640px;font-size:44px;line-height:1.62}}
+  .citation{{margin-top:100px;width:1640px;font-size:44px;line-height:1.62}}
   .dept{{margin-top:58px;font-size:33px;letter-spacing:9px;color:{RED};
     text-transform:uppercase}}
 
@@ -246,7 +246,7 @@ def build_html(c: dict) -> str:
   <div class="block">
     <div class="presented">This is to certify that</div>
     <div class="nameline"><div class="name">{{ Recipient Name }}</div></div>
-    <div class="namehint">personalised at checkout</div>
+    <div class="namehint">personalized at checkout</div>
     <div class="citation">{c['citation']}</div>
     <div class="dept">{html.escape(c['department'])}</div>
   </div>

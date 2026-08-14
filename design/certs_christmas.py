@@ -70,9 +70,9 @@ CERTS = [
         "ref": "BMA-2026-1205-G",
     },
     {
-        "slug": "x-mum",
+        "slug": "x-mom",
         "pattern": "recipient",
-        "title": "Certified Mum",
+        "title": "Certified Mom",
         "subject": "FULLY ACCREDITED",
         "department": "Office of Unread Advice",
         "citation": "for advice dispensed regardless of demand, a freezer of "
@@ -87,7 +87,7 @@ CERTS = [
         "subject": "FULLY ACCREDITED",
         "department": "Bureau of Thermostat Enforcement",
         "citation": "for jokes of consistent quality, lights switched off in unoccupied "
-                    "rooms, and an encyclopaedic knowledge of alternative routes.",
+                    "rooms, and an encyclopedic knowledge of alternative routes.",
         "seal": "THERMOSTAT ENFORCEMENT",
         "ref": "BMA-2026-1207-D",
     },

@@ -60,15 +60,15 @@
     "cohort": 2
   },
   {
-    "slug": "x-mum",
+    "slug": "x-mom",
     "pattern": "recipient",
-    "title": "Certified Mum",
+    "title": "Certified Mom",
     "subject": "FULLY ACCREDITED",
     "department": "Office of Unread Advice",
     "citation": "for advice dispensed regardless of demand, a freezer of unidentifiable containers, and being right an insufferable amount of the time.",
     "seal": "UNREAD ADVICE",
     "ref": "BMA-2026-1206-M",
-    "file": "bma-x-mum.png",
+    "file": "bma-x-mom.png",
     "cohort": 2
   },
   {
@@ -77,7 +77,7 @@
     "title": "Certified Dad",
     "subject": "FULLY ACCREDITED",
     "department": "Bureau of Thermostat Enforcement",
-    "citation": "for jokes of consistent quality, lights switched off in unoccupied rooms, and an encyclopaedic knowledge of alternative routes.",
+    "citation": "for jokes of consistent quality, lights switched off in unoccupied rooms, and an encyclopedic knowledge of alternative routes.",
     "seal": "THERMOSTAT ENFORCEMENT",
     "ref": "BMA-2026-1207-D",
     "file": "bma-x-dad.png",

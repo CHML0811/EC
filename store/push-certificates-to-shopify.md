@@ -40,7 +40,7 @@ Full filename list:
 bma-retirement.png      bma-coworker.png     bma-uncle.png         bma-boss.png
 bma-new-home.png        bma-new-parent.png   bma-graduation.png    bma-left-on-read.png
 bma-x-secret-santa.png  bma-x-white-elephant.png  bma-x-survived-year.png  bma-x-office-party.png
-bma-x-okayest-gift.png  bma-x-mum.png        bma-x-dad.png         bma-x-stocking.png
+bma-x-okayest-gift.png  bma-x-mom.png        bma-x-dad.png         bma-x-stocking.png
 ```
 
 ## Step 2 — upload the bytes

@@ -1,0 +1,4 @@
+design/.build/
+design/.build-mockups/
+__pycache__/
+*.pyc

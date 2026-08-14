@@ -32,6 +32,12 @@ Create **one Printify product per certificate** (16 total).
 
 Artwork is in `design/out/`. Upload the PNG, then in the placement editor:
 
+> **Listing images are already done** — 96 of them, in `design/mockups/`, generated without
+> Printify. See [`design/listing-images.md`](../design/listing-images.md). Printify's own
+> mockups are still worth swapping in as the **thumbnail** once they exist, because a real
+> photographed frame beats a rendered one. It replaces one image of six, not the set.
+
+
 - **Scale to fill** the print area
 - **Do not add bleed or margin** — the border is part of the design and is already inset
 - Check the preview at 8×10 **and** 11×14; the seal and serial number must both be fully visible

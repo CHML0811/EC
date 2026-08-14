@@ -11,11 +11,11 @@ Artwork: `design/out/bma-*.png` (2400×3000, 300dpi, print-ready).
 | 11×14 print | $42 | ~$14 | $9.66 | **$18.34 (44%)** |
 | 8×10 framed | $58 | ~$25 | $13.34 | **$19.66 (34%)** |
 
-**Every listing gets:** 13/13 tags used · all attributes filled · personalisation field
+**Every listing gets:** 13/13 tags used · all attributes filled · personalization field
 enabled (`Recipient name`, 40 char limit) · processing time 2–3 days · US free shipping over
 $60, else $5.95.
 
-> **Title formula:** `[Recipient/Occasion] + [Product] + [Personalised] + [Modifier]`
+> **Title formula:** `[Recipient/Occasion] + [Product] + [Personalized] + [Modifier]`
 > Etsy truncates around 60 chars in the grid — the first 40 carry the click.
 
 ---
@@ -27,11 +27,11 @@ $60, else $5.95.
 **Description:**
 > Forty years of showing up, and all he got was a card. Fix that.
 >
-> An officially unofficial certificate from the Bureau of Minor Achievements, personalised with their name and issued for "arriving, more or less on time, for several decades, and for leaving before anyone could ask them to learn a new system."
+> An officially unofficial certificate from the Bureau of Minor Achievements, personalized with their name and issued for "arriving, more or less on time, for several decades, and for leaving before anyone could ask them to learn a new system."
 >
 > Printed on heavy matte stock with an embossed-look seal, a serial number, and a registrar's signature line. It looks like something earned until you get close enough to read it — which is exactly when it lands.
 >
-> • Personalised with any name (add at checkout)
+> • Personalized with any name (add at checkout)
 > • Museum-quality matte paper, archival inks
 > • 8×10, 11×14, or framed
 > • Ships from the US in 3–5 days
@@ -44,11 +44,11 @@ $60, else $5.95.
 **Description:**
 > Recognition, finally, for meeting expectations approximately.
 >
-> A personalised certificate awarding them the title they have genuinely earned: World's Okayest Coworker. Issued by the Division of Technically Correct, for "replying eventually, and never once being the reason a meeting ran long."
+> A personalized certificate awarding them the title they have genuinely earned: World's Okayest Coworker. Issued by the Division of Technically Correct, for "replying eventually, and never once being the reason a meeting ran long."
 >
 > The best Secret Santa gift is the one that gets pinned above a desk and stays there for three years. This is that.
 >
-> • Personalised with any name
+> • Personalized with any name
 > • Heavy matte stock with seal and serial number
 > • 8×10, 11×14, or framed
 > • US shipping in 3–5 days
@@ -60,11 +60,11 @@ $60, else $5.95.
 **Description:**
 > Every family has one. Make it official.
 >
-> A personalised certificate from the Bureau of Unsolicited Advice, formally licensing him for "opinions delivered at volume, jokes repeated annually, and an unbroken record of standing near the grill without cooking."
+> A personalized certificate from the Bureau of Unsolicited Advice, formally licensing him for "opinions delivered at volume, jokes repeated annually, and an unbroken record of standing near the grill without cooking."
 >
 > He will hang this. You know he will.
 >
-> • Personalised with any name
+> • Personalized with any name
 > • Heavy matte stock, embossed-look seal
 > • 8×10, 11×14, or framed
 > • Ships from the US in 3–5 days
@@ -76,11 +76,11 @@ $60, else $5.95.
 **Description:**
 > For decisions made eventually.
 >
-> A personalised certificate from the Department of Almost Trying, recognising "emails sent at unreasonable hours, and saying 'let's circle back' with genuine conviction."
+> A personalized certificate from the Department of Almost Trying, recognizing "emails sent at unreasonable hours, and saying 'let's circle back' with genuine conviction."
 >
 > Safe for the office. Just barely.
 >
-> • Personalised with any name
+> • Personalized with any name
 > • Heavy matte stock with seal and serial number
 > • 8×10, 11×14, or framed
 
@@ -91,11 +91,11 @@ $60, else $5.95.
 **Description:**
 > One window is a decoration. A mortgage is a personality.
 >
-> A personalised certificate from the Office of Regrettable Purchases, marking "signing a document of considerable length, and discovering what a load-bearing wall is under the least convenient circumstances."
+> A personalized certificate from the Office of Regrettable Purchases, marking "signing a document of considerable length, and discovering what a load-bearing wall is under the least convenient circumstances."
 >
 > The housewarming gift that isn't another candle.
 >
-> • Personalised with any name
+> • Personalized with any name
 > • Heavy matte stock, ready to frame
 > • 8×10, 11×14, or framed
 
@@ -106,11 +106,11 @@ $60, else $5.95.
 **Description:**
 > Nobody warned them. We're not going to either.
 >
-> A personalised certificate from the Division of Diminishing Rest, awarded for "remaining upright through hours that should not exist, and for developing strong opinions about a stroller."
+> A personalized certificate from the Division of Diminishing Rest, awarded for "remaining upright through hours that should not exist, and for developing strong opinions about a stroller."
 >
 > The baby gets enough presents. This one is for them.
 >
-> • Personalised with any name
+> • Personalized with any name
 > • Heavy matte stock with seal
 > • 8×10, 11×14, or framed
 
@@ -121,26 +121,26 @@ $60, else $5.95.
 **Description:**
 > They finished. Technically.
 >
-> A personalised certificate from the Bureau of Unfinished Projects, recognising "completing the required minimum, submitting at the final permitted minute, and retaining approximately none of it."
+> A personalized certificate from the Bureau of Unfinished Projects, recognizing "completing the required minimum, submitting at the final permitted minute, and retaining approximately none of it."
 >
 > Funnier than a card, cheaper than the degree.
 >
-> • Personalised with any name
+> • Personalized with any name
 > • Heavy matte stock, ready to frame
 > • 8×10, 11×14, or framed
 
 ## 8 · Left On Read — `bma-left-on-read.png`
-**Pattern tested:** personalised
+**Pattern tested:** personalized
 **Title:** `Certificate of Leaving On Read, Personalized Funny Gift for Friend, Group Chat Print, Birthday Gag Gift`
-**Tags:** `funny gift for friend` · `personalized gift` · `group chat` · `best friend gift` · `funny certificate` · `gag gift` · `birthday gift friend` · `left on read` · `custom name print` · `bestie gift` · `internet humor` · `roommate gift` · `funny wall art`
+**Tags:** `funny friend gift` · `personalized gift` · `group chat` · `best friend gift` · `funny certificate` · `gag gift` · `birthday gift friend` · `left on read` · `custom name print` · `bestie gift` · `internet humor` · `roommate gift` · `funny wall art`
 **Description:**
 > They read it. They meant to reply. They did not reply.
 >
-> A personalised certificate from the Office of Deferred Replies, awarded for "reading immediately, intending to reply thoroughly, and then simply never doing so. Repeatedly. Without remorse."
+> A personalized certificate from the Office of Deferred Replies, awarded for "reading immediately, intending to reply thoroughly, and then simply never doing so. Repeatedly. Without remorse."
 >
 > Put it in the group chat. Watch them defend themselves.
 >
-> • Personalised with any name
+> • Personalized with any name
 > • Heavy matte stock with seal and serial number
 > • 8×10, 11×14, or framed
 
@@ -154,6 +154,6 @@ Group the 8 by `pattern` and compare conversion:
 |---|---|---|
 | **occasion** | retirement, new-home, new-parent, graduation | Lead with the event; build the seasonal calendar around occasions |
 | **recipient** | coworker, uncle, boss | Lead with the person; expand into every relationship |
-| **personalised** | left-on-read | Lead with the joke; the humour itself is the search |
+| **personalized** | left-on-read | Lead with the joke; the humor itself is the search |
 
 Whichever pattern wins gets the next cohort of 8. **Do not edit any listing before day 30.**
