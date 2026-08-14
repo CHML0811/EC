@@ -119,7 +119,7 @@ CERTS = [
     },
     {
         "slug": "left-on-read",
-        "pattern": "personalised",
+        "pattern": "personalized",
         "title": "Certificate of Leaving On Read",
         "subject": "THE GROUP CHAT",
         "department": "Office of Deferred Replies",

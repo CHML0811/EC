@@ -93,7 +93,7 @@ CERTS = [
     },
     {
         "slug": "x-stocking",
-        "pattern": "personalised",
+        "pattern": "personalized",
         "title": "Certificate of Marginal Improvement",
         "subject": "YEAR IN REVIEW",
         "department": "Office of Modest Expectations",
