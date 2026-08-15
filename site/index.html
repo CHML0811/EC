@@ -1,323 +1,434 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Deadpan Goods — Serious about stupid things</title>
-<meta name="description" content="Gag gifts engineered for one moment: when someone sees it and thinks 'this is literally my uncle.' Shipped fast, built well, slightly indefensible." />
-<meta property="og:title" content="Deadpan Goods — Serious about stupid things" />
-<meta property="og:description" content="Gag gifts built well and shipped fast. Slightly indefensible." />
-<meta property="og:type" content="website" />
+<title>The Bureau of Minor Achievements</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Personalized certificates recognizing things that don't deserve recognition. Printed in the USA, delivered in 3-5 days.">
 <style>
-  :root{
-    --ink:#17150F; --paper:#E4E2D8; --red:#D93B24; --acid:#E4D93C;
-    --olive:#565E42; --card:#EFEDE5; --line:#C9C6BA;
-    --body:#2A2721; --muted:#5F5B50;
+:root{
+  --paper:#F2EFE4; --card:#FBFAF5; --deep:#E7E3D5;
+  --ink:#17150F; --muted:#6A6558; --line:#CFC9B8; --hair:#E0DBCB;
+  --red:#B4321F; --olive:#565E42;
+  --serif:"Liberation Serif",Georgia,"Times New Roman",serif;
+  --mono:"Liberation Mono","DejaVu Sans Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#14130E; --card:#1D1B15; --deep:#100F0B;
+    --ink:#EFECE1; --muted:#9A9484; --line:#332F26; --hair:#262319;
+    --red:#D2603F; --olive:#8B9673;
   }
-  @media (prefers-color-scheme:dark){
-    :root{--paper:#12110D; --ink:#EDEBE1; --card:#1C1A15; --line:#332F26; --body:#DAD7CC; --muted:#8C8778}
-  }
-  *{box-sizing:border-box}
-  body{margin:0;background:var(--paper);color:var(--body);
-    font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;font-size:16px;line-height:1.6;
-    -webkit-font-smoothing:antialiased}
-  .display{font-family:Impact,Haettenschweiler,"Arial Narrow Bold","Franklin Gothic Heavy",sans-serif;
-    text-transform:uppercase;letter-spacing:-.01em;line-height:.92;text-wrap:balance;color:var(--ink)}
-  .mono{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
-  .wrap{max-width:1140px;margin:0 auto;padding:0 24px}
-  a{color:inherit}
+}
+:root[data-theme="dark"]{
+  --paper:#14130E; --card:#1D1B15; --deep:#100F0B;
+  --ink:#EFECE1; --muted:#9A9484; --line:#332F26; --hair:#262319;
+  --red:#D2603F; --olive:#8B9673;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--serif);
+  font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+h1,h2,h3,h4{margin:0;text-wrap:balance;line-height:1.14}
+p{margin:0}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+/* padding-inline, not padding: .wrap is also on <section>, and a class beats an element
+   selector — plain `padding` here silently cancels the sections' vertical rhythm */
+.wrap{max-width:1200px;margin:0 auto;padding-inline:26px}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.28em;text-transform:uppercase;
+  color:var(--red)}
 
-  .ticker{background:var(--ink);color:var(--paper);padding:9px 0;overflow:hidden}
-  .ticker .mono{font-size:11px;letter-spacing:.2em;text-transform:uppercase;
-    white-space:nowrap;display:flex;gap:40px;animation:slide 26s linear infinite}
-  @keyframes slide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-  @media (prefers-reduced-motion:reduce){.ticker .mono{animation:none;justify-content:center}}
+/* ---- masthead ---- */
+.top{border-bottom:1px solid var(--line);background:var(--paper);position:sticky;top:0;z-index:9}
+.topin{display:flex;align-items:center;justify-content:space-between;gap:18px;
+  padding:13px 0;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:12px}
+.brand img{width:38px;height:38px}
+.brand b{font-family:var(--mono);font-size:12.5px;letter-spacing:.17em;text-transform:uppercase;
+  font-weight:600;line-height:1.35}
+.btn{font-family:var(--mono);font-size:12px;letter-spacing:.13em;text-transform:uppercase;
+  padding:11px 20px;border:1.5px solid var(--ink);background:var(--ink);color:var(--paper)}
+.btn.ghost{background:transparent;color:var(--ink)}
+.btn:hover{background:var(--red);border-color:var(--red);color:#FBFAF5}
 
-  nav{display:flex;justify-content:space-between;align-items:center;
-    padding:20px 24px;max-width:1140px;margin:0 auto;gap:16px}
-  .logo{font-family:Impact,Haettenschweiler,sans-serif;font-size:23px;text-transform:uppercase;
-    color:var(--ink);letter-spacing:.005em;text-decoration:none}
-  .logo em{color:var(--red);font-style:normal}
-  .navlinks{display:flex;gap:22px;align-items:center;font-size:14px}
-  .navlinks a{text-decoration:none;color:var(--muted)}
-  .navlinks a:hover{color:var(--ink)}
-  .cartbtn{background:var(--ink);color:var(--paper);text-decoration:none;
-    padding:9px 17px;font-family:ui-monospace,monospace;font-size:12px;
-    letter-spacing:.1em;text-transform:uppercase}
-  .cartbtn:hover{background:var(--red)}
+/* ---- hero ---- */
+.hero img{width:100%}
+.hero .m{display:none}
+@media (max-width:860px){.hero .w{display:none}.hero .m{display:block}}
 
-  header.hero{border-top:3px solid var(--ink);border-bottom:3px solid var(--ink);padding:70px 0 56px}
-  .hero h1{font-size:clamp(46px,10.5vw,116px);margin:0}
-  .hero h1 .out{color:var(--red)}
-  .hero .lede{max-width:56ch;margin-top:24px;font-size:19px}
-  .hero .lede strong{color:var(--ink)}
-  .herobtns{display:flex;gap:12px;margin-top:32px;flex-wrap:wrap}
-  .btn{display:inline-block;text-decoration:none;padding:15px 30px;
-    font-family:ui-monospace,monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;
-    background:var(--ink);color:var(--paper);border:2px solid var(--ink);cursor:pointer}
-  .btn:hover{background:var(--red);border-color:var(--red)}
-  .btn.ghost{background:transparent;color:var(--ink)}
-  .btn.ghost:hover{background:var(--ink);color:var(--paper)}
+.strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  background:var(--deep)}
+.strip ul{list-style:none;margin:0;padding:0;display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(190px,1fr))}
+.strip li{padding:18px 22px;border-right:1px solid var(--line);font-family:var(--mono);
+  font-size:11.5px;letter-spacing:.13em;text-transform:uppercase;text-align:center}
+.strip li:last-child{border-right:0}
 
-  section{padding:60px 0 10px}
-  .sec-head{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-bottom:6px}
-  .sec-head h2{font-size:clamp(28px,5vw,46px);margin:0}
-  .sec-num{font-family:ui-monospace,monospace;font-size:12px;color:var(--red);letter-spacing:.18em}
-  .sec-sub{max-width:60ch;color:var(--muted);margin:0 0 32px}
+/* ---- sections ---- */
+section{padding-block:76px}
+.shead{display:flex;align-items:baseline;justify-content:space-between;gap:18px;
+  flex-wrap:wrap;padding-bottom:15px;border-bottom:2px solid var(--ink);margin-bottom:34px}
+.shead h2{font-size:15px;font-family:var(--mono);letter-spacing:.24em;text-transform:uppercase}
+.shead span{font-family:var(--mono);font-size:11.5px;color:var(--muted);letter-spacing:.08em}
 
-  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:28px}
-  .prod{border:1px solid var(--line);background:var(--card);display:flex;flex-direction:column}
-  .shot{aspect-ratio:1/1;position:relative;display:flex;align-items:center;justify-content:center;
-    overflow:hidden;border-bottom:1px solid var(--line);background-size:cover;background-position:center}
-  .shot span.ph{font-family:ui-monospace,monospace;font-size:10px;letter-spacing:.18em;
-    text-transform:uppercase;color:rgba(237,235,225,.5);border:1px dashed rgba(237,235,225,.3);
-    padding:9px 13px;text-align:center;z-index:2}
-  .s1{background-color:#123243;background-image:linear-gradient(160deg,#1D4E63,#0E2A38)}
-  .s2{background-color:#3E4331;background-image:linear-gradient(160deg,#5C6247,#2F3325)}
-  .s3{background-color:#161C26;background-image:linear-gradient(180deg,#0C1018,#232B38)}
-  .s4{background-color:#281E18;background-image:linear-gradient(160deg,#3A2C22,#181210)}
-  .s5{background-color:#5A2117;background-image:linear-gradient(160deg,#7A2C1E,#3A1710)}
-  .s6{background-color:#373426;background-image:linear-gradient(160deg,#4A4636,#232016)}
-  .tag{position:absolute;top:12px;left:12px;background:var(--acid);color:#17150F;
-    font-family:ui-monospace,monospace;font-size:9px;letter-spacing:.14em;
-    text-transform:uppercase;padding:5px 8px;z-index:3}
-  .tag.hot{background:var(--red);color:#fff}
-  .pinfo{padding:16px 17px 18px;display:flex;flex-direction:column;flex:1}
-  .pinfo h3{font-family:Impact,Haettenschweiler,sans-serif;text-transform:uppercase;
-    font-size:20px;margin:0 0 5px;color:var(--ink)}
-  .spec{font-family:ui-monospace,monospace;font-size:11px;color:var(--muted);
-    line-height:1.65;margin-bottom:13px}
-  .prow{display:flex;justify-content:space-between;align-items:center;margin-top:auto;gap:10px}
-  .price{font-family:Impact,Haettenschweiler,sans-serif;font-size:24px;color:var(--ink);
-    font-variant-numeric:tabular-nums}
-  .add{background:var(--ink);color:var(--paper);text-decoration:none;padding:9px 15px;
-    font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase}
-  .add:hover{background:var(--red)}
+/* ---- catalog ---- */
+.grid{display:grid;gap:26px;grid-template-columns:repeat(auto-fill,minmax(250px,1fr))}
+.item{background:var(--card);border:1px solid var(--line);display:flex;flex-direction:column}
+.shot{position:relative;display:block;border-bottom:1px solid var(--line)}
+.shot img{transition:transform .35s ease}
+.item:hover .shot img{transform:scale(1.03)}
+@media (prefers-reduced-motion:reduce){.shot img{transition:none}
+  .item:hover .shot img{transform:none}}
+.flag{position:absolute;top:12px;right:12px;background:var(--red);color:#FBFAF5;
+  font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;text-transform:uppercase;
+  padding:5px 9px}
+.item .body{padding:18px 18px 19px;display:flex;flex-direction:column;gap:8px;flex:1}
+.item h3{font-size:18px}
+.dept{font-size:14px;color:var(--muted);font-style:italic}
+.item .foot{margin-top:auto;padding-top:13px;border-top:1px dashed var(--line);
+  display:flex;align-items:baseline;justify-content:space-between;gap:10px}
+.code{font-family:var(--mono);font-size:10.5px;color:var(--muted)}
+.price{font-family:var(--mono);font-size:13px;font-weight:600}
 
-  .bundle{background:var(--ink);color:var(--paper);padding:52px 34px;margin-top:40px;
-    display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:32px;align-items:center}
-  .bundle h2{color:var(--paper);font-size:clamp(30px,5vw,52px);margin:0 0 12px}
-  .bundle p{color:#B8B3A5;margin:0 0 8px;max-width:44ch}
-  .bundle .was{font-family:ui-monospace,monospace;font-size:13px;color:#8C8778;
-    text-decoration:line-through;margin-right:9px}
-  .bundle .now{font-family:Impact,Haettenschweiler,sans-serif;font-size:44px;color:var(--acid)}
-  .bundle .btn{background:var(--acid);color:#17150F;border-color:var(--acid);margin-top:18px}
-  .bundle .btn:hover{background:var(--paper);border-color:var(--paper)}
-  .bundlelist{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:11px}
-  .bundlelist li{display:flex;gap:12px;align-items:baseline;
-    border-bottom:1px solid #332F26;padding-bottom:11px;font-size:15px;color:#DAD7CC}
-  .bundlelist .n{font-family:ui-monospace,monospace;font-size:11px;color:var(--red)}
+/* ---- requisition ---- */
+.req{background:var(--card);border:2px solid var(--ink);padding:44px 40px;
+  box-shadow:8px 8px 0 var(--hair)}
+.req h3{font-size:clamp(27px,4vw,40px);margin-top:16px}
+.req .lede{margin-top:18px;max-width:62ch;color:var(--muted);font-size:17.5px}
+.tablewrap{overflow-x:auto;margin-top:30px}
+table{width:100%;border-collapse:collapse;font-family:var(--mono);font-size:14px;min-width:460px}
+td{padding:14px 16px;border-bottom:1px solid var(--hair)}
+tr:last-child td{border-bottom:0}
+.n{text-align:right;font-variant-numeric:tabular-nums}
+.save{color:var(--red)}
+.reqfoot{margin-top:26px;display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+.note{font-size:14.5px;color:var(--muted);max-width:56ch}
 
-  .promises{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:24px;margin-top:12px}
-  .promise{border-top:2px solid var(--ink);padding-top:13px}
-  .promise b{display:block;color:var(--ink);font-size:15px;margin-bottom:4px}
-  .promise p{margin:0;font-size:14px;color:var(--muted)}
+/* ---- steps ---- */
+.steps{list-style:none;margin:0;padding:0;display:grid;gap:30px;
+  grid-template-columns:repeat(auto-fit,minmax(270px,1fr))}
+.steps li{display:flex;gap:18px;align-items:flex-start}
+.no{flex:0 0 40px;height:40px;border:2px solid var(--red);color:var(--red);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:16px}
+.steps h4{font-size:19px}
+.steps p{margin-top:7px;color:var(--muted);font-size:15.5px}
 
-  .signup{border:3px solid var(--ink);padding:44px 30px;margin-top:56px;text-align:center}
-  .signup h2{font-size:clamp(26px,4.4vw,42px);margin:0 0 10px}
-  .signup p{color:var(--muted);margin:0 auto 24px;max-width:46ch}
-  form{display:flex;gap:10px;max-width:460px;margin:0 auto;flex-wrap:wrap;justify-content:center}
-  input[type=email]{flex:1;min-width:210px;padding:14px 16px;border:2px solid var(--ink);
-    background:var(--card);color:var(--body);font-size:15px;font-family:inherit}
-  input[type=email]:focus-visible{outline:3px solid var(--red);outline-offset:2px}
-  button{border:0;font-family:ui-monospace,monospace}
-  .btn:focus-visible,.add:focus-visible,a:focus-visible{outline:3px solid var(--red);outline-offset:2px}
+/* ---- story ---- */
+.story{display:grid;gap:52px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  align-items:center}
+.story h3{font-size:clamp(28px,4vw,42px)}
+.story p{margin-top:20px;color:var(--muted);max-width:58ch}
+/* the seal PNG carries its own paper ground, so frame it as a stamped card — otherwise
+   it reads as a transparency bug against the dark theme */
+.story .seal{width:100%;max-width:300px;margin:0 auto;padding:34px;background:#F2EFE4;
+  border:1px solid var(--line);box-shadow:10px 12px 0 var(--hair)}
 
-  footer{border-top:3px solid var(--ink);margin-top:60px;padding:34px 0 60px;
-    display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
-    font-family:ui-monospace,monospace;font-size:12px;letter-spacing:.08em;
-    text-transform:uppercase;color:var(--muted)}
+/* ---- faq ---- */
+details{border-bottom:1px solid var(--line);padding:19px 0}
+summary{cursor:pointer;font-size:18.5px;list-style:none;display:flex;justify-content:space-between;
+  gap:18px;align-items:baseline}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-family:var(--mono);color:var(--red);font-size:21px;flex:0 0 auto}
+details[open] summary::after{content:"–"}
+details p{margin-top:13px;color:var(--muted);max-width:70ch}
+
+/* ---- footer ---- */
+footer{border-top:2px solid var(--ink);padding:40px 0 64px;margin-top:40px}
+.fin{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;
+  font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;color:var(--muted)}
 </style>
-</head>
-<body>
 
-<!-- ══════════════════════════════════════════════════════════════════
-     EDIT ONLY THIS BLOCK.
-     1. domain  → your Shopify domain (keep the .myshopify.com version)
-     2. variant → each product's VARIANT ID (see store/vercel-shopify-setup.md)
-     Any product left as null keeps a placeholder link until you fill it in.
-     ══════════════════════════════════════════════════════════════════ -->
-<script>
-  const SHOP = {
-    domain: "fbapgj-si.myshopify.com",
-    email_endpoint: "REPLACE_EMAIL_ENDPOINT",
-    // Live product handles. Multi-variant items link to the product page so the
-    // buyer picks a size; single-variant items can skip straight to checkout via
-    // their variant id (set skip_to_checkout below).
-    products: {
-      shark:     { handle: "the-inflatable-shark-suit",           variant: "45759127126063" },
-      shorts:    { handle: "hairy-leg-camo-shorts",               variant: null },
-      windows:   { handle: "creepy-window-silhouettes-set-of-12", variant: "45759129485359" },
-      longslv:   { handle: "the-statement-long-sleeve",           variant: null },
-      apron:     { handle: "licensed-to-grill-apron",             variant: "45759131713583" },
-      trophy:    { handle: "worlds-okayest-trophy",               variant: "45759131779119" },
-      unclepack: { handle: "the-uncle-starter-pack",              variant: null }
-    },
-    // false = send everyone to the product page (recommended: they see the photos).
-    // true  = single-variant items jump straight into Shopify checkout.
-    skip_to_checkout: false
-  };
-</script>
+<header class="top"><div class="wrap topin">
+  <a class="brand" href="#top">
+    <img src="../design/crops/retirement-crop-seal.png" alt="">
+    <b>The Bureau of<br>Minor Achievements</b>
+  </a>
+  <a class="btn" href="https://fbapgj-si.myshopify.com">Shop all 16</a>
+</div></header>
 
-<div class="ticker">
-  <div class="mono">
-    <span>Free shipping over $60 · Ships in 3–5 days · Gift-ready packaging · Nobody has to know it was you · Free shipping over $60 · Ships in 3–5 days · Gift-ready packaging · Nobody has to know it was you ·</span>
-    <span aria-hidden="true">Free shipping over $60 · Ships in 3–5 days · Gift-ready packaging · Nobody has to know it was you · Free shipping over $60 · Ships in 3–5 days · Gift-ready packaging · Nobody has to know it was you ·</span>
-  </div>
+<div class="hero" id="top">
+  <img class="w" src="../design/crops/hero-wide.png" alt="Three personalized certificates from the Bureau of Minor Achievements">
+  <img class="m" src="../design/crops/hero-mobile.png" alt="Three personalized certificates from the Bureau of Minor Achievements">
 </div>
 
-<nav>
-  <a class="logo" href="#top">Deadpan<em>.</em>Goods</a>
-  <div class="navlinks">
-    <a href="#shop">Shop</a>
-    <a href="#bundle">The Uncle Pack</a>
-    <a class="cartbtn" data-cart>Cart</a>
-  </div>
-</nav>
+<div class="strip"><div class="wrap"><ul>
+  <li>Personalized with any name</li>
+  <li>Printed in the USA</li>
+  <li>Delivered in 3–5 days</li>
+  <li>Heavy matte stock</li>
+</ul></div></div>
 
-<header class="hero" id="top">
-  <div class="wrap">
-    <h1 class="display">We are very<br>serious about<br><span class="out">stupid things.</span></h1>
-    <p class="lede">Gag gifts engineered for one moment: the second someone sees it and thinks <strong>“this is literally my uncle.”</strong> Built well, shipped fast, and guaranteed to make a room go quiet before it goes loud.</p>
-    <div class="herobtns">
-      <a class="btn" href="#shop">Shop the goods</a>
-      <a class="btn ghost" href="#bundle">The Uncle Pack →</a>
-    </div>
-  </div>
-</header>
-
-<section class="wrap" id="shop">
-  <div class="sec-head">
-    <span class="sec-num mono">01</span>
-    <h2 class="display">The goods</h2>
-  </div>
-  <p class="sec-sub">Every item is real, wearable, and slightly indefensible. Specs are accurate. The last one on each list is also accurate.</p>
-
+<section class="wrap">
+  <div class="shead"><h2>The catalog</h2><span>16 certifications currently issued</span></div>
   <div class="grid">
-
-    <div class="prod">
-      <div class="shot s1"><span class="tag hot mono">Bestseller</span><span class="ph">product photo<br>1:1</span></div>
-      <div class="pinfo">
-        <h3>The Inflatable Shark Suit</h3>
-        <div class="spec mono">100% nylon · one size fits most<br>Battery fan included · Ruins weddings</div>
-        <div class="prow"><span class="price">$49</span><a class="add" data-buy="shark">Add to cart</a></div>
-      </div>
+<article class="item">
+  <a class="shot" href="https://fbapgj-si.myshopify.com" aria-label="Certificate of Minor Achievement">
+    <img src="../design/mockups/retirement-1-framed.png" alt="Certificate of Minor Achievement, framed" loading="lazy">
+    
+  </a>
+  <div class="body">
+    <h3>Certificate of Minor Achievement</h3>
+    <p class="dept">Office of Sustained Mediocrity</p>
+    <div class="foot">
+      <span class="code">BMA-2026-0117-R</span>
+      <span class="price">from $32</span>
     </div>
-
-    <div class="prod">
-      <div class="shot s2"><span class="tag mono">Uncle-approved</span><span class="ph">product photo<br>1:1</span></div>
-      <div class="pinfo">
-        <h3>Hairy Leg Camo Shorts</h3>
-        <div class="spec mono">Quick-dry poly · Elastic waist<br>Photorealistic print · Legally distinct from real legs</div>
-        <div class="prow"><span class="price">$34</span><a class="add" data-buy="shorts">Add to cart</a></div>
-      </div>
+  </div>
+</article>
+<article class="item">
+  <a class="shot" href="https://fbapgj-si.myshopify.com" aria-label="World&#x27;s Okayest Coworker">
+    <img src="../design/mockups/coworker-1-framed.png" alt="World&#x27;s Okayest Coworker, framed" loading="lazy">
+    
+  </a>
+  <div class="body">
+    <h3>World&#x27;s Okayest Coworker</h3>
+    <p class="dept">Division of Technically Correct</p>
+    <div class="foot">
+      <span class="code">BMA-2026-0208-C</span>
+      <span class="price">from $32</span>
     </div>
-
-    <div class="prod">
-      <div class="shot s3"><span class="tag mono">Seasonal</span><span class="ph">product photo<br>1:1</span></div>
-      <div class="pinfo">
-        <h3>Creepy Window Silhouettes</h3>
-        <div class="spec mono">Set of 12 · Reusable static cling<br>Visible from the street · Concerns the neighbours</div>
-        <div class="prow"><span class="price">$26</span><a class="add" data-buy="windows">Add to cart</a></div>
-      </div>
+  </div>
+</article>
+<article class="item">
+  <a class="shot" href="https://fbapgj-si.myshopify.com" aria-label="Certified Uncle">
+    <img src="../design/mockups/uncle-1-framed.png" alt="Certified Uncle, framed" loading="lazy">
+    
+  </a>
+  <div class="body">
+    <h3>Certified Uncle</h3>
+    <p class="dept">Bureau of Unsolicited Advice</p>
+    <div class="foot">
+      <span class="code">BMA-2026-0304-U</span>
+      <span class="price">from $32</span>
     </div>
-
-    <div class="prod">
-      <div class="shot s4"><span class="tag mono">Ships free</span><span class="ph">product photo<br>1:1</span></div>
-      <div class="pinfo">
-        <h3>The Statement Long-Sleeve</h3>
-        <div class="spec mono">Heavyweight cotton · Unisex boxy fit<br>Back print · Ends conversations</div>
-        <div class="prow"><span class="price">$38</span><a class="add" data-buy="longslv">Add to cart</a></div>
-      </div>
+  </div>
+</article>
+<article class="item">
+  <a class="shot" href="https://fbapgj-si.myshopify.com" aria-label="Certificate of Adequate Leadership">
+    <img src="../design/mockups/boss-1-framed.png" alt="Certificate of Adequate Leadership, framed" loading="lazy">
+    
+  </a>
+  <div class="body">
+    <h3>Certificate of Adequate Leadership</h3>
+    <p class="dept">Department of Almost Trying</p>
+    <div class="foot">
+      <span class="code">BMA-2026-0421-B</span>
+      <span class="price">from $32</span>
     </div>
-
-    <div class="prod">
-      <div class="shot s5"><span class="tag mono">Gift-ready</span><span class="ph">product photo<br>1:1</span></div>
-      <div class="pinfo">
-        <h3>“Licensed To Grill” Apron</h3>
-        <div class="spec mono">Cotton canvas · Adjustable neck<br>Two pockets · No actual licence conferred</div>
-        <div class="prow"><span class="price">$32</span><a class="add" data-buy="apron">Add to cart</a></div>
-      </div>
+  </div>
+</article>
+<article class="item">
+  <a class="shot" href="https://fbapgj-si.myshopify.com" aria-label="Certificate of Structural Commitment">
+    <img src="../design/mockups/new-home-1-framed.png" alt="Certificate of Structural Commitment, framed" loading="lazy">
+    
+  </a>
+  <div class="body">
+    <h3>Certificate of Structural Commitment</h3>
+    <p class="dept">Office of Regrettable Purchases</p>
+    <div class="foot">
+      <span class="code">BMA-2026-0530-H</span>
+      <span class="price">from $32</span>
     </div>
-
-    <div class="prod">
-      <div class="shot s6"><span class="tag mono">Desk flex</span><span class="ph">product photo<br>1:1</span></div>
-      <div class="pinfo">
-        <h3>World's Okayest Trophy</h3>
-        <div class="spec mono">Resin &amp; metal · 8 inches tall<br>Engraved base · Damning with faint praise</div>
-        <div class="prow"><span class="price">$28</span><a class="add" data-buy="trophy">Add to cart</a></div>
-      </div>
+  </div>
+</article>
+<article class="item">
+  <a class="shot" href="https://fbapgj-si.myshopify.com" aria-label="Certificate of Sustained Sleep Deprivation">
+    <img src="../design/mockups/new-parent-1-framed.png" alt="Certificate of Sustained Sleep Deprivation, framed" loading="lazy">
+    
+  </a>
+  <div class="body">
+    <h3>Certificate of Sustained Sleep Deprivation</h3>
+    <p class="dept">Division of Diminishing Rest</p>
+    <div class="foot">
+      <span class="code">BMA-2026-0612-P</span>
+      <span class="price">from $32</span>
     </div>
+  </div>
+</article>
+<article class="item">
+  <a class="shot" href="https://fbapgj-si.myshopify.com" aria-label="Certificate of Technically Finishing">
+    <img src="../design/mockups/graduation-1-framed.png" alt="Certificate of Technically Finishing, framed" loading="lazy">
+    
+  </a>
+  <div class="body">
+    <h3>Certificate of Technically Finishing</h3>
+    <p class="dept">Bureau of Unfinished Projects</p>
+    <div class="foot">
+      <span class="code">BMA-2026-0708-G</span>
+      <span class="price">from $32</span>
+    </div>
+  </div>
+</article>
+<article class="item">
+  <a class="shot" href="https://fbapgj-si.myshopify.com" aria-label="Certificate of Leaving On Read">
+    <img src="../design/mockups/left-on-read-1-framed.png" alt="Certificate of Leaving On Read, framed" loading="lazy">
+    
+  </a>
+  <div class="body">
+    <h3>Certificate of Leaving On Read</h3>
+    <p class="dept">Office of Deferred Replies</p>
+    <div class="foot">
+      <span class="code">BMA-2026-0822-L</span>
+      <span class="price">from $32</span>
+    </div>
+  </div>
+</article>
+<article class="item">
+  <a class="shot" href="https://fbapgj-si.myshopify.com" aria-label="Certificate of Obligatory Festivity">
+    <img src="../design/mockups/x-secret-santa-1-framed.png" alt="Certificate of Obligatory Festivity, framed" loading="lazy">
+    <span class="flag">Holiday</span>
+  </a>
+  <div class="body">
+    <h3>Certificate of Obligatory Festivity</h3>
+    <p class="dept">Office of Mandatory Fun</p>
+    <div class="foot">
+      <span class="code">BMA-2026-1201-S</span>
+      <span class="price">from $32</span>
+    </div>
+  </div>
+</article>
+<article class="item">
+  <a class="shot" href="https://fbapgj-si.myshopify.com" aria-label="White Elephant Champion">
+    <img src="../design/mockups/x-white-elephant-1-framed.png" alt="White Elephant Champion, framed" loading="lazy">
+    <span class="flag">Holiday</span>
+  </a>
+  <div class="body">
+    <h3>White Elephant Champion</h3>
+    <p class="dept">Bureau of Strategic Regifting</p>
+    <div class="foot">
+      <span class="code">BMA-2026-1202-W</span>
+      <span class="price">from $32</span>
+    </div>
+  </div>
+</article>
+<article class="item">
+  <a class="shot" href="https://fbapgj-si.myshopify.com" aria-label="Certificate of Surviving Another Year">
+    <img src="../design/mockups/x-survived-year-1-framed.png" alt="Certificate of Surviving Another Year, framed" loading="lazy">
+    <span class="flag">Holiday</span>
+  </a>
+  <div class="body">
+    <h3>Certificate of Surviving Another Year</h3>
+    <p class="dept">Division of Diminishing Returns</p>
+    <div class="foot">
+      <span class="code">BMA-2026-1203-Y</span>
+      <span class="price">from $32</span>
+    </div>
+  </div>
+</article>
+<article class="item">
+  <a class="shot" href="https://fbapgj-si.myshopify.com" aria-label="Certificate of Attendance">
+    <img src="../design/mockups/x-office-party-1-framed.png" alt="Certificate of Attendance, framed" loading="lazy">
+    <span class="flag">Holiday</span>
+  </a>
+  <div class="body">
+    <h3>Certificate of Attendance</h3>
+    <p class="dept">Office of Mandatory Fun</p>
+    <div class="foot">
+      <span class="code">BMA-2026-1204-P</span>
+      <span class="price">from $32</span>
+    </div>
+  </div>
+</article>
+<article class="item">
+  <a class="shot" href="https://fbapgj-si.myshopify.com" aria-label="World&#x27;s Okayest Gift Giver">
+    <img src="../design/mockups/x-okayest-gift-1-framed.png" alt="World&#x27;s Okayest Gift Giver, framed" loading="lazy">
+    <span class="flag">Holiday</span>
+  </a>
+  <div class="body">
+    <h3>World&#x27;s Okayest Gift Giver</h3>
+    <p class="dept">Division of Adequate Thoughtfulness</p>
+    <div class="foot">
+      <span class="code">BMA-2026-1205-G</span>
+      <span class="price">from $32</span>
+    </div>
+  </div>
+</article>
+<article class="item">
+  <a class="shot" href="https://fbapgj-si.myshopify.com" aria-label="Certified Mom">
+    <img src="../design/mockups/x-mom-1-framed.png" alt="Certified Mom, framed" loading="lazy">
+    <span class="flag">Holiday</span>
+  </a>
+  <div class="body">
+    <h3>Certified Mom</h3>
+    <p class="dept">Office of Unread Advice</p>
+    <div class="foot">
+      <span class="code">BMA-2026-1206-M</span>
+      <span class="price">from $32</span>
+    </div>
+  </div>
+</article>
+<article class="item">
+  <a class="shot" href="https://fbapgj-si.myshopify.com" aria-label="Certified Dad">
+    <img src="../design/mockups/x-dad-1-framed.png" alt="Certified Dad, framed" loading="lazy">
+    <span class="flag">Holiday</span>
+  </a>
+  <div class="body">
+    <h3>Certified Dad</h3>
+    <p class="dept">Bureau of Thermostat Enforcement</p>
+    <div class="foot">
+      <span class="code">BMA-2026-1207-D</span>
+      <span class="price">from $32</span>
+    </div>
+  </div>
+</article>
+<article class="item">
+  <a class="shot" href="https://fbapgj-si.myshopify.com" aria-label="Certificate of Marginal Improvement">
+    <img src="../design/mockups/x-stocking-1-framed.png" alt="Certificate of Marginal Improvement, framed" loading="lazy">
+    <span class="flag">Holiday</span>
+  </a>
+  <div class="body">
+    <h3>Certificate of Marginal Improvement</h3>
+    <p class="dept">Office of Modest Expectations</p>
+    <div class="foot">
+      <span class="code">BMA-2026-1208-I</span>
+      <span class="price">from $32</span>
+    </div>
+  </div>
+</article></div>
+</section>
 
+<section class="wrap">
+  <div class="req">
+    <div class="eyebrow">Form 7B — Departmental Requisition</div>
+    <h3>Recognize an entire team at once.</h3>
+    <p class="lede">Offices order these for reviews, farewells, and the holiday party — a
+      certificate for every person, each one specific enough to be read aloud. Every name is
+      printed individually. Nobody gets a blank.</p>
+    <div class="tablewrap"><table><tr><td>5 certificates</td><td class='n'>$135</td><td class='n'>$27 each</td><td class='n save'>save 16%</td></tr><tr><td>10 certificates</td><td class='n'>$250</td><td class='n'>$25 each</td><td class='n save'>save 22%</td></tr><tr><td>25 certificates</td><td class='n'>$575</td><td class='n'>$23 each</td><td class='n save'>save 28%</td></tr></table></div>
+    <div class="reqfoot">
+      <a class="btn" href="https://fbapgj-si.myshopify.com">Request a departmental quote</a>
+      <p class="note">Mixed designs are fine — the point is that they're different. Send the
+        list of names and what each person is guilty of.</p>
+    </div>
   </div>
 </section>
 
-<section class="wrap" id="bundle">
-  <div class="bundle">
+<section class="wrap">
+  <div class="shead"><h2>How it works</h2><span>three steps, no account</span></div>
+  <ul class="steps"><li><span class='no'>1</span><div><h4>Pick the certificate</h4><p>Sixteen of them. One will be uncomfortably accurate.</p></div></li><li><span class='no'>2</span><div><h4>Type the name</h4><p>Exactly as it should be printed. We don't autocorrect it.</p></div></li><li><span class='no'>3</span><div><h4>It prints in the USA</h4><p>Dispatched in 2–3 business days, on your wall in 3–5.</p></div></li></ul>
+</section>
+
+<section class="wrap">
+  <div class="shead"><h2>The Bureau</h2><span>est. 1997, allegedly</span></div>
+  <div class="story">
     <div>
-      <h2 class="display">The Uncle<br>Starter Pack</h2>
-      <p>He has adult money and nothing to spend it on. Fix that in one order.</p>
-      <div style="margin-top:14px"><span class="was">$114 separately</span><span class="now">$89</span></div>
-      <a class="btn" data-buy="unclepack">Ruin his reputation →</a>
+      <h3>Official recognition, deployed against things that don't deserve any.</h3>
+      <p>Most gag gifts announce themselves. Novelty fonts, bright colors, a punchline you
+        can read from across the room. They get one laugh and then they get thrown away.</p>
+      <p>These don't. Each one is a properly set document — engine-turned border, embossed-look
+        seal, serial number, a registrar's signature line — that happens to certify that
+        someone stands near a grill without ever cooking anything. The joke lands because the
+        object refuses to admit there is one.</p>
+      <p>That's why they end up framed instead of binned. It's a real thing on real paper, and
+        it has that person's name on it.</p>
     </div>
-    <ul class="bundlelist">
-      <li><span class="n mono">01</span><span>Hairy Leg Camo Shorts</span></li>
-      <li><span class="n mono">02</span><span>“Licensed To Grill” Apron</span></li>
-      <li><span class="n mono">03</span><span>World's Okayest Trophy</span></li>
-      <li><span class="n mono">04</span><span>Gift box that says nothing useful</span></li>
-    </ul>
+    <img class="seal" src="../design/crops/retirement-crop-seal.png" alt="Seal of the Bureau of Minor Achievements">
   </div>
 </section>
 
 <section class="wrap">
-  <div class="sec-head">
-    <span class="sec-num mono">02</span>
-    <h2 class="display">The fine print</h2>
-  </div>
-  <p class="sec-sub">The jokes are dumb on purpose. Nothing else is.</p>
-  <div class="promises">
-    <div class="promise"><b>Real quality</b><p>Every item is sample-tested before it goes live. A gag that falls apart isn't funny twice.</p></div>
-    <div class="promise"><b>Ships in 3–5 days</b><p>Tracked from day one. Holiday cutoffs posted on every product page.</p></div>
-    <div class="promise"><b>Gift-ready</b><p>Arrives boxed and giftable. No invoice in the package.</p></div>
-    <div class="promise"><b>30-day returns</b><p>If it doesn't land, send it back. No interrogation.</p></div>
-  </div>
+  <div class="shead"><h2>Questions</h2><span>answered plainly</span></div>
+  <details><summary>Is this actually funny or is it just a certificate?</summary><p>It&#x27;s a real certificate, printed properly, that says something absurd with a completely straight face. The joke only works because the object is serious. A cheap print of a joke is just a cheap print.</p></details><details><summary>Can I put any name on it?</summary><p>Any name, up to 40 characters. We print it exactly as you type it, including the spelling you chose. Check it twice.</p></details><details><summary>How big is it?</summary><p>8×10 or 11×14 inches. Both fit standard frames you can buy anywhere, or add the framed option and skip that errand.</p></details><details><summary>Will it arrive creased?</summary><p>It ships flat in a rigid mailer. If it arrives damaged, send a photo and we replace it. You don&#x27;t have to send the damaged one back.</p></details><details><summary>Do you do custom text?</summary><p>Not yet. The wording is what makes them work, and we&#x27;d rather write it well than let you write it at 11pm. Departmental orders are the exception — ask.</p></details>
 </section>
 
-<section class="wrap">
-  <div class="signup">
-    <h2 class="display">Get the drops first</h2>
-    <p>New goods, seasonal restocks, and the occasional thing we probably shouldn't have made.</p>
-    <form id="signup" method="post">
-      <input type="email" name="email" placeholder="your email" aria-label="Email address" required />
-      <button class="btn" type="submit">Sign me up</button>
-    </form>
-  </div>
-</section>
-
-<footer class="wrap">
-  <span>© <span id="y"></span> Deadpan Goods</span>
-  <span>Serious about stupid things</span>
-</footer>
-
-<script>
-  document.getElementById('y').textContent = new Date().getFullYear();
-
-  // Wire every [data-buy] to its Shopify product page, or straight to checkout
-  // via a cart permalink (https://STORE/cart/VARIANT_ID:1) when skip_to_checkout
-  // is on and the item has a single variant.
-  document.querySelectorAll('[data-buy]').forEach(function (el) {
-    var p = SHOP.products[el.getAttribute('data-buy')];
-    if (!p) { el.href = 'https://' + SHOP.domain; return; }
-    el.href = (SHOP.skip_to_checkout && p.variant)
-      ? 'https://' + SHOP.domain + '/cart/' + p.variant + ':1'
-      : 'https://' + SHOP.domain + '/products/' + p.handle;
-  });
-
-  var cart = document.querySelector('[data-cart]');
-  if (cart) cart.href = 'https://' + SHOP.domain + '/cart';
-
-  var form = document.getElementById('signup');
-  if (form) form.action = SHOP.email_endpoint;
-</script>
-</body>
-</html>
+<footer><div class="wrap fin">
+  <span>The Bureau of Minor Achievements</span>
+  <span>Printed in the USA · Ships flat · Replaced if damaged</span>
+</div></footer>
