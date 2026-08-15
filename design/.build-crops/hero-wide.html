@@ -1,0 +1,46 @@
+<!doctype html>
+<meta charset="utf-8">
+<style>
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:"Liberation Serif","Times New Roman",serif;color:#17150F;
+    -webkit-font-smoothing:antialiased}
+  .eyebrow{font-size:30px;letter-spacing:11px;color:#B4321F;text-transform:uppercase}
+  .mono{font-family:"Liberation Mono",monospace}
+
+  html,body{width:2400px;height:1000px;overflow:hidden}
+  
+  /* centred with a fixed gap — space-between strands the two halves at opposite edges */
+  body{background:radial-gradient(ellipse at 34% 26%, #EDE9E1 0%, #DCD7CC 60%, #C9C3B6 100%);
+    display:flex;flex-direction:row;align-items:center;
+    justify-content:center;
+    gap:110px;padding:90px 110px;
+    text-align:left}
+  .copy{max-width:780px}
+  .eyebrow{font-size:22px;letter-spacing:7px;color:#B4321F;
+    text-transform:uppercase;white-space:nowrap}
+  h1{margin-top:26px;font-size:90px;line-height:1.04;font-weight:700;
+    letter-spacing:-2px;text-wrap:balance}
+  .sub{margin-top:26px;font-size:32px;line-height:1.5;opacity:.74;
+    max-width:30ch}
+  /* height tracks the tallest card plus its offset, or the fan floats in dead space */
+  .fan{position:relative;flex:0 0 auto;width:820px;
+    height:613px}
+  .fan img{position:absolute;top:0;width:460px;
+    height:575px;object-fit:cover;border:1px solid rgba(0,0,0,.18);
+    box-shadow:16px 22px 44px rgba(28,24,16,.28)}
+  .f1{left:0;transform:rotate(-7deg)}
+  .f2{left:180px;top:38px;z-index:2}
+  .f3{left:360px;transform:rotate(6deg)}
+
+</style>
+
+<div class="copy">
+  <div class="eyebrow">The Bureau of Minor Achievements</div>
+  <h1>Official recognition for things that don't deserve any.</h1>
+  <div class="sub">Personalized certificates, printed in the USA, delivered in 3–5 days.</div>
+</div>
+<div class="fan">
+  <img class="f1" src="../out/bma-retirement.png">
+  <img class="f2" src="../out/bma-uncle.png">
+  <img class="f3" src="../out/bma-x-secret-santa.png">
+</div>
