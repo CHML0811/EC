@@ -2,3 +2,6 @@ design/.build/
 design/.build-mockups/
 __pycache__/
 *.pyc
+kit/dist/
+kit/.build-listing/
+kit/Office-Awards-Kit.zip

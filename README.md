@@ -24,6 +24,7 @@ then TikTok Shop affiliate.
 | 🖨️ **[Printify setup spec](store/printify-setup-spec.md)** | Exactly which blank, provider, sizes and prices. **Do this next.** |
 | 🎨 **[Certificate generator](design/generate_certificates.py)** | `python3 design/generate_certificates.py` → 8 print-ready 300dpi designs in `design/out/` |
 | 🖼️ **[Listing images](design/listing-images.md)** | 96 generated mockups in `design/mockups/` — framed, hook, detail, sizes, info, pin. **Upload 1–5 in order.** |
+| 🎁 **[Office Awards Kit](marketing/etsy-office-awards-kit.md)** | The digital product — 38 awards, a working maker, a host's script. `python3 kit/build_kit.py`. **List this first.** |
 | 🧭 **[First-seller strategy](playbooks/first-seller-strategy.md)** | Impulse vs intent, necessity vs AOV, why the winners here sell digital kits. **Read before building anything new.** |
 | 🧭 **[What to sell next](playbooks/product-decision.md)** | Market data, three candidates, the sequence. Bulk orders first — 20× the order value at $0 cost. |
 | 🏛️ **[Storefront](site/index.html)** | `python3 site/build_storefront.py <previews> --local site/index.html` — catalog built from the manifests |
@@ -51,7 +52,7 @@ The moat: **[original-design-line.md](playbooks/original-design-line.md)**
 |---|---|
 | Shopify | `fbapgj-si.myshopify.com` · **USD** · Advanced plan (**downgrade to Basic — saves $360/mo**) |
 | Shipping | ✅ US $5.95, free over $60 · Rest of World $14.95 |
-| Products | 8 novelty SKUs (draft) + 8 certificates · [product-data.md](store/product-data.md) |
+| Products | 38 certificates rendered · 8 novelty SKUs (draft) · [product-data.md](store/product-data.md) |
 | Policies | Written, ready to push · [policies-and-pages.md](store/policies-and-pages.md) |
 | Go-live | [go-live-checklist.md](store/go-live-checklist.md) |
 
@@ -64,8 +65,9 @@ rename store to *Deadpan Goods* · timezone → GMT+8. About 45 minutes, once.
 workflow/     30-day-plan · growth-loop · operating-flow · automation-blueprint
 playbooks/    beginner-fit-strategy · long-term-brand-strategy · original-design-line
 marketing/    etsy-cohort-1 · etsy-cohort-2 · etsy-metrics-brief · pinterest-pins
-design/       generate_certificates.py → out/*.png       (print-ready artwork)
-              generate_mockups.py      → mockups/*.png   (96 listing images)
+design/       generate_certificates.py + certs_christmas + certs_office → out/*.png
+              generate_mockups.py → mockups/*.png · generate_crops.py → crops/*.png
+kit/          build_kit.py → Office-Awards-Kit.zip (maker + 5 PDFs + 38 certificates)
 store/        product-data · policies-and-pages · shopify/us-market setup · storefront
 ```
 
