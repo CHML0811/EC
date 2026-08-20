@@ -24,6 +24,7 @@ then TikTok Shop affiliate.
 | 🖨️ **[Printify setup spec](store/printify-setup-spec.md)** | Exactly which blank, provider, sizes and prices. **Do this next.** |
 | 🎨 **[Certificate generator](design/generate_certificates.py)** | `python3 design/generate_certificates.py` → 8 print-ready 300dpi designs in `design/out/` |
 | 🖼️ **[Listing images](design/listing-images.md)** | 96 generated mockups in `design/mockups/` — framed, hook, detail, sizes, info, pin. **Upload 1–5 in order.** |
+| 🧭 **[First-seller strategy](playbooks/first-seller-strategy.md)** | Impulse vs intent, necessity vs AOV, why the winners here sell digital kits. **Read before building anything new.** |
 | 🧭 **[What to sell next](playbooks/product-decision.md)** | Market data, three candidates, the sequence. Bulk orders first — 20× the order value at $0 cost. |
 | 🏛️ **[Storefront](site/index.html)** | `python3 site/build_storefront.py <previews> --local site/index.html` — catalog built from the manifests |
 | 📌 **[Pinterest pins](marketing/pinterest-pins.md)** | 40 pins, 6 boards, image crops. Free traffic — a December play made in August. |
