@@ -1,0 +1,159 @@
+# Handoff — pick this up in Cursor
+
+Everything is built and pushed. This is the order to do things in and the exact prompts to
+paste. `AGENTS.md` carries the project rules; Cursor loads it automatically.
+
+**Total time to first listing live: about 45 minutes.** None of it needs an AI.
+
+---
+
+## Do these three yourself. No AI required.
+
+### 1 · Etsy seller account — ~15 min
+[etsy.com/sell](https://www.etsy.com/sell). Needs your ID and bank details, which is why
+nobody else can do it for you. Shop name: **Bureau of Minor Achievements** (or
+`BureauOfMinorAchievements` if taken — don't add numbers, it reads as spam).
+
+### 2 · Publish the Office Awards Kit — ~20 min
+Everything is written in **`marketing/etsy-office-awards-kit.md`** — title, all 13 tags,
+description, settings.
+
+- Listing type: **Digital**
+- Upload: **`kit/Office-Awards-Kit.zip`** (8.2 MB, under Etsy's 20 MB cap)
+- Images: **`kit/listing/kit-1` … `kit-4`**, in that order
+- Price: **$24**
+- Personalization: **off**
+
+### 3 · Downgrade Shopify — ~2 min
+Advanced $399 → Basic $39. **Saves $360 every month.** Nothing in this project uses an
+Advanced feature.
+
+---
+
+## Then hand these to Cursor
+
+Paste each prompt as-is. They assume `AGENTS.md` is loaded.
+
+### Prompt A — get oriented
+```
+Read AGENTS.md, then playbooks/first-seller-strategy.md and
+marketing/etsy-office-awards-kit.md.
+
+Summarize in 10 lines: what this business sells, which product is the priority and why,
+and what the single blocking step is. Then tell me the one thing you'd do next and why.
+Don't write any code yet.
+```
+
+### Prompt B — verify the build still works
+```
+Run each of these and report failures with the actual traceback:
+
+  python3 design/generate_certificates.py
+  python3 design/certs_christmas.py
+  python3 design/certs_office.py
+  python3 kit/build_kit.py
+
+Expected: 38 PNGs in design/out/, and kit/Office-Awards-Kit.zip at roughly 8.2 MB.
+
+Then open kit/dist/AwardsMaker.html and confirm the dropdown lists 38 awards and the
+preview renders. Do not change any design or copy — this is a check, not a refactor.
+```
+
+### Prompt C — the second listing
+```
+Create a second Etsy listing for the SAME kit aimed at teachers instead of offices:
+end-of-year classroom awards. Follow the exact structure of
+marketing/etsy-office-awards-kit.md.
+
+Rules from AGENTS.md apply: US English, exactly 13 tags, every tag 20 characters or fewer,
+no invented numbers.
+
+Write 12 new classroom certificates into design/certs_school.py, following the pattern in
+design/certs_office.py exactly. Keep the deadpan voice — dry and specific, never zany.
+Then run it and show me the new PNGs.
+
+Do not touch the existing cohorts.
+```
+
+*Why this one: the kit is already built. A second audience is a second listing for a few
+hours of work, and Etsy ranks listings, not shops — two listings is two chances to be found.*
+
+### Prompt D — after the first sale
+```
+The first sale came in. Read marketing/etsy-metrics-brief.md and workflow/growth-loop.md,
+then tell me:
+
+1. Which metric decides whether to make more of this, and what the threshold is
+2. Whether to add mugs yet (check playbooks/product-decision.md for the gate)
+3. What to publish next
+
+Give me a recommendation, not options.
+```
+
+### Prompt E — if nothing sells in 30 days
+```
+30 days, no sales. Before changing anything, diagnose in this order:
+
+1. Is the listing getting IMPRESSIONS? (Etsy Stats → Search)
+   - No impressions  = the title/tags don't match how people search. Rewrite the title.
+   - Impressions, no clicks = image 1 is losing the grid. Remake it.
+   - Clicks, no sales = the description or price. Fix in that order.
+
+2. Do NOT cut the price first. Price is almost never why a new digital listing fails —
+   being unfindable is.
+
+Tell me which of the three it is, with the numbers you used, then fix that one thing only.
+```
+
+---
+
+## The video, when you get to it
+
+Read **`marketing/video-playbook.md`** first. It has the diagnosis of why the last one came
+out badly, and the exact Grok prompts.
+
+The three things that matter most:
+
+1. **The best video for this product uses no AI at all** — screen-record the Awards Maker.
+   Paste ten names, press print, watch ten certificates appear. That's the #1 performing hook
+   type (product/outcome showcase) by definition, and it has zero uncanny-valley risk.
+2. **In Grok, use image-to-video, never text-to-video**, starting from a real PNG in this
+   repo. Text-to-video will melt the typography, and this product *is* typography. Every
+   prompt in the playbook carries the clause that stops the model rewriting the text.
+3. **Ship ten hooks, not one video.** That's the only real advantage AI gives you. The
+   playbook has all ten written out.
+
+Judge on **3-second retention**, not likes. Under 50% kill it, over 70% make five more.
+
+---
+
+## What's done, so you don't rebuild it
+
+| | |
+|---|---|
+| Certificates | 38 designs, 2400×3000 @ 300dpi, print-ready |
+| Listing images | 96 mockups + 82 channel crops + 4 kit images |
+| The kit | Maker + 5 PDFs + 38 certificates, zipped at 8.2 MB |
+| Copy | 32 physical listings + the kit listing, all inside Etsy's limits |
+| Storefront | `site/index.html`, catalog built from the manifests |
+| Shopify | USD, shipping zones live (US $5.95, free over $60) |
+
+## What's genuinely unfinished
+
+- **Etsy account and the listing.** The only thing standing between this and revenue.
+- **Shopify product images.** Cohort 1's eight PNGs are in Shopify's staging bucket but were
+  never registered — and **those staged URLs expired on 2026-08-16**, so
+  `store/push-certificates-to-shopify.md` has to restart at step 1. Low priority; Etsy is the
+  sales channel, Shopify is just the brand home.
+- **Printify.** Not started. Not needed until the physical line goes live.
+- **Bulk shipping math.** The departmental tiers on the storefront assume one parcel.
+  Printify bills per item. **Verify in their calculator before promoting those tiers.**
+
+---
+
+## If you only remember one thing
+
+The work is done. **The bottleneck is not more work — it's an Etsy account.**
+
+Resist the urge to have Cursor build more. The temptation will be strong because building is
+easy and listing is boring. Publish first, then build.

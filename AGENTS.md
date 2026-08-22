@@ -1,0 +1,112 @@
+# Project context for AI assistants
+
+Read this before touching anything. Cursor loads `AGENTS.md` automatically; if you're in a
+tool that doesn't, paste it into the chat first.
+
+## What this is
+
+**The Bureau of Minor Achievements** — a fictional government agency issuing official
+certificates for things that don't deserve recognition. Sold two ways:
+
+1. **The Office Awards Kit** — $24 digital download. 38 certificates + an offline maker +
+   a host's script. Zero cost per sale. **This is the priority.**
+2. **Physical certificates** — $32–58 prints via Printify. Built, not yet listed.
+
+Sold on **Etsy** (search intent does the marketing) with Shopify as the brand home.
+
+Run by one person with no ecommerce experience, no supplier relationships, no audience, and
+no US presence. Every decision has to respect that.
+
+## Non-negotiables
+
+These were each decided against a real alternative. Don't quietly reverse them.
+
+| Rule | Why |
+|---|---|
+| **Never invent a number** | No fake review counts, sales figures, or "as seen in". Ever. |
+| **US English in buyer-facing copy** | Etsy tag matching is literal. `personalised` ≠ `personalized`. |
+| **Etsy tags ≤ 20 characters, exactly 13** | Over 20 and Etsy silently rejects the tag. |
+| **No AI-generated humans in marketing** | Uncanny valley kills trust. See `marketing/video-playbook.md`. |
+| **Image-to-video only, never text-to-video** | Video models mangle typography and this product *is* typography. |
+| **Paper and digital, not apparel** | Apparel keeps ~14% after Etsy fees; paper keeps 40–55%. |
+| **Don't add SKUs before 10 sales** | Reasoning in `playbooks/product-decision.md`. |
+| **Check IP before any new design** | No brands, characters, logos, or licensed anything. |
+
+## The voice
+
+Deadpan bureaucracy. The joke works *because the document refuses to admit there is one*.
+
+- ✅ *"for opinions delivered at volume, jokes repeated annually, and an unbroken record of standing near the grill without cooking."*
+- ❌ *"LOL! The world's funniest uncle award! 😂"*
+
+Never explain the joke. Never use exclamation marks in product copy. Specific beats clever —
+"9:14 every morning" is funny, "always late" is not.
+
+## How everything builds
+
+Pure Python 3 + headless Chromium. **No dependencies, no package manager, nothing to install.**
+Chromium renders HTML to PNG and PDF; that's the entire toolchain.
+
+```bash
+# artwork — 38 certificates, 2400×3000 @ 300dpi
+python3 design/generate_certificates.py    # 8 general occasions
+python3 design/certs_christmas.py          # 8 Christmas
+python3 design/certs_office.py             # 22 office awards
+
+# imagery
+python3 design/generate_mockups.py         # 96 Etsy/Pinterest listing images
+python3 design/generate_crops.py           # 82 channel crops (story, feed, OG, banners)
+
+# the digital product — runs the whole chain and zips it
+python3 kit/build_kit.py                   # → kit/Office-Awards-Kit.zip (8.2 MB)
+python3 kit/build_listing_images.py        # → kit/listing/*.png
+
+# storefront
+python3 site/build_storefront.py <previews> --local site/index.html
+```
+
+Chromium lives at `/opt/pw-browsers/…`; `design/generate_certificates.py:find_chrome()`
+resolves it and falls back to `chromium` / `google-chrome` on PATH.
+
+## Things that will bite you
+
+Each of these was a real bug, found and fixed. Don't reintroduce them.
+
+- **Chromium's `--force-device-scale-factor` below 1 does not scale the layout.** It captures
+  a smaller window of the same page — you get the top-left corner. To downscale, put the PNG
+  in an `<img>` at the target size and screenshot that.
+- **`--print-to-pdf` and `--screenshot` need absolute `file://` URIs.** `pathlib.as_uri()`
+  throws on a relative path.
+- **A class selector beats an element selector.** `.wrap{padding:…}` on a `<section>` silently
+  cancels `section{padding:…}`. Use `padding-inline` / `padding-block`.
+- **`fieldset{display:flex}` overrides the browser's `[hidden]`.** Restate
+  `[hidden]{display:none!important}`.
+- **`preserveAspectRatio="none"` SVGs need an explicit width**, or they render short.
+- **Certificate text is flex-centred**, so hard-coded crop offsets drift when a citation runs
+  long. `design/generate_crops.py` measures with `getBoundingClientRect` instead — follow that
+  pattern.
+- **The MCP connectors drop constantly.** Write the mutation to a runbook file before running
+  it, so a disconnect mid-sequence doesn't lose the work.
+
+## Where things are
+
+```
+playbooks/first-seller-strategy.md   ← read this first. Why digital, why not t-shirts.
+playbooks/product-decision.md        what to sell next, and what to refuse
+marketing/video-playbook.md          hooks, Grok prompts, what made the last video bad
+marketing/etsy-office-awards-kit.md  the $24 listing — title, 13 tags, description
+marketing/etsy-cohort-1.md           8 physical listings
+marketing/etsy-cohort-2-christmas.md 8 Christmas listings (publish by Oct 1)
+store/paste-sheet.html               every Etsy field with copy buttons
+store/printify-setup-spec.md         exact blank, provider, sizes, prices
+store/push-certificates-to-shopify.md validated GraphQL runbook
+design/  kit/  site/                  build scripts, all documented in their docstrings
+```
+
+## The one thing that matters
+
+**Nothing has sold yet.** Every file here is preparation. The only action that changes that is
+publishing the Office Awards Kit on Etsy — which needs no Printify, no card on file, and no
+shipping setup.
+
+Before adding anything new, ask whether it gets that listing live faster. If not, it can wait.
