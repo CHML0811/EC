@@ -6,6 +6,9 @@ Channel crops — every aspect ratio the marketing plan actually needs.
 
 Output: design/crops/
 
+SCOPE: cohorts 1 and 2, matching generate_mockups.py — the designs sold as standalone
+prints. Cohort 3 (office) ships inside the kit and is not listed individually.
+
 Two different operations, because "crop it" only works some of the time:
 
   TRUE CROPS — a window onto the real artwork, measured in the browser rather than

@@ -35,32 +35,36 @@ then TikTok Shop affiliate.
 | 📊 **[Etsy metrics brief](marketing/etsy-metrics-brief.html)** | The metric that actually decides ranking, threshold bands, the 30-day no-touch rule |
 | 🔁 **[Growth loop](workflow/growth-loop.md)** | The weekly cycle. Runs automatically every Monday. |
 
-## The strategy in four lines
+## The strategy in five lines
 
-1. **Print-on-demand, not sourced goods.** Printify auto-generates the product photos, so
-   there's no camera, no samples, and $0 upfront.
-2. **Paper goods, not apparel.** Etsy takes 20–25%. Certificates keep 34–46%; t-shirts keep 14%.
-3. **Etsy, not TikTok organic.** Buyers there already search "funny gift for uncle" with a card
-   out. No audience or daily content required.
-4. **Owned IP, not resold SKUs.** The Bureau is a world competitors can't clone, and
-   personalisation makes it stickier still.
+1. **Digital first, physical second.** The $24 kit needs no Printify, no card on file and no
+   shipping setup — it can list the hour the Etsy account exists, and costs $0 per sale.
+2. **Paper and downloads, not apparel.** Etsy takes 20–25% all-in. The kit keeps 77%,
+   certificates 34–46%; t-shirts keep 14%.
+3. **Etsy, not TikTok organic.** Intent products are found by search. Impulse products need an
+   audience, daily content, or ad budget — none of which exist here.
+4. **Sell the ceremony, not the print.** The listings actually moving volume in this category
+   are bundles sold to offices, not single art prints.
+5. **Owned IP, not resold SKUs.** The Bureau is a world competitors can't clone, and the
+   writing — not the layout — is the part that takes more than an afternoon to copy.
 
-Full reasoning: **[beginner-fit-strategy.md](playbooks/beginner-fit-strategy.md)** ·
-Long term: **[long-term-brand-strategy.md](playbooks/long-term-brand-strategy.md)** ·
-The moat: **[original-design-line.md](playbooks/original-design-line.md)**
+Full reasoning: **[first-seller-strategy.md](playbooks/first-seller-strategy.md)** ·
+What's next: **[product-decision.md](playbooks/product-decision.md)** ·
+Long term: **[long-term-brand-strategy.md](playbooks/long-term-brand-strategy.md)**
 
 ## Store state
 
 | | |
 |---|---|
+| Lead product | **Office Awards Kit** — $24 digital, built and packaged, 8.2 MB |
+| Artwork | 38 certificates · 182 listing images · all generated, no camera |
 | Shopify | `fbapgj-si.myshopify.com` · **USD** · Advanced plan (**downgrade to Basic — saves $360/mo**) |
 | Shipping | ✅ US $5.95, free over $60 · Rest of World $14.95 |
-| Products | 38 certificates rendered · 8 novelty SKUs (draft) · [product-data.md](store/product-data.md) |
-| Policies | Written, ready to push · [policies-and-pages.md](store/policies-and-pages.md) |
-| Go-live | [go-live-checklist.md](store/go-live-checklist.md) |
+| Etsy | ❌ **Not created. This is the only thing blocking revenue.** |
+| Printify | ❌ Not started — and not needed until the physical line goes live |
 
-**Outstanding (needs a human):** Printify + Etsy accounts · activate payments (ID/bank) ·
-rename store to *Deadpan Goods* · timezone → GMT+8. About 45 minutes, once.
+**Outstanding (needs a human):** Etsy account → publish the kit → downgrade Shopify.
+**About 40 minutes, once.** Full steps in [HANDOFF.md](HANDOFF.md).
 
 ## Repo map
 

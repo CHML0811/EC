@@ -24,8 +24,9 @@ from generate_mockups import PIN_PHRASE  # noqa: E402
 ROOT = pathlib.Path(__file__).resolve().parent
 OUT_DIR = ROOT / "out"
 
-PRICES = [("8 × 10", "$32", "~$10", "$7.36", "$14.64", "46%"),
-          ("11 × 14", "$42", "~$14", "$9.66", "$18.34", "44%"),
+PRICES = [("Office Awards Kit — digital", "$24", "$0", "$5.52", "$18.48", "77%"),
+          ("8 × 10 print", "$32", "~$10", "$7.36", "$14.64", "46%"),
+          ("11 × 14 print", "$42", "~$14", "$9.66", "$18.34", "44%"),
           ("8 × 10 framed", "$58", "~$25", "$13.34", "$19.66", "34%")]
 
 FORMATS = [
@@ -38,24 +39,23 @@ FORMATS = [
 ]
 
 MINE = [
-    ("Certificate artwork", "16 designs, 2400×3000 at 300dpi, print-ready."),
-    ("Listing images", "96 renders — six per design, no Printify account required."),
-    ("Listing copy", "32 listings: titles, 13 tags each, descriptions, all inside Etsy's limits."),
-    ("Store policies", "Returns, shipping, privacy, terms — written, validated, queued to push."),
-    ("Shipping zones", "Live on Shopify. US $5.95, free over $60. Rest of world $14.95."),
+    ("Certificate artwork", "38 designs, 2400×3000 at 300dpi, print-ready."),
+    ("The Office Awards Kit", "The $24 digital product — maker, 5 PDFs, 38 awards. Packaged, 8.2 MB."),
+    ("Listing images", "182 renders — mockups, channel crops and kit images. No camera, no credits."),
+    ("Listing copy", "33 listings: titles, 13 tags each, descriptions, all inside Etsy's limits."),
+    ("Video playbook", "10 hooks, exact Grok prompts, and why the last attempt failed."),
+    ("Handoff", "AGENTS.md and HANDOFF.md — any assistant can pick this up cold."),
 ]
 
 YOURS = [
-    ("Printify account", "Free. Connect it to the Shopify store, add a card so orders don't stall.",
-     "~10 min"),
-    ("Build the 16 products", "Matte vertical poster, US provider, 8×10 and 11×14 only. Spec is written.",
-     "~40 min"),
-    ("Etsy seller account", "Needs your ID and bank details. Nothing else can happen before this.",
+    ("Etsy seller account", "Your ID and bank details. Nothing else can happen before this.",
      "~15 min"),
-    ("Publish cohort 1", "Eight listings. Every field is in the paste sheet with a copy button.",
-     "~30 min"),
+    ("Publish the Awards Kit", "Upload one zip. No Printify, no card, no shipping setup. $0 per sale.",
+     "~20 min"),
     ("Downgrade Shopify", "Advanced $399 → Basic $39. Saves $360 every month you don't need it.",
      "~2 min"),
+    ("Then: Printify", "Only needed for the physical line. Spec is written and waiting.",
+     "later"),
 ]
 
 
@@ -64,10 +64,15 @@ def data_uri(path: pathlib.Path) -> str:
 
 
 def card(c: dict, web: pathlib.Path) -> str:
+    # cohort 3 ships inside the kit, so it has no framed mockup and no search phrase
+    phrase = PIN_PHRASE.get(c["slug"])
+    query = (f'<p class="query"><span>searches for</span>{html.escape(phrase)}</p>'
+             if phrase else
+             '<p class="query"><span>sold inside</span>The Office Awards Kit</p>')
     return f"""
 <figure class="card">
   <div class="shot"><img src="{data_uri(web / (c['slug'] + '.png'))}"
-       alt="{html.escape(c['title'])}, framed" loading="lazy"></div>
+       alt="{html.escape(c['title'])}" loading="lazy"></div>
   <figcaption>
     <h3>{html.escape(c['title'])}</h3>
     <p class="sub">{html.escape(c['subject'])}</p>
@@ -76,7 +81,7 @@ def card(c: dict, web: pathlib.Path) -> str:
       <span class="ref">{c['ref']}</span>
       <span class="tag t-{c['pattern']}">{c['pattern']}</span>
     </div>
-    <p class="query"><span>searches for</span>{html.escape(PIN_PHRASE[c['slug']])}</p>
+    {query}
   </figcaption>
 </figure>"""
 
@@ -84,9 +89,11 @@ def card(c: dict, web: pathlib.Path) -> str:
 def build(web: pathlib.Path) -> str:
     c1 = json.loads((OUT_DIR / "manifest.json").read_text(encoding="utf-8"))
     c2 = json.loads((OUT_DIR / "manifest-christmas.json").read_text(encoding="utf-8"))
+    c3 = json.loads((OUT_DIR / "manifest-office.json").read_text(encoding="utf-8"))
 
     grid1 = "".join(card(c, web) for c in c1)
     grid2 = "".join(card(c, web) for c in c2)
+    grid3 = "".join(card(c, web) for c in c3)
 
     fmts = "".join(f"""
 <figure class="fmt">
@@ -107,7 +114,8 @@ def build(web: pathlib.Path) -> str:
         for i, (t, d, m) in enumerate(YOURS, 1))
 
     page = TEMPLATE
-    for token, value in [("GRID1", grid1), ("GRID2", grid2), ("FORMATS", fmts),
+    for token, value in [("GRID1", grid1), ("GRID2", grid2), ("GRID3", grid3),
+                         ("FORMATS", fmts),
                          ("PRICES", prices), ("DONE", mine), ("TODO", yours)]:
         page = page.replace(f"<!--{token}-->", value)
     return page
@@ -255,18 +263,32 @@ ul{list-style:none;margin:0;padding:0}
 <header class="mast">
   <div class="stamp">Rendered</div>
   <div class="org">The Bureau of Minor Achievements</div>
-  <h1>Sixteen certificates,<br>ready to list.</h1>
+  <h1>One product finished,<br>one account away.</h1>
   <p class="lede">A fictional agency issuing official recognition for things that don't
     deserve any. Every design, every listing image, and every word of copy below was
-    generated — no camera, no photo studio, no stock to buy.</p>
+    generated — no camera, no photo studio, no stock to buy, no supplier to call.</p>
   <dl class="docket">
-    <div><dt>Designs</dt><dd>16</dd></div>
-    <div><dt>Listing images</dt><dd>96</dd></div>
-    <div><dt>Cohorts</dt><dd>2</dd></div>
-    <div><dt>Channel</dt><dd class="word">Etsy, then Pinterest</dd></div>
-    <div><dt>Blocked on</dt><dd class="word">Two free accounts</dd></div>
+    <div><dt>Designs</dt><dd>38</dd></div>
+    <div><dt>Listing images</dt><dd>182</dd></div>
+    <div><dt>Products</dt><dd>2</dd></div>
+    <div><dt>Cost per sale</dt><dd class="word">$0 on the kit</dd></div>
+    <div><dt>Blocked on</dt><dd class="word">One free account</dd></div>
   </dl>
 </header>
+
+<section>
+  <div class="shead"><h2>The lead product · Office Awards Kit</h2>
+    <span class="note flag">$24 · zero cost per sale</span></div>
+  <p class="intro">A complete awards ceremony as a download: 38 certificates, an offline
+    maker that turns a list of names into a stack of finished awards, a host's script, a
+    nomination ballot, name tents and three announcement emails. It needs no Printify, no
+    card on file and no shipping setup, so it can go live the hour the Etsy account exists
+    — which is exactly why it's first.</p>
+  <p class="intro"><strong>The maker is the part competitors can't copy in an afternoon.</strong>
+    It draws each certificate live in HTML rather than shipping images, so the name is real
+    text, printing happens at printer resolution, and every field is genuinely editable. One
+    file, 28&nbsp;KB, works with the internet switched off.</p>
+</section>
 
 <section>
   <div class="shead"><h2>Cohort I · General occasions</h2>
@@ -289,6 +311,17 @@ ul{list-style:none;margin:0;padding:0}
 </section>
 
 <section>
+  <div class="shead"><h2>Cohort III · Office awards</h2>
+    <span class="note">22 designs · kit only</span></div>
+  <p class="intro">Written for a ceremony rather than for single listings. An awards night
+    needs enough categories that every person in the room gets one — a ceremony where four
+    people are recognised and eight are not is worse than no ceremony at all. These cover the
+    recognisable office archetypes instead of occasions, and they are sold inside the kit
+    rather than individually.</p>
+  <div class="grid"><!--GRID3--></div>
+</section>
+
+<section>
   <div class="shead"><h2>Six images per design</h2>
     <span class="note">shown: Retirement</span></div>
   <p class="intro">Etsy ranks on conversion, and conversion is decided in the search grid
@@ -307,7 +340,8 @@ ul{list-style:none;margin:0;padding:0}
   </table></div>
   <p class="tnote">Etsy's headline fee is 6.5%. The real number, once payment processing,
     listing fees and offsite ads are counted, is 20–25% — which is why this is paper and not
-    apparel. The same brand on t-shirts keeps 14%.</p>
+    apparel. The same brand on t-shirts keeps 14%. The kit keeps the most of all because it
+    has no cost of goods at all: <strong>fourteen sales covers a month of tooling.</strong></p>
 </section>
 
 <section>
@@ -327,7 +361,7 @@ ul{list-style:none;margin:0;padding:0}
 
 <div class="foot">
   <span>Bureau of Minor Achievements · internal registry</span>
-  <span>No revenue yet. Nothing sells until step 4.</span>
+  <span>No revenue yet. Nothing sells until step 2.</span>
 </div>
 
 </div>

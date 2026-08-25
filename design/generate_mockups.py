@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Listing imagery for all 16 Bureau certificates — generated, not photographed.
+Listing imagery for the 16 individually-listed certificates.
 
 Etsy ranks on conversion and conversion is decided by the image grid, but Printify
 mockups need a Printify account and photos need a camera. This renders the whole set
@@ -9,6 +9,12 @@ with headless Chromium instead: six images per certificate, no account, no credi
     python3 design/generate_mockups.py
 
 Output: design/mockups/<slug>-{1..6}-*.png
+
+SCOPE: cohorts 1 and 2 only — the designs sold as standalone prints. The 22 office
+certificates (cohort 3) are deliberately excluded: they ship inside the Office Awards Kit
+and have never been listed individually, so mockups for them would be ~50 MB of repo
+weight for products nobody can buy. Add `manifest-office.json` to the loop below if that
+changes.
 
   1 framed   2000x2000  framed on a wall — the buyer picturing it hung
   2 hook     2000x2000  the joke at thumbnail size — this one wins the search grid

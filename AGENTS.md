@@ -49,11 +49,12 @@ Chromium renders HTML to PNG and PDF; that's the entire toolchain.
 
 ```bash
 # artwork — 38 certificates, 2400×3000 @ 300dpi
-python3 design/generate_certificates.py    # 8 general occasions
-python3 design/certs_christmas.py          # 8 Christmas
-python3 design/certs_office.py             # 22 office awards
+python3 design/generate_certificates.py    # 8 general occasions   (cohort 1)
+python3 design/certs_christmas.py          # 8 Christmas           (cohort 2)
+python3 design/certs_office.py             # 22 office awards      (cohort 3)
 
-# imagery
+# imagery — cohorts 1+2 only, by design. Cohort 3 ships inside the kit and has never
+# been listed individually, so mockups for it would be ~50 MB of unusable repo weight.
 python3 design/generate_mockups.py         # 96 Etsy/Pinterest listing images
 python3 design/generate_crops.py           # 82 channel crops (story, feed, OG, banners)
 
