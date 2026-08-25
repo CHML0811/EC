@@ -1,14 +1,18 @@
-# Deadpan Goods — AI-Run Print-on-Demand Gift Brand
+# The Bureau of Minor Achievements
 
-Personalised joke certificates from **The Bureau of Minor Achievements** — a fictional agency
-issuing official certifications for things that don't deserve them. Deadpan voice, real
-quality, sold where gift buyers are already searching.
+A fictional government agency issuing official recognition for things that don't deserve
+any. Personalized certificates and a complete office awards ceremony, sold where gift
+buyers are already searching. Deadpan voice, real production quality.
 
 > *"Recognition, finally, for meeting expectations approximately."*
 
-**Stack:** Claude (research, design, listings, analysis) → **Printify** (US printing, free
-auto-generated mockups) → **Etsy** (primary channel) + **Shopify** (brand home) → Pinterest,
-then TikTok Shop affiliate.
+**Two products.** The **Office Awards Kit** ($24 digital, $0 per sale, built and packaged)
+and **38 certificates** as physical prints ($32–58 via Printify, built and waiting).
+
+**Stack:** Claude for research, design, copy and code → **Etsy** as the sales channel →
+**Shopify** as the brand home → Printify only when the physical line goes live.
+
+**Built with:** Python 3 and headless Chromium. No dependencies, nothing to install.
 
 ---
 
@@ -19,15 +23,15 @@ then TikTok Shop affiliate.
 | 🚀 **[HANDOFF.md](HANDOFF.md)** | **Read this first.** The 45-minute path to a live listing, plus ready-to-paste Cursor prompts. |
 | 🤖 **[AGENTS.md](AGENTS.md)** | Project rules for any AI picking this up — voice, non-negotiables, and the bugs already fixed. |
 | 🎬 **[Video playbook](marketing/video-playbook.md)** | Why the last video was trash, the 10 hooks to test, exact Grok prompts. |
-| 🎯 **[30-day plan](workflow/30-day-plan.md)** | Aug 9 → Sep 8. Weekly gates, honest revenue target, ~$34 budget. **Read this first.** |
+| 🎯 **[30-day plan](workflow/30-day-plan.md)** | Weekly gates, honest revenue target, ~$34 budget |
 | 📦 **[Etsy cohort 1](marketing/etsy-cohort-1.md)** | 8 listings — titles, 13 tags each, descriptions, pricing ladder |
 | 🎄 **[Etsy cohort 2 — Christmas](marketing/etsy-cohort-2-christmas.md)** | 8 Secret Santa / gift-exchange listings. **Publish by Oct 1** to rank for December. |
 | ⚡ **[Paste sheet](store/paste-sheet.html)** | Every field in the order Etsy asks, with copy buttons. **Open this while you set up.** |
-| 🔧 **[Push certs to Shopify](store/push-certificates-to-shopify.md)** | Validated runbook to upload the artwork and create the 8 products. Pending — connector unstable. |
-| 🖨️ **[Printify setup spec](store/printify-setup-spec.md)** | Exactly which blank, provider, sizes and prices. **Do this next.** |
-| 🎨 **[Certificate generator](design/generate_certificates.py)** | `python3 design/generate_certificates.py` → 8 print-ready 300dpi designs in `design/out/` |
-| 🖼️ **[Listing images](design/listing-images.md)** | 96 generated mockups in `design/mockups/` — framed, hook, detail, sizes, info, pin. **Upload 1–5 in order.** |
-| 🎁 **[Office Awards Kit](marketing/etsy-office-awards-kit.md)** | The digital product — 38 awards, a working maker, a host's script. `python3 kit/build_kit.py`. **List this first.** |
+| 🔧 **[Push certs to Shopify](store/push-certificates-to-shopify.md)** | Validated runbook. The staged uploads expired — restart at step 1. Low priority; Etsy is the channel. |
+| 🖨️ **[Printify setup spec](store/printify-setup-spec.md)** | Exactly which blank, provider, sizes and prices. Only needed for the physical line. |
+| 🎨 **[Certificate generators](design/generate_certificates.py)** | `generate_certificates` + `certs_christmas` + `certs_office` → 38 print-ready 300dpi designs |
+| 🖼️ **[Listing images](design/listing-images.md)** | 96 mockups + 82 channel crops. Six per design, generated — no camera. **Upload 1–5 in order.** |
+| 🎁 **[Office Awards Kit](marketing/etsy-office-awards-kit.md)** | **The lead product.** 38 awards, a working maker, a host's script. `python3 kit/build_kit.py` |
 | 🧭 **[First-seller strategy](playbooks/first-seller-strategy.md)** | Impulse vs intent, necessity vs AOV, why the winners here sell digital kits. **Read before building anything new.** |
 | 🧭 **[What to sell next](playbooks/product-decision.md)** | Market data, three candidates, the sequence. Bulk orders first — 20× the order value at $0 cost. |
 | 🏛️ **[Storefront](site/index.html)** | `python3 site/build_storefront.py <previews> --local site/index.html` — catalog built from the manifests |
@@ -70,8 +74,9 @@ Long term: **[long-term-brand-strategy.md](playbooks/long-term-brand-strategy.md
 
 ```
 workflow/     30-day-plan · growth-loop · operating-flow · automation-blueprint
-playbooks/    beginner-fit-strategy · long-term-brand-strategy · original-design-line
-marketing/    etsy-cohort-1 · etsy-cohort-2 · etsy-metrics-brief · pinterest-pins
+playbooks/    first-seller-strategy · product-decision · long-term-brand-strategy
+marketing/    office-awards-kit · etsy-cohort-1 · etsy-cohort-2 · video-playbook
+              etsy-metrics-brief · pinterest-pins
 design/       generate_certificates.py + certs_christmas + certs_office → out/*.png
               generate_mockups.py → mockups/*.png · generate_crops.py → crops/*.png
 kit/          build_kit.py → Office-Awards-Kit.zip (maker + 5 PDFs + 38 certificates)
