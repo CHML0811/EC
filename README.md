@@ -27,7 +27,7 @@ and **38 certificates** as physical prints ($32–58 via Printify, built and wai
 | 📦 **[Etsy cohort 1](marketing/etsy-cohort-1.md)** | 8 listings — titles, 13 tags each, descriptions, pricing ladder |
 | 🎄 **[Etsy cohort 2 — Christmas](marketing/etsy-cohort-2-christmas.md)** | 8 Secret Santa / gift-exchange listings. **Publish by Oct 1** to rank for December. |
 | ⚡ **[Paste sheet](store/paste-sheet.html)** | Every field in the order Etsy asks, with copy buttons. **Open this while you set up.** |
-| 🔧 **[Push certs to Shopify](store/push-certificates-to-shopify.md)** | Validated runbook. The staged uploads expired — restart at step 1. Low priority; Etsy is the channel. |
+| 🔧 **[Shopify uploader](store/upload_to_shopify.py)** | `python3 store/upload_to_shopify.py --all --execute` — 16 products, images, prices, policies, pages. One command, no connector. |
 | 🖨️ **[Printify setup spec](store/printify-setup-spec.md)** | Exactly which blank, provider, sizes and prices. Only needed for the physical line. |
 | 🎨 **[Certificate generators](design/generate_certificates.py)** | `generate_certificates` + `certs_christmas` + `certs_office` → 38 print-ready 300dpi designs |
 | 🖼️ **[Listing images](design/listing-images.md)** | 96 mockups + 82 channel crops. Six per design, generated — no camera. **Upload 1–5 in order.** |
@@ -80,7 +80,7 @@ marketing/    office-awards-kit · etsy-cohort-1 · etsy-cohort-2 · video-playb
 design/       generate_certificates.py + certs_christmas + certs_office → out/*.png
               generate_mockups.py → mockups/*.png · generate_crops.py → crops/*.png
 kit/          build_kit.py → Office-Awards-Kit.zip (maker + 5 PDFs + 38 certificates)
-store/        product-data · policies-and-pages · shopify/us-market setup · storefront
+store/        upload_to_shopify.py · product-data · policies-and-pages · paste-sheet
 ```
 
 <details>

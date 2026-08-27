@@ -64,6 +64,11 @@ python3 kit/build_listing_images.py        # → kit/listing/*.png
 
 # storefront
 python3 site/build_storefront.py <previews> --local site/index.html
+
+# push the shop to Shopify — needs an Admin API token, no connector involved
+export SHOPIFY_STORE=... SHOPIFY_TOKEN=shpat_...
+python3 store/upload_to_shopify.py --all              # dry run — the default
+python3 store/upload_to_shopify.py --all --execute
 ```
 
 Chromium lives at `/opt/pw-browsers/…`; `design/generate_certificates.py:find_chrome()`
@@ -86,8 +91,11 @@ Each of these was a real bug, found and fixed. Don't reintroduce them.
 - **Certificate text is flex-centred**, so hard-coded crop offsets drift when a citation runs
   long. `design/generate_crops.py` measures with `getBoundingClientRect` instead — follow that
   pattern.
-- **The MCP connectors drop constantly.** Write the mutation to a runbook file before running
-  it, so a disconnect mid-sequence doesn't lose the work.
+- **The MCP connectors drop constantly.** Fifteen-plus times in one session. Anything that
+  has to talk to Shopify should go through `store/upload_to_shopify.py`, which uses the
+  Admin API directly and doesn't depend on a connector being up.
+- **Shopify staged upload URLs expire after 24 hours.** Don't stage files you aren't about
+  to register.
 
 ## Where things are
 

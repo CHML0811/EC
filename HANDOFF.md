@@ -28,6 +28,31 @@ description, settings.
 Advanced $399 → Basic $39. **Saves $360 every month.** Nothing in this project uses an
 Advanced feature.
 
+### 4 · Fill the Shopify store — ~10 min, optional
+Etsy is the sales channel; Shopify is the brand home and the bulk-order desk. When you want
+it looking real, one command does the whole thing — 16 products with images, prices,
+variants, all four policies and both pages:
+
+```bash
+# Shopify admin → Settings → Apps and sales channels → Develop apps → Create an app
+#   → Admin API scopes: write_products, write_files, write_legal_policies,
+#     write_online_store_pages → Install → reveal the token
+export SHOPIFY_STORE=fbapgj-si.myshopify.com
+export SHOPIFY_TOKEN=shpat_...
+export SHOPIFY_SUPPORT_EMAIL=your-real@email.com   # policies name an address
+
+python3 store/upload_to_shopify.py --all                       # dry run first
+python3 store/upload_to_shopify.py --products --limit 1 --execute   # one product, check it
+python3 store/upload_to_shopify.py --all --execute             # the rest
+```
+
+Products are created as **DRAFT** and matched on handle, so re-running is safe. The script
+refuses to publish policies while they still name the placeholder support address — set
+`SHOPIFY_SUPPORT_EMAIL` or pass `--allow-placeholder-email` if you genuinely don't care yet.
+
+**It has never been run against a live store**, because no API token existed while it was
+written. Hence the `--limit 1` step: create one product, look at it in admin, then continue.
+
 ---
 
 ## Then hand these to Cursor
@@ -141,10 +166,9 @@ Judge on **3-second retention**, not likes. Under 50% kill it, over 70% make fiv
 ## What's genuinely unfinished
 
 - **Etsy account and the listing.** The only thing standing between this and revenue.
-- **Shopify product images.** Cohort 1's eight PNGs are in Shopify's staging bucket but were
-  never registered — and **those staged URLs expired on 2026-08-16**, so
-  `store/push-certificates-to-shopify.md` has to restart at step 1. Low priority; Etsy is the
-  sales channel, Shopify is just the brand home.
+- **Shopify store contents.** `store/upload_to_shopify.py` does this in one command but has
+  never been run against a live store — start it with `--limit 1 --execute`. Low priority;
+  Etsy is the sales channel, Shopify is just the brand home.
 - **Printify.** Not started. Not needed until the physical line goes live.
 - **Bulk shipping math.** The departmental tiers on the storefront assume one parcel.
   Printify bills per item. **Verify in their calculator before promoting those tiers.**

@@ -1,11 +1,31 @@
 # Push the 16 certificates into Shopify — runbook
 
-## ⏱️ Step 1 and 2 are DONE for cohort 1 — finish before the URLs expire
+> ## ⚠️ Superseded — use the script instead
+>
+> **[`store/upload_to_shopify.py`](upload_to_shopify.py)** does everything below in one
+> command, plus policies, pages, variants and prices. It needs no MCP connector and no
+> dependencies:
+>
+> ```bash
+> export SHOPIFY_STORE=fbapgj-si.myshopify.com
+> export SHOPIFY_TOKEN=shpat_...
+> python3 store/upload_to_shopify.py --all            # dry run
+> python3 store/upload_to_shopify.py --all --execute
+> ```
+>
+> This document is kept as the reference for what each mutation does, and for anyone
+> pasting into **Admin → Apps → Shopify GraphiQL** by hand.
+>
+> Note the script uploads the **framed mockups** as the featured image, not the flat
+> artwork — a product photo converts, a bare PNG doesn't.
 
-Eight files are uploaded and sitting in Shopify's staging bucket. **The staged URLs expire
-2026-08-16 15:36 UTC.** After that they're dead and steps 1–2 must be redone from scratch.
+## ~~Step 1 and 2 are DONE for cohort 1~~ — expired
 
-Resume at **step 3** (`fileCreate`) with these `originalSource` values:
+The eight staged URLs below expired on **2026-08-16 15:36 UTC**. They are dead. Any run
+starts from step 1.
+
+These were the staged URLs. They are listed only so it's clear they were used and are
+now dead — **do not try to resume from them**:
 
 ```
 https://shopify-staged-uploads.storage.googleapis.com/tmp/78201487407/files/52608d0b-a039-4a0c-9528-3f409f3b412b/bma-retirement.png
@@ -18,7 +38,7 @@ https://shopify-staged-uploads.storage.googleapis.com/tmp/78201487407/files/fe79
 https://shopify-staged-uploads.storage.googleapis.com/tmp/78201487407/files/3b465a13-600f-4090-bdb1-5f1b3f4cc126/bma-left-on-read.png
 ```
 
-Cohort 2 (the eight `bma-x-*` files) has **not** been uploaded yet — start it at step 1.
+Cohort 2 (the eight `bma-x-*` files) was never uploaded.
 
 > These are the certificate artwork files. Better listing imagery already exists in
 > `design/mockups/` — use `<slug>-1-framed.png` as each product's featured image and keep
@@ -27,16 +47,9 @@ Cohort 2 (the eight `bma-x-*` files) has **not** been uploaded yet — start it 
 ---
 
 
-Both mutations below are **schema-validated** against the Admin API. The Shopify MCP
-connector has been dropping every few minutes, so this is written to be run in one pass the
-moment it's stable — by me, by the Monday routine, or by you in **Admin → Apps → Shopify
-GraphiQL**.
-
-**Why this matters:** Shopify products currently have no images. Products without images look
-broken and can't be advertised. This fixes that without needing Printify.
-
-> Note: these are the **certificate artwork** files, not Printify mockups. Good enough to make
-> the store look real; replace with Printify mockups once those exist.
+Every mutation below is **schema-validated** against the Admin API, and the staged-upload
+path was executed successfully for real. `upload_to_shopify.py` automates all of it; this
+remains the reference for what each step does.
 
 ---
 
@@ -144,13 +157,13 @@ Titles, descriptions and tags: `marketing/etsy-cohort-1.md`. Common settings:
 
 | Field | Value |
 |---|---|
-| Vendor | `Deadpan Goods` |
+| Vendor | `The Bureau of Minor Achievements` |
 | Product type | `Wall Art` |
 | Status | `DRAFT` |
 | Options | `Size` → `8x10 Print`, `11x14 Print`, `8x10 Framed` |
 | Prices | `32.00` / `42.00` / `58.00` |
 | Inventory | tracking **off** |
-| Tags | `bureau`, `certificate`, `personalised`, + `season:christmas` on `bma-x-*` |
+| Tags | from `marketing/etsy-cohort-*.md`, + `season:christmas` on `bma-x-*` |
 
 ## Verify
 
