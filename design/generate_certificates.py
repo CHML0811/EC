@@ -13,6 +13,7 @@ Output: design/out/*.png  (upload straight to Printify as poster artwork)
 import base64
 import html
 import json
+import os
 import pathlib
 import shutil
 import subprocess
@@ -24,10 +25,30 @@ TMP = ROOT / ".build"
 
 W, H = 2400, 3000  # 8x10in @ 300dpi
 
+# Every build script renders through Chrome, so this has to work on whatever machine the
+# project is cloned onto. macOS and Windows both install Chrome somewhere that is NOT on
+# PATH, which is the first thing that breaks for anyone picking this up.
 CHROME_CANDIDATES = [
+    # this container
     "/opt/pw-browsers/chromium_headless_shell-1194/chrome-linux/headless_shell",
     "/opt/pw-browsers/chromium-1194/chrome-linux/chrome",
+    # macOS
+    "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+    "/Applications/Chromium.app/Contents/MacOS/Chromium",
+    "/Applications/Microsoft Edge.app/Contents/MacOS/Microsoft Edge",
+    "/Applications/Brave Browser.app/Contents/MacOS/Brave Browser",
+    # Windows
+    r"C:\Program Files\Google\Chrome\Application\chrome.exe",
+    r"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe",
+    r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe",
+    # Linux
+    "/usr/bin/google-chrome", "/usr/bin/google-chrome-stable",
+    "/usr/bin/chromium", "/usr/bin/chromium-browser",
+    "/snap/bin/chromium",
 ]
+
+PATH_NAMES = ["google-chrome", "google-chrome-stable", "chromium", "chromium-browser",
+              "chrome", "msedge"]
 
 # --- palette -----------------------------------------------------------------
 PAPER = "#F2EFE4"
@@ -267,13 +288,29 @@ def build_html(c: dict) -> str:
 
 
 def find_chrome() -> str:
+    """Locate a Chrome/Chromium binary. Override with CHROME=/path/to/chrome."""
+    override = os.environ.get("CHROME")
+    if override:
+        if pathlib.Path(override).exists():
+            return override
+        sys.exit(f"CHROME is set to {override!r} but nothing is there.")
+
     for p in CHROME_CANDIDATES:
         if pathlib.Path(p).exists():
             return p
-    found = shutil.which("chromium") or shutil.which("google-chrome")
-    if found:
-        return found
-    sys.exit("No Chromium found. Set CHROME_CANDIDATES.")
+    for name in PATH_NAMES:
+        found = shutil.which(name)
+        if found:
+            return found
+
+    sys.exit(
+        "No Chrome or Chromium found.\n\n"
+        "Everything in this project renders through headless Chrome. Install Google Chrome\n"
+        "(google.com/chrome) — if it's already installed somewhere unusual, point at it:\n\n"
+        "  macOS    export CHROME='/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'\n"
+        "  Linux    export CHROME=/usr/bin/google-chrome\n"
+        "  Windows  set CHROME=C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe\n"
+    )
 
 
 def main() -> None:

@@ -1,0 +1,49 @@
+---
+description: Bureau of Minor Achievements — project rules, always applied
+alwaysApply: true
+---
+
+# Read AGENTS.md first
+
+`AGENTS.md` at the repo root is the single source of truth: what this business sells, the
+voice, every build command, and the bugs already found and fixed. Read it before changing
+anything. This file only restates the rules that must never be broken.
+
+## Never
+
+- **Invent a number.** No fake review counts, sales figures, or "as seen in".
+- **Use British spelling in buyer-facing copy.** Etsy tag matching is literal —
+  `personalised` and `personalized` are different tags, and US buyers type the z.
+- **Exceed 20 characters on an Etsy tag**, or ship fewer than 13. Over 20 is silently rejected.
+- **Put AI-generated humans in marketing**, or use text-to-video for anything showing a
+  certificate. Video models mangle typography and this product *is* typography.
+- **Add new SKUs before 10 sales.** Reasoning is in `playbooks/product-decision.md`.
+- **Use a brand, character, logo or licensed anything** in a design.
+
+## The voice
+
+Deadpan bureaucracy. The joke works *because the document refuses to admit there is one*.
+
+- ✅ "for opinions delivered at volume, jokes repeated annually, and an unbroken record of
+  standing near the grill without cooking."
+- ❌ "LOL! The world's funniest uncle award! 😂"
+
+Never explain the joke. No exclamation marks in product copy. Specific beats clever —
+"9:14 every morning" is funny, "always late" is not.
+
+## Build
+
+Python 3 + headless Chrome. No dependencies, nothing to install. If Chrome isn't found,
+`export CHROME=/path/to/chrome`.
+
+```bash
+python3 design/generate_certificates.py && python3 design/certs_christmas.py \
+  && python3 design/certs_office.py     # 38 certificates
+python3 kit/build_kit.py                # → kit/Office-Awards-Kit.zip, the product
+```
+
+## The one thing that matters
+
+Nothing has sold yet. Every file here is preparation. The only action that changes that is
+publishing the Office Awards Kit on Etsy. Before building anything new, ask whether it gets
+that listing live faster — if not, it waits.

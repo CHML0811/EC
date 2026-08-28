@@ -96,4 +96,7 @@ store/        upload_to_shopify.py · product-data · policies-and-pages · past
   the decoded viral mechanics. Revisit when there's revenue for samples.
 - [`marketing/halloween-launch-plan.md`](marketing/halloween-launch-plan.md) — parked; needs
   sourced stock and US filming.
+- [`prompts/design-and-marketing-prompts.md`](prompts/design-and-marketing-prompts.md) —
+  football-direction prompt library. **Do not follow it**; current prompts are in
+  `marketing/video-playbook.md`. Kept for its IP-clearance reasoning.
 </details>

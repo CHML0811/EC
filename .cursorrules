@@ -1,0 +1,20 @@
+Read AGENTS.md at the repo root before changing anything. It is the source of truth for
+this project: what it sells, the voice, every build command, and the bugs already fixed.
+
+Hard rules:
+- Never invent a number — no fake review counts, sales figures or "as seen in".
+- US English in all buyer-facing copy. Etsy tag matching is literal: "personalised" and
+  "personalized" are different tags, and US buyers type the z.
+- Etsy tags: exactly 13, each 20 characters or fewer. Over 20 is silently rejected.
+- No AI-generated humans in marketing, and never text-to-video for anything showing a
+  certificate — video models mangle typography and this product is typography.
+- No new SKUs before 10 sales (see playbooks/product-decision.md).
+- No brands, characters, logos or licensed material in any design.
+
+Voice: deadpan bureaucracy. The joke works because the document refuses to admit there is
+one. Never explain it. No exclamation marks in product copy. Specific beats clever.
+
+Build: Python 3 + headless Chrome, no dependencies. If Chrome isn't found, set CHROME.
+
+Nothing has sold yet. Before building anything new, ask whether it gets the Office Awards
+Kit listed on Etsy faster. If not, it waits.

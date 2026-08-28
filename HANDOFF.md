@@ -7,6 +7,22 @@ paste. `AGENTS.md` carries the project rules; Cursor loads it automatically.
 
 ---
 
+## 0 · First, rebuild the product on your machine — ~90 seconds
+
+A fresh clone has the source but not the build artifacts (they're gitignored). One command:
+
+```bash
+python3 kit/build_kit.py     # → kit/Office-Awards-Kit.zip, the file you upload to Etsy
+```
+
+Needs Python 3 and Chrome, nothing else. If it says "No Chrome or Chromium found", install
+Chrome or point at it — `export CHROME='/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'`
+on macOS.
+
+Verified working from a clean clone: 38 certificates, 5 PDFs, the maker, 8.2 MB.
+
+---
+
 ## Do these three yourself. No AI required.
 
 ### 1 · Etsy seller account — ~15 min

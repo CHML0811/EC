@@ -44,8 +44,18 @@ Never explain the joke. Never use exclamation marks in product copy. Specific be
 
 ## How everything builds
 
-Pure Python 3 + headless Chromium. **No dependencies, no package manager, nothing to install.**
-Chromium renders HTML to PNG and PDF; that's the entire toolchain.
+Pure Python 3 + headless Chrome. **No dependencies, no package manager, nothing to install.**
+Chrome renders HTML to PNG and PDF; that's the entire toolchain.
+
+**First run on a new machine:** a fresh clone has the source but not the build artifacts —
+`kit/Office-Awards-Kit.zip` and `design/out/` are gitignored. One command rebuilds them:
+
+```bash
+python3 kit/build_kit.py     # 38 certificates + the zip, ~90 seconds
+```
+
+If that fails with "No Chrome or Chromium found", install Chrome or point at it:
+`export CHROME='/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'`
 
 ```bash
 # artwork — 38 certificates, 2400×3000 @ 300dpi
@@ -71,8 +81,9 @@ python3 store/upload_to_shopify.py --all              # dry run — the default
 python3 store/upload_to_shopify.py --all --execute
 ```
 
-Chromium lives at `/opt/pw-browsers/…`; `design/generate_certificates.py:find_chrome()`
-resolves it and falls back to `chromium` / `google-chrome` on PATH.
+`design/generate_certificates.py:find_chrome()` checks this container's path, then the
+standard macOS / Windows / Linux install locations, then PATH. `CHROME=/path/to/chrome`
+overrides everything.
 
 ## Things that will bite you
 
@@ -108,7 +119,9 @@ marketing/etsy-cohort-1.md           8 physical listings
 marketing/etsy-cohort-2-christmas.md 8 Christmas listings (publish by Oct 1)
 store/paste-sheet.html               every Etsy field with copy buttons
 store/printify-setup-spec.md         exact blank, provider, sizes, prices
-store/push-certificates-to-shopify.md validated GraphQL runbook
+store/upload_to_shopify.py           one command: products, images, policies, pages
+store/push-certificates-to-shopify.md the same thing by hand — superseded, kept as reference
+prompts/                             ⚠️ ARCHIVED football-direction prompts. Do not follow.
 design/  kit/  site/                  build scripts, all documented in their docstrings
 ```
 

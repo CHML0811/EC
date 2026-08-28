@@ -1,3 +1,17 @@
+> # ⚠️ ARCHIVED — do not follow these prompts
+>
+> This library targets the **football-culture POD** direction, which was abandoned when the
+> World Cup window closed. Following it will produce football artwork for a business that
+> sells joke certificates.
+>
+> **Current prompts live in [`marketing/video-playbook.md`](../marketing/video-playbook.md)**
+> (video, hooks, Grok) and [`HANDOFF.md`](../HANDOFF.md) (Cursor).
+>
+> Kept only for the IP-clearance reasoning in it, which still applies to every new design:
+> no marks, no crests, no names, no faces.
+
+---
+
 # Prompt Library — Design, Video, Website, Retargeting
 
 Copy-paste prompts for the football-culture POD launch. Replace `[BRACKETS]`.
