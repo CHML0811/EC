@@ -21,6 +21,7 @@ and **38 certificates** as physical prints ($32–58 via Printify, built and wai
 | | |
 |---|---|
 | 🚀 **[Etsy launch console](store/etsy-launch-console.html)** | Nine steps, every field with a copy button. **Open this next to the Etsy tab.** |
+| 💰 **[Etsy or our own site?](playbooks/where-to-sell.md)** | Real fee numbers, and why Etsy's cut is customer acquisition rather than a platform fee. |
 | ✅ **[verify.py](verify.py)** | `python3 verify.py` — 13 checks. **Run this first after any break.** |
 | 🚀 **[HANDOFF.md](HANDOFF.md)** | **Read this first.** The 45-minute path to a live listing, plus ready-to-paste Cursor prompts. |
 | 🤖 **[AGENTS.md](AGENTS.md)** | Project rules for any AI picking this up — voice, non-negotiables, and the bugs already fixed. |
@@ -45,8 +46,8 @@ and **38 certificates** as physical prints ($32–58 via Printify, built and wai
 
 1. **Digital first, physical second.** The $24 kit needs no Printify, no card on file and no
    shipping setup — it can list the hour the Etsy account exists, and costs $0 per sale.
-2. **Paper and downloads, not apparel.** Etsy takes 20–25% all-in. The kit keeps 77%,
-   certificates 34–46%; t-shirts keep 14%.
+2. **Paper and downloads, not apparel.** Etsy takes ~11% on an organic sale. The kit keeps
+   **89%** — no cost of goods at all; prints keep ~46–58%; apparel is far worse.
 3. **Etsy, not TikTok organic.** Intent products are found by search. Impulse products need an
    audience, daily content, or ad budget — none of which exist here.
 4. **Sell the ceremony, not the print.** The listings actually moving volume in this category

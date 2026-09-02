@@ -72,8 +72,8 @@ product is bad; it's that **there is no path from product to human.**
 
 An intent product needs none of them. Ranking does the marketing, once, for free, forever.
 
-T-shirts fail a second test anyway: after Etsy's ~23% all-in, apparel keeps about **14%**,
-versus 40–55% for paper. Add size exchanges and returns and it's worse. Two independent
+T-shirts fail a second test anyway: after Etsy's cut *and* a $10–14 blank, apparel keeps a
+fraction of what paper does — and paper never generates a size exchange. Add size exchanges and returns and it's worse. Two independent
 reasons to skip, not one.
 
 **Keep the taste. Change the mechanism.** Deadpan humor sold to someone actively searching

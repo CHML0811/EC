@@ -114,8 +114,12 @@ almost never the reason a new digital listing doesn't sell; being unfindable is.
 | Needs a card on file | No | Yes |
 | Shipping setup | None | Zones, rates, profiles |
 | Cost per sale | $0 | ~$10 |
-| Margin | ~76% after Etsy | ~46% |
+| Margin | ~89% after Etsy | ~58% |
 | Can go live | The day the account exists | After Printify is built |
 
-At $24 with Etsy taking roughly 23%, you keep about **$18.50 per sale, with no cost of
-goods at all.** Fourteen sales covers the entire month's tooling.
+At $24, Etsy takes **$2.73** on an organic sale — 6.5% transaction, 3% + $0.25 processing,
+$0.20 listing. **You keep $21.27, with no cost of goods at all.**
+
+If a sale comes through an Etsy ad click, Offsite Ads adds 15% ($3.60) and you keep $17.67.
+That fee is optional and can be switched off until the shop passes $10k in 12 months.
+See [`playbooks/where-to-sell.md`](../playbooks/where-to-sell.md).

@@ -1,5 +1,13 @@
 # Etsy Cohort 1 — The Bureau of Minor Achievements
 
+> **⚠️ Fee correction.** The tables below use Etsy at ~23%. The real cut on an
+> **organic** sale is **~11%** (6.5% + 3% + $0.25 + $0.20 listing). The extra 15% is
+> Offsite Ads, which applies only to ad-driven sales and is optional under $10k/yr.
+> **Every margin below is therefore conservative — the real ones are better.**
+> Full breakdown: [`playbooks/where-to-sell.md`](../playbooks/where-to-sell.md).
+
+
+
 8 listings, published together as one cohort so they can be read against each other.
 Artwork: `design/out/bma-*.png` (2400×3000, 300dpi, print-ready).
 

@@ -25,8 +25,8 @@ from generate_mockups import PIN_PHRASE  # noqa: E402
 
 SHOP = "https://fbapgj-si.myshopify.com"
 
-# Bulk tiers. Sold direct through Shopify, so Etsy's ~23% never applies — which is why
-# $23/unit here still beats $32/unit through Etsy on money actually kept.
+# Bulk tiers. Sold direct through Shopify, so Etsy's cut never applies at all — only
+# payment processing. See playbooks/where-to-sell.md for the fee breakdown.
 BULK = [("5", "$135", "$27", "16%"), ("10", "$250", "$25", "22%"), ("25", "$575", "$23", "28%")]
 
 STEPS = [

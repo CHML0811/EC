@@ -44,17 +44,18 @@ onboarding, farewells, work anniversaries — not just in December. And it's the
 candidate that fixes LTV, because a company that does this once does it every year.
 
 The margin is *better* than retail, which is counterintuitive but simple: bulk orders go
-through Shopify direct, so Etsy's ~23% never applies. Only payment processing does.
+through Shopify direct, so Etsy's cut never applies at all. Only payment processing does.
 
 | | Retail via Etsy | Bulk via Shopify |
 |---|---:|---:|
 | Unit price | $32.00 | $23.00 |
 | Print cost | −$10.00 | −$10.00 |
-| Platform | −$7.36 (Etsy ~23%) | −$0.97 (payments only) |
-| **Kept per unit** | **$14.64** | **$12.03** |
-| **Kept per order** | **$14.64** | **$300.75** (×25) |
+| Platform | −$3.49 (Etsy ~11%) | −$0.97 (payments only) |
+| **Kept per unit** | **$18.51** | **$12.03** |
+| **Kept per order** | **$18.51** | **$300.75** (×25) |
 
-Slightly less per unit. **Twenty times more per order.**
+Less per unit — a wider gap than it first looked, now the fee is right. **Still sixteen
+times more per order**, which is the point. Fee maths: [`where-to-sell.md`](where-to-sell.md).
 
 > ⚠️ **One number to verify before publishing the tiers.** Printify charges shipping per
 > item with a reduced rate for each additional item — it is *not* one flat parcel fee for

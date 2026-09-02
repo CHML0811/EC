@@ -1,5 +1,13 @@
 # Strategy Correction — the beginner-fit version
 
+> **⚠️ Fee correction.** The tables below use Etsy at ~23%. The real cut on an
+> **organic** sale is **~11%** (6.5% + 3% + $0.25 + $0.20 listing). The extra 15% is
+> Offsite Ads, which applies only to ad-driven sales and is optional under $10k/yr.
+> **Every margin below is therefore conservative — the real ones are better.**
+> Full breakdown: [`playbooks/where-to-sell.md`](where-to-sell.md).
+
+
+
 Written for: **no ecommerce experience · based in Hong Kong · selling to the US · no product
 in hand · doesn't want to make daily content.** The earlier plan quietly assumed the opposite
 on all four. This fixes it.

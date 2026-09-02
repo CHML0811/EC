@@ -1,5 +1,13 @@
 # Printify Setup Spec — exactly what to click
 
+> **⚠️ Fee correction.** The tables below use Etsy at ~23%. The real cut on an
+> **organic** sale is **~11%** (6.5% + 3% + $0.25 + $0.20 listing). The extra 15% is
+> Offsite Ads, which applies only to ad-driven sales and is optional under $10k/yr.
+> **Every margin below is therefore conservative — the real ones are better.**
+> Full breakdown: [`playbooks/where-to-sell.md`](../playbooks/where-to-sell.md).
+
+
+
 For all 16 Bureau certificates. Getting the blank and provider right is a **margin decision**,
 not a preference — the wrong pick quietly costs $4–8 per sale.
 

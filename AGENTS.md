@@ -28,7 +28,8 @@ These were each decided against a real alternative. Don't quietly reverse them.
 | **Etsy tags ≤ 20 characters, exactly 13** | Over 20 and Etsy silently rejects the tag. |
 | **No AI-generated humans in marketing** | Uncanny valley kills trust. See `marketing/video-playbook.md`. |
 | **Image-to-video only, never text-to-video** | Video models mangle typography and this product *is* typography. |
-| **Paper and digital, not apparel** | Apparel keeps ~14% after Etsy fees; paper keeps 40–55%. |
+| **Paper and digital, not apparel** | Apparel margin is far worse after print costs; paper and digital keep most of the price. |
+| **Etsy takes ~11%, not 23%** | 6.5% + 3% + $0.25 + $0.20. The extra 15% is Offsite Ads and applies **only** to ad-driven sales — optional under $10k/yr. Don't quote 23% as the norm. |
 | **Don't add SKUs before 10 sales** | Reasoning in `playbooks/product-decision.md`. |
 | **Check IP before any new design** | No brands, characters, logos, or licensed anything. |
 

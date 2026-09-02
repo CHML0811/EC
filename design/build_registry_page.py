@@ -24,10 +24,10 @@ from generate_mockups import PIN_PHRASE  # noqa: E402
 ROOT = pathlib.Path(__file__).resolve().parent
 OUT_DIR = ROOT / "out"
 
-PRICES = [("Office Awards Kit — digital", "$24", "$0", "$5.52", "$18.48", "77%"),
-          ("8 × 10 print", "$32", "~$10", "$7.36", "$14.64", "46%"),
-          ("11 × 14 print", "$42", "~$14", "$9.66", "$18.34", "44%"),
-          ("8 × 10 framed", "$58", "~$25", "$13.34", "$19.66", "34%")]
+PRICES = [("Office Awards Kit — digital", "$24", "$0", "$2.73", "$21.27", "89%"),
+          ("8 × 10 print", "$32", "~$10", "$3.49", "$18.51", "58%"),
+          ("11 × 14 print", "$42", "~$14", "$4.44", "$23.56", "56%"),
+          ("8 × 10 framed", "$58", "~$25", "$5.96", "$27.04", "47%")]
 
 FORMATS = [
     ("1-framed", "Framed", "2000²", "The grid thumbnail. A buyer picturing it on a wall."),
@@ -332,7 +332,7 @@ ul{list-style:none;margin:0;padding:0}
 </section>
 
 <section>
-  <div class="shead"><h2>Unit economics</h2><span class="note">after Etsy's ~23% all-in</span></div>
+  <div class="shead"><h2>Unit economics</h2><span class="note">after Etsy's ~11% on an organic sale</span></div>
   <div class="tablewrap"><table>
     <thead><tr><th>Size</th><th class="n">Retail</th><th class="n">Print</th>
       <th class="n">Etsy</th><th class="n">You keep</th><th class="n">Margin</th></tr></thead>
