@@ -1,4 +1,7 @@
-# The 30-Day Plan — Aug 9 → Sep 8, 2026
+# The 30-Day Plan
+
+> Written against relative days, not calendar dates — it starts whenever you do.
+> **Day 1 is the day the Etsy listing goes live**, not the day you start reading.
 
 Goal: **first 10 paid orders and one validated title pattern.**
 
@@ -10,7 +13,7 @@ You asked what 30 days of AI ecommerce earns. Straight answer: **Etsy needs 30�
 rank a listing**, and the new-listing boost lasts 14–21 days. So 30 days does not produce a
 business. It produces the thing a business is built on.
 
-| Outcome | Realistic by Sep 8 |
+| Outcome | Realistic by day 30 |
 |---|---|
 | Listings live | **8** |
 | Orders | **5–20** |
@@ -27,7 +30,7 @@ Turn it on at day 14, not day 1 — let the listings settle first.
 
 ---
 
-## Week 1 · Aug 9–15 — Foundation
+## Week 1 · Days 1–7 — Foundation
 
 **You (≈45 min, one time)**
 1. Shopify → Settings → General → name **Deadpan Goods** · timezone **(GMT+8) Hong Kong**
@@ -44,19 +47,19 @@ Turn it on at day 14, not day 1 — let the listings settle first.
 
 **Gate:** all 8 live on Etsy by **Aug 15**. Publish as one cohort, same day.
 
-## Week 2 · Aug 16–22 — Let it settle
+## Week 2 · Days 8–14 — Let it settle
 
 **Rule of the week: do not touch the listings.** Every edit restarts Etsy's learning.
 
 **Me:** Pinterest pin copy (5 per listing = 40 pins, free traffic, gift shoppers plan there) ·
-draft Cohort 2 · monitor via the Monday routine.
+draft Cohort 2 · review the numbers once a week (see `workflow/growth-loop.md`).
 
 **You:** pin the Pinterest images (~20 min). Nothing else.
 
 **Day 14 checkpoint:** any impressions at all? If a listing has **zero** by Aug 22, its tags
 are wrong — that's the one exception to the no-touch rule. Turn on Etsy Ads at $2/day.
 
-## Week 3 · Aug 23–29 — Read the early signal
+## Week 3 · Days 15–21 — Read the early signal
 
 **Me:** analyse impressions and favourites by pattern (occasion / recipient / personalised) ·
 build **Cohort 2 (8 more designs)** weighted toward whichever pattern is pulling · start the
@@ -67,7 +70,7 @@ build **Cohort 2 (8 more designs)** weighted toward whichever pattern is pulling
 **Day 21 checkpoint:** ≥100 visits across the cohort. Below that it's an SEO problem, not an
 offer problem — I rewrite titles and tags for the laggards only.
 
-## Week 4 · Aug 30 – Sep 8 — First judgement
+## Week 4 · Days 22–30 — First judgement
 
 **Day 30 is when Etsy starts ranking on real behaviour.** Now we read it properly.
 

@@ -7,13 +7,17 @@ paste. `AGENTS.md` carries the project rules; Cursor loads it automatically.
 
 ---
 
-## 0 · First, rebuild the product on your machine — ~90 seconds
-
-A fresh clone has the source but not the build artifacts (they're gitignored). One command:
+## 0 · Check the project is healthy, then build it — ~2 minutes
 
 ```bash
+python3 verify.py            # 13 checks: Chrome, sources, Etsy tag limits, doc links
 python3 kit/build_kit.py     # → kit/Office-Awards-Kit.zip, the file you upload to Etsy
 ```
+
+`verify.py` is the thing to run whenever you come back to this after a break, or after an
+assistant changes something. It catches what actually rots: a missing Chrome, an Etsy tag
+that grew past 20 characters, a British spelling in buyer-facing copy, a doc link pointing
+at a renamed file. It exits non-zero on failure, so Cursor can run it too.
 
 Needs Python 3 and Chrome, nothing else. If it says "No Chrome or Chromium found", install
 Chrome or point at it — `export CHROME='/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'`
@@ -85,19 +89,13 @@ and what the single blocking step is. Then tell me the one thing you'd do next a
 Don't write any code yet.
 ```
 
-### Prompt B — verify the build still works
+### Prompt B — verify the project is healthy
 ```
-Run each of these and report failures with the actual traceback:
+Run `python3 verify.py --full` and report the result.
 
-  python3 design/generate_certificates.py
-  python3 design/certs_christmas.py
-  python3 design/certs_office.py
-  python3 kit/build_kit.py
-
-Expected: 38 PNGs in design/out/, and kit/Office-Awards-Kit.zip at roughly 8.2 MB.
-
-Then open kit/dist/AwardsMaker.html and confirm the dropdown lists 38 awards and the
-preview renders. Do not change any design or copy — this is a check, not a refactor.
+If anything fails, fix only what failed and re-run until it passes. Do not refactor
+anything, do not "improve" any copy, and do not touch a design — this is a check, not a
+cleanup. Show me the final output.
 ```
 
 ### Prompt C — the second listing

@@ -47,6 +47,10 @@ Never explain the joke. Never use exclamation marks in product copy. Specific be
 Pure Python 3 + headless Chrome. **No dependencies, no package manager, nothing to install.**
 Chrome renders HTML to PNG and PDF; that's the entire toolchain.
 
+**Before and after any change:** `python3 verify.py` — 13 checks covering Chrome, every
+build script compiling, Etsy tag limits, US spelling in buyer-facing copy, and doc links.
+Exits non-zero on failure. `--full` rebuilds everything and checks the output too.
+
 **First run on a new machine:** a fresh clone has the source but not the build artifacts —
 `kit/Office-Awards-Kit.zip` and `design/out/` are gitignored. One command rebuilds them:
 

@@ -20,6 +20,7 @@ and **38 certificates** as physical prints ($32–58 via Printify, built and wai
 
 | | |
 |---|---|
+| ✅ **[verify.py](verify.py)** | `python3 verify.py` — 13 checks. **Run this first after any break.** |
 | 🚀 **[HANDOFF.md](HANDOFF.md)** | **Read this first.** The 45-minute path to a live listing, plus ready-to-paste Cursor prompts. |
 | 🤖 **[AGENTS.md](AGENTS.md)** | Project rules for any AI picking this up — voice, non-negotiables, and the bugs already fixed. |
 | 🎬 **[Video playbook](marketing/video-playbook.md)** | Why the last video was trash, the 10 hooks to test, exact Grok prompts. |
@@ -37,7 +38,7 @@ and **38 certificates** as physical prints ($32–58 via Printify, built and wai
 | 🏛️ **[Storefront](site/index.html)** | `python3 site/build_storefront.py <previews> --local site/index.html` — catalog built from the manifests |
 | 📌 **[Pinterest pins](marketing/pinterest-pins.md)** | 40 pins, 6 boards, image crops. Free traffic — a December play made in August. |
 | 📊 **[Etsy metrics brief](marketing/etsy-metrics-brief.html)** | The metric that actually decides ranking, threshold bands, the 30-day no-touch rule |
-| 🔁 **[Growth loop](workflow/growth-loop.md)** | The weekly cycle. Runs automatically every Monday. |
+| 🔁 **[Growth loop](workflow/growth-loop.md)** | The weekly review cycle. **You run it** — nothing is automated. |
 
 ## The strategy in five lines
 

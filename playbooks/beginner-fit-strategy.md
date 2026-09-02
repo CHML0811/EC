@@ -141,7 +141,7 @@ first sales come from.
 - Write every Etsy listing: titles, tags, descriptions, SEO
 - Re-price the apparel, update the Shopify catalog
 - Pinterest pin copy, TikTok Shop affiliate brief for creators
-- Weekly research and reporting via the Monday routine
+- Weekly research and reporting — run it yourself, or paste the growth-loop prompt into Cursor
 
 **The blocker is gone.** Choosing paper goods over sourced novelty means I can build the
 actual products, not just describe them. Illustrated designs would still need Higgsfield
