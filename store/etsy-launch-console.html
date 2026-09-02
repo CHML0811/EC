@@ -1,0 +1,280 @@
+<title>Etsy Launch Console</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+:root{
+  --ground:#E8E5DB; --panel:#FAF8F2; --sunk:#F1EEE5;
+  --ink:#17150F; --muted:#6E6857; --rule:#CBC5B4; --hair:#DFDACC;
+  --accent:#B4321F; --done:#4C5A3F;
+  --mono:"Liberation Mono","DejaVu Sans Mono",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  --serif:Georgia,"Liberation Serif","Times New Roman",serif;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --ground:#14130E; --panel:#1E1C15; --sunk:#191710;
+    --ink:#EFECE1; --muted:#968F7D; --rule:#332F26; --hair:#262319;
+    --accent:#D2603F; --done:#8B9673;
+  }
+}
+:root[data-theme="dark"]{
+  --ground:#14130E; --panel:#1E1C15; --sunk:#191710;
+  --ink:#EFECE1; --muted:#968F7D; --rule:#332F26; --hair:#262319;
+  --accent:#D2603F; --done:#8B9673;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--serif);
+  font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3{margin:0;line-height:1.2;text-wrap:balance}
+p{margin:0}
+button{font:inherit;color:inherit;cursor:pointer}
+a{color:var(--accent)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.wrap{max-width:860px;margin:0 auto;padding-inline:22px}
+
+/* ---- sticky progress ---- */
+.bar{position:sticky;top:0;z-index:10;background:var(--ground);
+  border-bottom:1px solid var(--rule)}
+.barin{display:flex;align-items:center;gap:16px;padding:13px 0;flex-wrap:wrap}
+.barin h1{font-family:var(--mono);font-size:13px;letter-spacing:.2em;text-transform:uppercase}
+.track{flex:1;min-width:120px;height:7px;background:var(--sunk);
+  border:1px solid var(--rule);overflow:hidden}
+.fill{height:100%;width:0;background:var(--done);transition:width .28s ease}
+.tally{font-family:var(--mono);font-size:12px;color:var(--muted);
+  font-variant-numeric:tabular-nums;white-space:nowrap}
+.reset{background:none;border:0;font-family:var(--mono);font-size:11px;
+  letter-spacing:.1em;text-transform:uppercase;color:var(--muted);
+  text-decoration:underline;text-underline-offset:3px;padding:0}
+.reset:hover{color:var(--accent)}
+@media (prefers-reduced-motion:reduce){.fill{transition:none}}
+
+/* ---- intro ---- */
+.intro{padding:34px 0 8px}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.24em;
+  text-transform:uppercase;color:var(--accent)}
+.intro h2{margin-top:14px;font-size:clamp(26px,4.6vw,38px)}
+.intro p{margin-top:14px;color:var(--muted);max-width:62ch}
+
+/* ---- steps ---- */
+.steps{display:flex;flex-direction:column;gap:18px;padding:26px 0 90px}
+.step{background:var(--panel);border:1px solid var(--rule);
+  display:grid;grid-template-columns:auto 1fr;gap:0 18px;padding:20px 22px}
+.step.done{background:var(--sunk);border-color:var(--hair)}
+.step.done .head h3,.step.done .body{opacity:.5}
+.tick{grid-row:1/3;width:34px;height:34px;border:2px solid var(--rule);
+  background:transparent;border-radius:50%;display:flex;align-items:center;
+  justify-content:center;font-family:var(--mono);font-size:13px;font-weight:700;
+  color:var(--muted);flex:0 0 auto;padding:0}
+.tick:hover{border-color:var(--accent);color:var(--accent)}
+.step.done .tick{background:var(--done);border-color:var(--done);color:var(--panel)}
+.head{display:flex;align-items:baseline;justify-content:space-between;gap:14px;
+  flex-wrap:wrap}
+.head h3{font-size:19px}
+.mins{font-family:var(--mono);font-size:11px;color:var(--muted);white-space:nowrap}
+.body{margin-top:9px;display:flex;flex-direction:column;gap:12px}
+.body>p{color:var(--muted);font-size:15px;max-width:62ch}
+.go{display:inline-block;align-self:flex-start;background:var(--accent);color:#FBFAF5;
+  padding:10px 18px;font-family:var(--mono);font-size:12px;letter-spacing:.12em;
+  text-transform:uppercase;text-decoration:none;border:0}
+.go:hover{filter:brightness(1.12)}
+
+/* ---- copyable field ---- */
+.field{border:1px solid var(--rule);background:var(--ground)}
+.flabel{display:flex;align-items:center;justify-content:space-between;gap:10px;
+  padding:8px 11px;border-bottom:1px solid var(--rule);background:var(--sunk)}
+.flabel span{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--muted)}
+.copy{background:var(--ink);color:var(--ground);border:0;padding:6px 13px;
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase}
+.copy:hover{background:var(--accent);color:#FBFAF5}
+.copy.ok{background:var(--done);color:#FBFAF5}
+.fval{padding:12px;font-size:15px;line-height:1.55;white-space:pre-wrap;
+  max-height:230px;overflow:auto}
+.fval.code{font-family:var(--mono);font-size:13px;white-space:pre;overflow-x:auto}
+
+/* ---- tags ---- */
+.tags{display:flex;flex-wrap:wrap;gap:7px;padding:12px}
+.tag{display:flex;align-items:baseline;gap:7px;border:1px solid var(--rule);
+  background:var(--panel);padding:5px 9px;font-family:var(--mono);font-size:12px}
+.tag b{font-weight:400}
+.tag i{font-style:normal;font-size:10px;color:var(--muted);
+  font-variant-numeric:tabular-nums}
+.tag.tight i{color:var(--accent)}
+
+/* ---- file rows ---- */
+.files{display:flex;flex-direction:column;gap:0;border:1px solid var(--rule)}
+.file{display:flex;align-items:baseline;gap:12px;padding:9px 12px;
+  border-bottom:1px solid var(--hair);font-family:var(--mono);font-size:12.5px}
+.file:last-child{border-bottom:0}
+.file b{font-weight:400;flex:1;word-break:break-all}
+.file i{font-style:normal;color:var(--muted);font-size:11px;white-space:nowrap}
+.file em{font-style:normal;color:var(--accent);font-size:10.5px;letter-spacing:.1em;
+  text-transform:uppercase;white-space:nowrap}
+
+.note{border-left:3px solid var(--accent);padding:11px 14px;background:var(--sunk);
+  font-size:14.5px;color:var(--muted)}
+.note b{color:var(--ink);font-weight:400}
+
+.after{border-top:2px solid var(--ink);padding:26px 0 70px;margin-top:12px}
+.after h2{font-family:var(--mono);font-size:13px;letter-spacing:.2em;
+  text-transform:uppercase;margin-bottom:16px}
+.after ul{margin:0;padding-left:20px;color:var(--muted);max-width:64ch}
+.after li{margin-bottom:9px}
+.after b{color:var(--ink);font-weight:400}
+</style>
+
+<div class="bar"><div class="wrap barin">
+  <h1>Etsy Launch</h1>
+  <div class="track"><div class="fill" id="fill"></div></div>
+  <span class="tally" id="tally">0 of 9</span>
+  <button class="reset" id="reset">Reset</button>
+</div></div>
+
+<div class="wrap">
+  <div class="intro">
+    <div class="eyebrow">The Bureau of Minor Achievements</div>
+    <h2>Nine steps to your first listing.</h2>
+    <p>Every field is here in the order Etsy asks for it, with a copy button. Keep this open
+      beside the Etsy tab. Progress is saved in this browser, so you can stop halfway and
+      come back.</p>
+  </div>
+
+  <div class="steps" id="steps"></div>
+
+  <div class="after">
+    <h2>The first 48 hours</h2>
+    <ul>
+      <li><b>Don't touch the listing.</b> Etsy gives new listings a boost for 14–21 days.
+        Editing resets how it's being measured.</li>
+      <li><b>Watch impressions, not views.</b> Etsy Stats → Search. No impressions means the
+        title doesn't match how people search — that's the only thing worth changing early.</li>
+      <li><b>Expect nothing for two weeks.</b> Ranking takes 30–90 days. Silence in week one
+        is normal, not a verdict.</li>
+      <li><b>When you want a second listing</b>, the same kit aimed at teachers is a few
+        hours of work — prompt C in <b>HANDOFF.md</b>. Etsy ranks listings, not shops.</li>
+    </ul>
+  </div>
+</div>
+
+<script>
+const KIT = {"title": "Funny Office Awards Kit, 38 Printable Employee Award Certificates, Editable Staff Awards, Work Christmas Party, Instant Download", "tags": ["office awards", "funny awards", "employee awards", "award certificate", "work party games", "staff appreciation", "printable awards", "team building", "office christmas", "funny certificate", "instant download", "editable template", "coworker gift"], "desc": "Everything you need to run an office awards ceremony. Twenty minutes, start to finish.\n\nYour company gives awards for revenue and targets. Nobody ever gets one for what they're actually known for. This fixes that.\n\nThe Bureau of Minor Achievements issues official recognition for things that don't deserve any — the Certificate of Approximate Punctuality, Meetings That Were Emails, Permanent Audio Only, Refrigerator Archaeology. Properly typeset documents with an embossed-look seal and a serial number, that happen to certify something absurd. The joke lands because the paperwork refuses to admit there is one.\n\nWHAT'S INCLUDED\n\n✦ 38 award certificates — enough that nobody in the room gets left out\n✦ The Awards Maker — open one file in your browser, type a name, press print. No\naccount, no software, no subscription. Works with the internet switched off.\n✦ The host's script — what to actually say, word for word, with timings. Read it off\nthe page if you want to.\n✦ A nomination ballot — let the office vote on who gets what\n✦ Fold-over name tents — four per sheet\n✦ Three announcement emails — announce it, remind people, follow up\n\nWHY THE SCRIPT MATTERS\n\nMaking the certificates was never the hard part. Standing up in front of forty colleagues and holding the room is. The script covers the opening, the rhythm for each award, the person who didn't show up, the one who wants to make a speech, and the joke that lands wrong. Nothing else you can buy does this.\n\nHOW IT WORKS\n\n1. Download instantly after checkout\n2. Open AwardsMaker.html in any browser\n3. Paste your team's names, print the lot\n\nPrint at home on any printer, or send the PDFs to a print shop. Yours to keep and reuse every year — rewrite the awards and the citations to suit your own office.\n\nPLEASE NOTE\n\nThis is a digital download. No physical item is shipped. Because files can't be returned, digital purchases aren't refundable — but if anything doesn't open or print properly, message me and I'll sort it out the same day.\n\nMade by one person. If you use it, I'd genuinely love to hear how it went."};
+
+const STEPS = [
+  { t: "Create the Etsy seller account", m: "~15 min",
+    p: "Needs your ID and bank details, which is why nobody can do this part for you. Everything after it is copy and paste.",
+    link: ["https://www.etsy.com/sell", "Open Etsy seller signup"],
+    fields: [["Shop name", "BureauOfMinorAchievements", "text"]],
+    note: "If the name is taken, drop a word — <b>MinorAchievements</b> — rather than adding numbers. A number reads as spam to buyers." },
+
+  { t: "Build the file you'll upload", m: "~90 sec",
+    p: "A fresh clone has the source but not the built product. One command creates it.",
+    fields: [["Run in the project folder", "python3 kit/build_kit.py", "code"]],
+    note: "Produces <b>kit/Office-Awards-Kit.zip</b> — 38 certificates, 5 PDFs and the Awards Maker, 8.2 MB. If it can't find Chrome, install it or set <b>CHROME</b> to its path." },
+
+  { t: "Start a new listing — Digital", m: "~1 min",
+    p: "Shop Manager → Listings → Add a listing. Set the type to Digital straight away: it removes shipping entirely, which is the whole reason this product goes first.",
+    note: "Category: <b>Paper &amp; Party Supplies → Paper → Stationery</b>. Renewal: automatic. No production partner." },
+
+  { t: "Title", m: "~30 sec",
+    p: "Front-loaded with the phrase that carries buying intent. 126 characters, inside Etsy's 140 limit.",
+    fields: [["Listing title", KIT.title, "text"]] },
+
+  { t: "Description", m: "~1 min",
+    p: "Paste as-is. Etsy renders plain text, so the line breaks are the formatting.",
+    fields: [["Description", KIT.desc, "text"]] },
+
+  { t: "The 13 tags", m: "~3 min",
+    p: "Etsy allows exactly 13 and silently rejects any tag over 20 characters. These are all checked and under.",
+    tags: true,
+    note: "Add them one at a time. If Etsy rejects one, it's a duplicate of a word already in your title — swap it rather than dropping to 12." },
+
+  { t: "Price and settings", m: "~1 min",
+    p: "The comparable template packs sell at $8–15, but none include a script, a ballot or a working maker. This isn't the same product and shouldn't be priced against them.",
+    fields: [["Price (USD)", "24.00", "code"]],
+    note: "Quantity: <b>999</b>. Personalization: <b>off</b> — the buyer types names themselves, that's the product. If it hasn't sold in 30 days, rewrite the title before you touch the price." },
+
+  { t: "Upload the file and the images", m: "~4 min",
+    p: "Images first, in this exact order — Etsy uses the first as your search-grid thumbnail, and that image alone decides most of your click-through.",
+    files: true },
+
+  { t: "Publish", m: "~10 sec",
+    p: "That's the whole thing. From here it's Etsy's search that does the selling.",
+    note: "At $24 with Etsy taking roughly 23%, you keep about <b>$18.50 per sale with no cost of goods</b>. Fourteen sales covers a month of tooling." }
+];
+
+const FILES = [
+  ["kit/listing/kit-1-hero.png", "Image 1", "thumbnail — what it is"],
+  ["kit/listing/kit-2-grid.png", "Image 2", "all 38 at once"],
+  ["kit/listing/kit-3-maker.png", "Image 3", "proves the maker is real"],
+  ["kit/listing/kit-4-promise.png", "Image 4", "kills the objections"],
+  ["kit/Office-Awards-Kit.zip", "The file", "8.2 MB · cap is 20 MB"]
+];
+
+const KEY = "bma-etsy-launch-v1";
+let done = new Set();
+try { done = new Set(JSON.parse(localStorage.getItem(KEY) || "[]")); } catch (e) { /* private mode */ }
+const save = () => { try { localStorage.setItem(KEY, JSON.stringify([...done])); } catch (e) {} };
+
+const esc = s => String(s).replace(/[&<>"]/g, c =>
+  ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+
+function field([label, value, kind], id) {
+  return `<div class="field">
+    <div class="flabel"><span>${esc(label)}</span>
+      <button class="copy" data-copy="${id}">Copy</button></div>
+    <div class="fval ${kind === "code" ? "code" : ""}" id="v${id}">${esc(value)}</div>
+  </div>`;
+}
+
+function render() {
+  document.getElementById("steps").innerHTML = STEPS.map((s, i) => {
+    const isDone = done.has(i);
+    let inner = s.p ? `<p>${s.p}</p>` : "";
+    if (s.link) inner += `<a class="go" href="${s.link[0]}" target="_blank" rel="noopener">${s.link[1]} →</a>`;
+    (s.fields || []).forEach((f, j) => { inner += field(f, `${i}-${j}`); });
+    if (s.tags) inner += `<div class="field"><div class="flabel">
+        <span>13 tags · comma separated</span>
+        <button class="copy" data-copy="tags">Copy all</button></div>
+      <div class="tags">${KIT.tags.map(t =>
+        `<span class="tag ${t.length > 17 ? "tight" : ""}"><b>${esc(t)}</b><i>${t.length}</i></span>`).join("")}
+      </div><div class="fval code" id="vtags" hidden>${esc(KIT.tags.join(", "))}</div></div>`;
+    if (s.files) inner += `<div class="files">${FILES.map(([p, n, w]) =>
+        `<div class="file"><i>${n}</i><b>${esc(p)}</b><em>${w}</em></div>`).join("")}</div>`;
+    if (s.note) inner += `<div class="note">${s.note}</div>`;
+
+    return `<section class="step ${isDone ? "done" : ""}">
+      <button class="tick" data-step="${i}" aria-pressed="${isDone}"
+        aria-label="Mark step ${i + 1} done">${isDone ? "✓" : i + 1}</button>
+      <div class="head"><h3>${esc(s.t)}</h3><span class="mins">${s.m}</span></div>
+      <div class="body">${inner}</div>
+    </section>`;
+  }).join("");
+
+  const n = done.size, total = STEPS.length;
+  document.getElementById("fill").style.width = (n / total * 100) + "%";
+  document.getElementById("tally").textContent =
+    n === total ? "all 9 done" : `${n} of ${total}`;
+}
+
+document.addEventListener("click", e => {
+  const tick = e.target.closest(".tick");
+  if (tick) {
+    const i = +tick.dataset.step;
+    done.has(i) ? done.delete(i) : done.add(i);
+    save(); render(); return;
+  }
+  const btn = e.target.closest(".copy");
+  if (!btn) return;
+  const src = document.getElementById("v" + btn.dataset.copy);
+  if (!src) return;
+  navigator.clipboard.writeText(src.textContent).then(() => {
+    btn.textContent = "Copied"; btn.classList.add("ok");
+    setTimeout(() => { btn.textContent = btn.dataset.copy === "tags" ? "Copy all" : "Copy";
+                       btn.classList.remove("ok"); }, 1400);
+  }).catch(() => { btn.textContent = "Select it"; });
+});
+
+document.getElementById("reset").addEventListener("click", () => {
+  done = new Set(); save(); render();
+});
+
+render();
+</script>

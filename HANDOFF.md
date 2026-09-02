@@ -35,8 +35,11 @@ nobody else can do it for you. Shop name: **Bureau of Minor Achievements** (or
 `BureauOfMinorAchievements` if taken — don't add numbers, it reads as spam).
 
 ### 2 · Publish the Office Awards Kit — ~20 min
-Everything is written in **`marketing/etsy-office-awards-kit.md`** — title, all 13 tags,
-description, settings.
+**Open [`store/etsy-launch-console.html`](store/etsy-launch-console.html) in a browser and
+work down it beside the Etsy tab.** Nine steps, every field with a copy button, in the order
+Etsy asks for them. Progress saves in the browser so you can stop halfway.
+
+The same content in plain markdown: **`marketing/etsy-office-awards-kit.md`**.
 
 - Listing type: **Digital**
 - Upload: **`kit/Office-Awards-Kit.zip`** (8.2 MB, under Etsy's 20 MB cap)

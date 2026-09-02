@@ -20,6 +20,7 @@ and **38 certificates** as physical prints ($32–58 via Printify, built and wai
 
 | | |
 |---|---|
+| 🚀 **[Etsy launch console](store/etsy-launch-console.html)** | Nine steps, every field with a copy button. **Open this next to the Etsy tab.** |
 | ✅ **[verify.py](verify.py)** | `python3 verify.py` — 13 checks. **Run this first after any break.** |
 | 🚀 **[HANDOFF.md](HANDOFF.md)** | **Read this first.** The 45-minute path to a live listing, plus ready-to-paste Cursor prompts. |
 | 🤖 **[AGENTS.md](AGENTS.md)** | Project rules for any AI picking this up — voice, non-negotiables, and the bugs already fixed. |
