@@ -21,6 +21,7 @@ and **38 certificates** as physical prints ($32–58 via Printify, built and wai
 | | |
 |---|---|
 | 🚀 **[Etsy launch console](store/etsy-launch-console.html)** | Nine steps, every field with a copy button. **Open this next to the Etsy tab.** |
+| 🎯 **[Etsy market fit](playbooks/etsy-market-fit.md)** | Who buys on Etsy, what earns most, and the cheapest expansions from here. |
 | ❓ **[Will this actually sell?](playbooks/will-this-sell.md)** | What I verified vs assumed, the number I never got, and how to check it free in 15 min. |
 | 💰 **[Etsy or our own site?](playbooks/where-to-sell.md)** | Real fee numbers, and why Etsy's cut is customer acquisition rather than a platform fee. |
 | ✅ **[verify.py](verify.py)** | `python3 verify.py` — 13 checks. **Run this first after any break.** |
@@ -29,7 +30,8 @@ and **38 certificates** as physical prints ($32–58 via Printify, built and wai
 | 🎬 **[Video playbook](marketing/video-playbook.md)** | Why the last video was trash, the 10 hooks to test, exact Grok prompts. |
 | 🎯 **[30-day plan](workflow/30-day-plan.md)** | Weekly gates, honest revenue target, ~$34 budget |
 | 📦 **[Etsy cohort 1](marketing/etsy-cohort-1.md)** | 8 listings — titles, 13 tags each, descriptions, pricing ladder |
-| 🎄 **[Etsy cohort 2 — Christmas](marketing/etsy-cohort-2-christmas.md)** | 8 Secret Santa / gift-exchange listings. **Publish by Oct 1** to rank for December. |
+| 🎄 **[Christmas awards listing](marketing/etsy-christmas-awards-kit.md)** | **Listing #2 — same zip, seasonal keywords.** An hour's work. Publish by early October. |
+| 🎄 **[Etsy cohort 2 — Christmas prints](marketing/etsy-cohort-2-christmas.md)** | 8 physical Secret Santa listings, for when the Printify line goes live. |
 | ⚡ **[Paste sheet](store/paste-sheet.html)** | Every field in the order Etsy asks, with copy buttons. **Open this while you set up.** |
 | 🔧 **[Shopify uploader](store/upload_to_shopify.py)** | `python3 store/upload_to_shopify.py --all --execute` — 16 products, images, prices, policies, pages. One command, no connector. |
 | 🖨️ **[Printify setup spec](store/printify-setup-spec.md)** | Exactly which blank, provider, sizes and prices. Only needed for the physical line. |

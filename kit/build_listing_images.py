@@ -28,6 +28,15 @@ TMP = ROOT / ".build-listing"
 SQ = 2000
 PAPER, INK, RED, OLIVE, FAINT = g.PAPER, g.INK, g.RED, g.OLIVE, g.FAINT
 
+XMAS_CONTENTS = [
+    ("38", "awards, including 8 for Christmas"),
+    ("1", "certificate maker — type a name, print"),
+    ("1", "host's script, word for word"),
+    ("1", "nomination ballot for the office"),
+    ("1", "set of fold-over name tents"),
+    ("3", "announcement emails, ready to send"),
+]
+
 CONTENTS = [
     ("38", "personalized award certificates"),
     ("1", "certificate maker — type a name, print"),
@@ -42,7 +51,12 @@ def page(w, h, css, body):
     return m.page(w, h, css, body)
 
 
-def scene_hero() -> str:
+def scene_hero(xmas: bool = False) -> str:
+    rows_src = XMAS_CONTENTS if xmas else CONTENTS
+    eyebrow = "The Bureau of Minor Achievements"
+    head = "The Office<br>Christmas Awards" if xmas else "The Office<br>Awards Kit"
+    foot = ("Instant download &middot; order the night before"
+            if xmas else "Instant download &middot; nothing to install")
     css = f"""
   body{{background:{PAPER};padding:140px 150px;display:flex;flex-direction:column;
     justify-content:space-between}}
@@ -62,15 +76,15 @@ def scene_hero() -> str:
     opacity:.66}}
 """
     rows = "".join(f'<div class="row"><div class="q">{q}</div><div class="w">{w}</div></div>'
-                   for q, w in CONTENTS)
+                   for q, w in rows_src)
     body = f"""
 <div class="top">
-  <div class="eyebrow">The Bureau of Minor Achievements</div>
-  <h1>The Office<br>Awards Kit</h1>
+  <div class="eyebrow">{eyebrow}</div>
+  <h1>{head}</h1>
   <div class="rule"></div>
 </div>
 <div class="list">{rows}</div>
-<div class="foot">Instant download &middot; nothing to install</div>"""
+<div class="foot">{foot}</div>"""
     return page(SQ, SQ, css, body)
 
 
@@ -154,6 +168,8 @@ def scene_promise() -> str:
 
 
 def main() -> None:
+    # --christmas builds only the seasonal hero for listing #2; everything else is shared
+    xmas = "--christmas" in sys.argv
     OUT.mkdir(parents=True, exist_ok=True)
     TMP.mkdir(parents=True, exist_ok=True)
     chrome = g.find_chrome()
@@ -181,6 +197,13 @@ def main() -> None:
          "--virtual-time-budget=4000", "--window-size=1500,1000",
          f"--screenshot={maker}", (ROOT / "dist" / "AwardsMaker.html").resolve().as_uri()],
         check=True, capture_output=True)
+
+    if xmas:
+        shot(scene_hero(xmas=True), "kit-x1-hero")
+        p = OUT / "kit-x1-hero.png"
+        print(f"  {p.name:<22} {p.stat().st_size/1024:6.0f} KB")
+        print("\nChristmas hero -> use as image 1 of listing #2")
+        return
 
     shot(scene_hero(), "kit-1-hero")
     shot(scene_grid(slugs), "kit-2-grid")

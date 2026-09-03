@@ -64,11 +64,20 @@ The same content in plain markdown: **`marketing/etsy-office-awards-kit.md`**.
 - Price: **$18** (launch price — raise to $24 after ~10 reviews)
 - Personalization: **off**
 
-### 4 · Downgrade Shopify — ~2 min
+### 4 · List it again for Christmas — ~1 hour, do this by early October
+**The same zip, a second listing.** The eight Christmas certificates are already inside it,
+so this needs no new product — just a seasonal title, 13 different tags and one new image.
+Etsy ranks listings, not shops, so two listings is two chances to be found on searches that
+don't compete with each other.
+
+Copy is written: **[`marketing/etsy-christmas-awards-kit.md`](marketing/etsy-christmas-awards-kit.md)**.
+The seasonal hero image is already built at `kit/listing/kit-x1-hero.png`.
+
+### 5 · Downgrade Shopify — ~2 min
 Advanced $399 → Basic $39. **Saves $360 every month.** Nothing in this project uses an
 Advanced feature.
 
-### 5 · Fill the Shopify store — ~10 min, optional
+### 6 · Fill the Shopify store — ~10 min, optional
 Etsy is the sales channel; Shopify is the brand home and the bulk-order desk. When you want
 it looking real, one command does the whole thing — 16 products with images, prices,
 variants, all four policies and both pages:
