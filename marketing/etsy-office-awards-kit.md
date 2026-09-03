@@ -1,6 +1,6 @@
 # Etsy listing — The Office Awards Kit
 
-**Type:** Digital download · **Price:** $24 · **File:** `kit/Office-Awards-Kit.zip` (8.2 MB)
+**Type:** Digital download · **Launch price:** $18 → $24 later · **File:** `kit/Office-Awards-Kit.zip` (8.2 MB)
 
 Digital listings need no shipping profile, no Printify, and no card on file. This can go
 live the hour the Etsy account exists — which is the whole reason it's first.
@@ -10,11 +10,15 @@ live the hour the Etsy account exists — which is the whole reason it's first.
 ## Title
 
 ```
-Funny Office Awards Kit, 38 Printable Employee Award Certificates, Editable Staff Awards, Work Christmas Party, Instant Download
+Office Awards Ceremony Kit, Funny Employee Award Certificates with Host Script, Printable Staff Awards, Work Party, Instant Download
 ```
 
-126 characters. Front-loaded with **funny office awards** because that's the phrase with
-buying intent behind it — "printable" and "instant download" are there for the filters.
+131 characters. **Changed** — it used to lead with "38 Printable Employee Award
+Certificates". Competitors sell packs of 101, 84 and 50, so leading with 38 put our weakest
+number first. It now leads with the **ceremony and the host script**, which none of them
+appear to include. Reasoning: [`playbooks/will-this-sell.md`](../playbooks/will-this-sell.md).
+
+Still front-loaded with "Office Awards" for search.
 
 ## Tags — all 13, all inside the 20-character limit
 
@@ -90,21 +94,40 @@ Upload in this order. Etsy uses the first as the search-grid thumbnail.
 | # | File | Job |
 |---|---|---|
 | 1 | `kit-1-hero.png` | What it is and what's in it, readable at thumbnail size |
-| 2 | `kit-2-grid.png` | All 38 at once — the "enough for everyone" proof |
-| 3 | `kit-3-maker.png` | Proof the maker is real software, not a promise |
+| 2 | `kit-3-maker.png` | **Moved up.** The maker is the thing no competitor has — show it before the count |
+| 3 | `kit-2-grid.png` | All 38 at once. Still worth showing, just not second |
 | 4 | `kit-4-promise.png` | Kills the objections: instant, offline, no account, reusable |
+
+> The order changed. Competitors sell packs of 50–101 certificates, so a grid of 38 is not
+> the argument — working software is.
 
 Still worth adding later: a photo of a printed certificate on an actual desk. A real-world
 shot outperforms every render, and you can take it on a phone once you print one.
 
-## Pricing
+## Pricing — launch at $18, raise to $24
 
-$24 is the anchor. The comparable listings selling volume are template packs at $8–15, but
-none of them include a script, ballot, or a working maker — the kit isn't the same product
-and shouldn't be priced against them.
+**This reverses the earlier $24 recommendation.** Reasoning in
+[`playbooks/will-this-sell.md`](../playbooks/will-this-sell.md).
 
-**If it hasn't sold in 30 days, don't cut the price first.** Rewrite the title. Price is
-almost never the reason a new digital listing doesn't sell; being unfindable is.
+Etsy boosts a new listing for 14–21 days, and ranking inside that window is driven by
+conversion rate and sales velocity. Early sales are worth more than early margin, because
+ranking compounds for months and $6 doesn't.
+
+| | At $24 | At $18 |
+|---|---:|---:|
+| You keep per sale | $21.27 | $15.72 |
+| Likely sales in the boost window | 2–3 | 8–10 |
+
+Ten sales and ten reviews put a listing somewhere three sales never will. **Raise to $24
+once you have roughly ten reviews** — that's when the premium becomes defensible to a buyer
+looking at $9 alternatives.
+
+$18 is still well above the $8–15 template packs, which is right: the kit contains a script,
+a ballot and a working maker, and none of them do.
+
+**If it hasn't sold in 30 days, still don't cut the price first.** Check impressions.
+Unfindable is a more common failure than overpriced — but at $24 with no reviews, price is a
+genuine suspect, which is exactly why we start lower.
 
 ## Why this is listing #1
 

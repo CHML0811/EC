@@ -27,14 +27,31 @@ Verified working from a clean clone: 38 certificates, 5 PDFs, the maker, 8.2 MB.
 
 ---
 
-## Do these three yourself. No AI required.
+## Do these yourself. No AI required.
 
-### 1 · Etsy seller account — ~15 min
+### 1 · Check the demand is real — ~15 min, free, do this FIRST
+**I never got this number and it's the biggest gap in the work.** I verified the category has
+~500 competing listings with real sales volume, but never how many people search for it.
+
+Sign up for [eRank](https://erank.com) free — 100 keyword lookups a day. Check
+`office awards`, `funny awards`, `employee awards`, `printable awards`.
+
+| Monthly searches | Verdict |
+|---|---|
+| Under ~1,000 | Too thin. Don't spend the $20 — pick a different niche with the same machinery. |
+| 1,000–20,000 | Normal and workable. Continue. |
+| Over 20,000 | Good, but competition will be tougher than 500 listings suggests. |
+
+Also open the top 3 listings for "funny office awards" and read their review counts.
+Reviews ≈ 5–10% of sales, so 200 reviews ≈ 2,000–4,000 units sold. That tells you the
+ceiling better than any tool. Full reasoning: [`playbooks/will-this-sell.md`](playbooks/will-this-sell.md).
+
+### 2 · Etsy seller account — ~15 min
 [etsy.com/sell](https://www.etsy.com/sell). Needs your ID and bank details, which is why
 nobody else can do it for you. Shop name: **Bureau of Minor Achievements** (or
 `BureauOfMinorAchievements` if taken — don't add numbers, it reads as spam).
 
-### 2 · Publish the Office Awards Kit — ~20 min
+### 3 · Publish the Office Awards Kit — ~20 min
 **Open [`store/etsy-launch-console.html`](store/etsy-launch-console.html) in a browser and
 work down it beside the Etsy tab.** Nine steps, every field with a copy button, in the order
 Etsy asks for them. Progress saves in the browser so you can stop halfway.
@@ -44,14 +61,14 @@ The same content in plain markdown: **`marketing/etsy-office-awards-kit.md`**.
 - Listing type: **Digital**
 - Upload: **`kit/Office-Awards-Kit.zip`** (8.2 MB, under Etsy's 20 MB cap)
 - Images: **`kit/listing/kit-1` … `kit-4`**, in that order
-- Price: **$24**
+- Price: **$18** (launch price — raise to $24 after ~10 reviews)
 - Personalization: **off**
 
-### 3 · Downgrade Shopify — ~2 min
+### 4 · Downgrade Shopify — ~2 min
 Advanced $399 → Basic $39. **Saves $360 every month.** Nothing in this project uses an
 Advanced feature.
 
-### 4 · Fill the Shopify store — ~10 min, optional
+### 5 · Fill the Shopify store — ~10 min, optional
 Etsy is the sales channel; Shopify is the brand home and the bulk-order desk. When you want
 it looking real, one command does the whole thing — 16 products with images, prices,
 variants, all four policies and both pages:
