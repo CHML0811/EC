@@ -8,27 +8,24 @@ That is legitimate on Etsy and it's the cheapest listing you will ever create: n
 product, no new file, no new fulfilment. **Etsy ranks listings, not shops** — two listings
 is two chances to be found.
 
-**Type:** Digital download · **Launch price:** $18 · **Publish by:** early October, to rank
-for the December peak.
+**Type:** Digital download · **Launch price:** $12.99 · **Publish: THIS WEEK.**
 
 ---
 
 ## Title
 
 ```
-Office Christmas Party Awards, Funny Employee Award Certificates with Host Script, Printable Work Party Games, Instant Download
+Christmas Office Party Awards | Holiday Employee Certificates Printable | Work Secret Santa Game | Instant Download
 ```
 
 125 characters. Front-loaded with **office christmas party** — the seasonal phrase with
 buying intent. Everything after it earns its place: "awards", "certificates", "host script"
 (our differentiator), "printable", "instant download".
 
-## Tags — 13, all inside the 20-character limit
+## Tags — 13, none over 20 characters, zero overlap with the office listing
 
 ```
-office christmas · christmas awards · work party games · holiday party games ·
-funny office awards · employee awards · staff christmas · office party ·
-team christmas · printable awards · award certificate · instant download · coworker gift
+christmas awards · holiday work party · ugly sweater awards · secret santa game · christmas party game · work christmas gift · holiday office · staff christmas · xmas party games · office christmas · festive awards · holiday printable · christmas office
 ```
 
 Deliberately different from listing #1 wherever possible. Two listings competing for the
@@ -77,6 +74,8 @@ same keywords cannibalise each other; these lean seasonal so they rank on differ
 > Print at home on any printer, or send the PDFs to a print shop. Yours to keep and reuse
 > every year — rewrite the awards and the citations to suit your own office.
 >
+> **A note on the format.** The Awards Maker is a single HTML file — you open it in Chrome, Safari or Edge like a web page. There is nothing to install, no Canva account, no subscription, and it works with the internet switched off. If you can open a browser you can use it. Every certificate is also included as a ready-to-print image if you'd rather skip the maker entirely.
+>
 > **PLEASE NOTE**
 >
 > This is a digital download. No physical item is shipped. Because files can't be returned,
@@ -101,11 +100,16 @@ python3 kit/build_listing_images.py --christmas   # → kit/listing/kit-x1-hero.
 
 Upload order: `kit-x1-hero` → `kit-3-maker` → `kit-2-grid` → `kit-4-promise`.
 
-## Timing
+## Timing — this week, not October
 
-**Publish by early October.** Etsy needs 30–90 days to rank a listing, and office Christmas
-parties are booked and organised through November. A listing that goes live in December is
-invisible for the season it was built for.
+**Corrected.** I previously said early October. That was wrong.
+
+Today is **3 September**. Seasonal printables need **6–8 weeks to index** before the rush,
+and office Christmas parties are booked and organised through November. Counting back, a
+listing going live now is indexed in time; **mid-October is the last responsible date, not
+the target.**
+
+Every week of delay is a week of indexing lost from a season that only comes once a year.
 
 ## Why this listing is worth an hour
 

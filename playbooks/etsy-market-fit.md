@@ -32,6 +32,7 @@ The top-earning digital categories, with the prices they sustain
 | 3 | **Wedding templates & printables** | **$15–50** | **Highest value orders on the platform** |
 | 4 | **Business templates** | **$12–40** | B2B buyers |
 | 5 | Educational printables for teachers | $3–20 | **Repeat customers** |
+| — | **Party award certificates — our niche** | **$4–$12** | **$15–$30 only if huge + editable** |
 
 Two other findings that matter more than the list:
 
@@ -44,8 +45,15 @@ Two other findings that matter more than the list:
 
 ## Where our product actually sits
 
-**Better than I'd realised.** The Office Awards Kit is a *business template* — category 4,
-$12–40 band. Our $18 launch price sits squarely inside it.
+**⚠️ Corrected.** I placed the kit in the business-template band ($12–40) by category
+reasoning. Against **live listings in our actual niche** that's wrong: party award
+certificates cluster at **$6–$12** — $6 for 47 office holiday awards, $6.50 for 24 funny
+office awards, $8.25 for 200 Canva awards, $10 for 50 editable Christmas awards. A $30/150
+listing exists and has almost no reviews.
+
+$14.99 is above that cluster and defensible *only if the listing visibly shows* the script,
+the ballot and the editor. A flat page-one screenshot at $14.99 loses to $6.99 every time.
+Price against the live grid, not a category average.
 
 And on your demographic point: **who buys office party supplies?** Office managers, HR, EAs,
 team leads. Those roles skew female. The kit is not misaligned with Etsy's buyer — it's
@@ -69,9 +77,15 @@ machinery, same file format, different audience** — not a new product line.
 | 2 | **Bridal shower games & awards** | **Wedding $15–50** | Bride, maid of honour | ~2 hours |
 | 3 | **Teacher end-of-year awards** | Educational $3–20, **repeat** | Teachers (majority female) | ~2 hours |
 | 4 | Baby shower awards | Wedding-adjacent $15–50 | Mum-to-be, friend | ~2 hours |
-| 5 | Sports team / coach awards | $10–25 | Team parent | ~2 hours |
+| 5 | **Nurse / unit awards** | $10–25 | Same buyer type, **less competition** | ~2 hours |
+| 6 | Sports team / coach awards | $10–25 | Team parent | ~2 hours |
 
-### 1. Christmas — do this the same week
+### 1. Christmas — do this **this week**, not October
+
+Seasonal printables need **6–8 weeks to index** before the rush, and office parties are
+booked through November. Today is 3 September; **mid-October is the last responsible date,
+not the target.**
+
 
 **The eight Christmas certificates are already in the zip.** A second listing titled for
 "office christmas party awards" is the *same file* with a different title, tags and images.
@@ -123,6 +137,20 @@ Mugs need a new supply chain. A bridal cohort needs an afternoon and reuses ever
 *finished*, and one live listing teaches more than four more unpublished ones.
 
 ---
+
+## Two more things that decide this
+
+**Photo 1 must be the product, printed.** Buyers cannot hold a file. First image is a printed
+certificate on a desk with **DIGITAL DOWNLOAD** on the image; second is a grid of every award
+title. Flat page-one screenshots lose the click. *(Done — `kit/listing/kit-1-hero.png`.)*
+
+**Pinterest the same day you publish.** For printables it's the main free traffic source after
+Etsy search. One vertical pin using the exact title keyword, then three variants. No ads until
+the listing converts.
+
+**And what not to do:** don't start planners or wall art. They earn more in aggregate and are
+far more flooded. Our edge is a joke structure that already exists. Don't buy a PLR dump.
+Don't run ads. **The constraint is listing count against a product that is already built.**
 
 ## What to look at that I can't
 

@@ -6,7 +6,7 @@ buyers are already searching. Deadpan voice, real production quality.
 
 > *"Recognition, finally, for meeting expectations approximately."*
 
-**Two products.** The **Office Awards Kit** ($24 digital, $0 per sale, built and packaged)
+**Two products.** The **Office Awards Kit** ($14.99 digital, $0 per sale, built and packaged)
 and **38 certificates** as physical prints ($32–58 via Printify, built and waiting).
 
 **Stack:** Claude for research, design, copy and code → **Etsy** as the sales channel →
@@ -30,7 +30,7 @@ and **38 certificates** as physical prints ($32–58 via Printify, built and wai
 | 🎬 **[Video playbook](marketing/video-playbook.md)** | Why the last video was trash, the 10 hooks to test, exact Grok prompts. |
 | 🎯 **[30-day plan](workflow/30-day-plan.md)** | Weekly gates, honest revenue target, ~$34 budget |
 | 📦 **[Etsy cohort 1](marketing/etsy-cohort-1.md)** | 8 listings — titles, 13 tags each, descriptions, pricing ladder |
-| 🎄 **[Christmas awards listing](marketing/etsy-christmas-awards-kit.md)** | **Listing #2 — same zip, seasonal keywords.** An hour's work. Publish by early October. |
+| 🎄 **[Christmas awards listing](marketing/etsy-christmas-awards-kit.md)** | **Listing #2 — same zip, seasonal keywords.** An hour's work. **Publish this week.** |
 | 🎄 **[Etsy cohort 2 — Christmas prints](marketing/etsy-cohort-2-christmas.md)** | 8 physical Secret Santa listings, for when the Printify line goes live. |
 | ⚡ **[Paste sheet](store/paste-sheet.html)** | Every field in the order Etsy asks, with copy buttons. **Open this while you set up.** |
 | 🔧 **[Shopify uploader](store/upload_to_shopify.py)** | `python3 store/upload_to_shopify.py --all --execute` — 16 products, images, prices, policies, pages. One command, no connector. |
@@ -47,14 +47,15 @@ and **38 certificates** as physical prints ($32–58 via Printify, built and wai
 
 ## The strategy in five lines
 
-1. **Digital first, physical second.** The $24 kit needs no Printify, no card on file and no
-   shipping setup — it can list the hour the Etsy account exists, and costs $0 per sale.
+1. **Digital first, physical second.** The $14.99 kit needs no Printify, no card on file and
+   no shipping setup — it can list the hour the Etsy account exists, and costs $0 per sale.
 2. **Paper and downloads, not apparel.** Etsy takes ~11% on an organic sale. The kit keeps
    **89%** — no cost of goods at all; prints keep ~46–58%; apparel is far worse.
 3. **Etsy, not TikTok organic.** Intent products are found by search. Impulse products need an
    audience, daily content, or ad budget — none of which exist here.
-4. **Sell the ceremony, not the print.** The listings actually moving volume in this category
-   are bundles sold to offices, not single art prints.
+4. **Sell the ceremony, not the print.** The listings moving volume are bundles sold to
+   offices. Awards cluster at **$6–$12** — a premium only holds if the listing *shows* the
+   script and the editor, which is why photo 1 is printed certificates, not a page one.
 5. **Owned IP, not resold SKUs.** The Bureau is a world competitors can't clone, and the
    writing — not the layout — is the part that takes more than an afternoon to copy.
 
@@ -66,15 +67,19 @@ Long term: **[long-term-brand-strategy.md](playbooks/long-term-brand-strategy.md
 
 | | |
 |---|---|
-| Lead product | **Office Awards Kit** — $24 digital, built and packaged, 8.2 MB |
+| Lead product | **Office Awards Kit** — $14.99 digital, built and packaged, 8.2 MB |
 | Artwork | 38 certificates · 182 listing images · all generated, no camera |
 | Shopify | `fbapgj-si.myshopify.com` · **USD** · Advanced plan (**downgrade to Basic — saves $360/mo**) |
 | Shipping | ✅ US $5.95, free over $60 · Rest of World $14.95 |
 | Etsy | ❌ **Not created. This is the only thing blocking revenue.** |
 | Printify | ❌ Not started — and not needed until the physical line goes live |
 
-**Outstanding (needs a human):** Etsy account → publish the kit → downgrade Shopify.
-**About 40 minutes, once.** Full steps in [HANDOFF.md](HANDOFF.md).
+**This week:** Etsy account → publish the kit → **publish the Christmas listing** (same zip,
+seasonal keywords, ~1 hr) → pin both → downgrade Shopify. Full steps in
+[HANDOFF.md](HANDOFF.md).
+
+**Christmas is time-critical:** seasonal printables need 6–8 weeks to index and office
+parties are booked through November. Mid-October is the last responsible date, not the target.
 
 ## Repo map
 

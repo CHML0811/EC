@@ -61,17 +61,26 @@ The same content in plain markdown: **`marketing/etsy-office-awards-kit.md`**.
 - Listing type: **Digital**
 - Upload: **`kit/Office-Awards-Kit.zip`** (8.2 MB, under Etsy's 20 MB cap)
 - Images: **`kit/listing/kit-1` … `kit-4`**, in that order
-- Price: **$18** (launch price — raise to $24 after ~10 reviews)
+- Price: **$14.99** — provisional. If the top organic row is $5–$8 with 400+ reviews, drop to $9.99
 - Personalization: **off**
 
-### 4 · List it again for Christmas — ~1 hour, do this by early October
+### 4 · List it again for Christmas — ~1 hour, **this week**
 **The same zip, a second listing.** The eight Christmas certificates are already inside it,
 so this needs no new product — just a seasonal title, 13 different tags and one new image.
 Etsy ranks listings, not shops, so two listings is two chances to be found on searches that
 don't compete with each other.
 
-Copy is written: **[`marketing/etsy-christmas-awards-kit.md`](marketing/etsy-christmas-awards-kit.md)**.
-The seasonal hero image is already built at `kit/listing/kit-x1-hero.png`.
+**Not October.** Seasonal printables need 6–8 weeks to index and office parties are booked
+through November. Today is 3 September; mid-October is the last responsible date, not the
+target. Every week of delay is indexing lost from a season that comes once a year.
+
+Copy is written: **[`marketing/etsy-christmas-awards-kit.md`](marketing/etsy-christmas-awards-kit.md)**
+— $12.99, its own 13 tags with zero overlap so the two listings don't bury each other. The
+seasonal hero is built at `kit/listing/kit-x1-hero.png`.
+
+Then **pin both listings the same day**. Pinterest is the main free traffic source for
+printables after Etsy search — one vertical pin per listing using the exact title keyword,
+then three variants. No ads until a listing converts.
 
 ### 5 · Downgrade Shopify — ~2 min
 Advanced $399 → Basic $39. **Saves $360 every month.** Nothing in this project uses an

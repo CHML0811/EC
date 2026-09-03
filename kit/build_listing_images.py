@@ -52,39 +52,49 @@ def page(w, h, css, body):
 
 
 def scene_hero(xmas: bool = False) -> str:
-    rows_src = XMAS_CONTENTS if xmas else CONTENTS
-    eyebrow = "The Bureau of Minor Achievements"
-    head = "The Office<br>Christmas Awards" if xmas else "The Office<br>Awards Kit"
-    foot = ("Instant download &middot; order the night before"
-            if xmas else "Instant download &middot; nothing to install")
+    """Photo 1. A printed certificate on a desk, not a flat page.
+
+    Buyers can't hold a file. The listings that win the click show the thing printed and
+    sitting somewhere real, with DIGITAL DOWNLOAD stated on the image so nobody expects a
+    parcel. A screenshot of page one loses to that every time.
+    """
+    art = (REPO / "design" / "out" /
+           ("bma-x-secret-santa.png" if xmas else "bma-o-punctuality.png")).as_uri()
+    under = (REPO / "design" / "out" /
+             ("bma-x-office-party.png" if xmas else "bma-o-email-meeting.png")).as_uri()
+    head = "Christmas Office<br>Party Awards" if xmas else "Funny Office<br>Awards"
+    sub = ("38 printable certificates &middot; 8 for Christmas"
+           if xmas else "38 printable award certificates")
     css = f"""
-  body{{background:{PAPER};padding:140px 150px;display:flex;flex-direction:column;
-    justify-content:space-between}}
-  .top{{text-align:center}}
-  .eyebrow{{font-size:30px;letter-spacing:12px;color:{RED};text-transform:uppercase}}
-  h1{{margin-top:44px;font-size:158px;line-height:1.02;font-weight:700;
-    text-transform:uppercase;letter-spacing:-3px;text-wrap:balance}}
-  .rule{{width:280px;height:4px;background:{RED};margin:46px auto 0}}
-  .list{{display:flex;flex-direction:column;gap:0}}
-  .row{{display:flex;align-items:baseline;gap:34px;padding:26px 0;
-    border-bottom:2px solid rgba(23,21,15,.13)}}
-  .row:last-child{{border-bottom:0}}
-  .q{{flex:0 0 130px;text-align:right;font-size:62px;font-weight:700;color:{RED};
-    font-family:"Liberation Mono",monospace}}
-  .w{{font-size:46px;line-height:1.3}}
-  .foot{{text-align:center;font-size:34px;letter-spacing:6px;text-transform:uppercase;
-    opacity:.66}}
+  /* a desk, not a photo studio — a warm surface, real shadows, nothing pretending to be a
+     photograph. The certificate is the only sharp thing on the page. */
+  body{{background:
+      radial-gradient(ellipse at 30% 18%, #C7B49A 0%, #AF9A7E 46%, #8E7A60 100%);
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    padding:110px 100px;position:relative;overflow:hidden}}
+  .stack{{position:relative;width:1180px;height:1180px}}
+  .stack img{{position:absolute;border:1px solid rgba(0,0,0,.22)}}
+  .under{{width:820px;height:1025px;left:60px;top:96px;transform:rotate(-7deg);
+    box-shadow:20px 26px 46px rgba(38,28,16,.34);filter:brightness(.97)}}
+  .top{{width:880px;height:1100px;left:250px;top:40px;transform:rotate(3.5deg);
+    box-shadow:30px 38px 66px rgba(38,28,16,.42)}}
+  .badge{{position:absolute;top:74px;right:70px;background:{RED};color:#FBFAF5;
+    padding:22px 40px;font-family:"Liberation Mono",monospace;font-size:40px;
+    letter-spacing:9px;text-transform:uppercase;font-weight:700;
+    box-shadow:10px 12px 26px rgba(38,28,16,.4);transform:rotate(3deg)}}
+  .cap{{position:absolute;left:0;right:0;bottom:78px;text-align:center;color:#FBF8F1}}
+  .cap h1{{font-size:118px;line-height:1.04;font-weight:700;text-transform:uppercase;
+    letter-spacing:-2px;text-shadow:0 4px 26px rgba(38,28,16,.6)}}
+  .cap p{{margin-top:26px;font-size:42px;letter-spacing:3px;
+    text-shadow:0 3px 16px rgba(38,28,16,.6)}}
 """
-    rows = "".join(f'<div class="row"><div class="q">{q}</div><div class="w">{w}</div></div>'
-                   for q, w in rows_src)
     body = f"""
-<div class="top">
-  <div class="eyebrow">{eyebrow}</div>
-  <h1>{head}</h1>
-  <div class="rule"></div>
+<div class="badge">Digital Download</div>
+<div class="stack">
+  <img class="under" src="{under}">
+  <img class="top" src="{art}">
 </div>
-<div class="list">{rows}</div>
-<div class="foot">{foot}</div>"""
+<div class="cap"><h1>{head}</h1><p>{sub}</p></div>"""
     return page(SQ, SQ, css, body)
 
 

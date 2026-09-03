@@ -1,6 +1,6 @@
 # Etsy listing — The Office Awards Kit
 
-**Type:** Digital download · **Launch price:** $18 → $24 later · **File:** `kit/Office-Awards-Kit.zip` (8.2 MB)
+**Type:** Digital download · **Launch price:** $14.99 · **File:** `kit/Office-Awards-Kit.zip` (8.2 MB)
 
 Digital listings need no shipping profile, no Printify, and no card on file. This can go
 live the hour the Etsy account exists — which is the whole reason it's first.
@@ -10,7 +10,7 @@ live the hour the Etsy account exists — which is the whole reason it's first.
 ## Title
 
 ```
-Office Awards Ceremony Kit, Funny Employee Award Certificates with Host Script, Printable Staff Awards, Work Party, Instant Download
+Funny Office Awards Printable | 38 Employee Certificates PDF | Work Party Superlatives | Instant Download
 ```
 
 131 characters. **Changed** — it used to lead with "38 Printable Employee Award
@@ -20,13 +20,14 @@ appear to include. Reasoning: [`playbooks/will-this-sell.md`](../playbooks/will-
 
 Still front-loaded with "Office Awards" for search.
 
-## Tags — all 13, all inside the 20-character limit
+## Tags — 13, none over 20 characters, zero overlap with the Christmas listing
 
 ```
-office awards · funny awards · employee awards · award certificate · work party games ·
-staff appreciation · printable awards · team building · office christmas ·
-funny certificate · instant download · editable template · coworker gift
+office party awards · funny employee award · coworker certificate · work superlatives · employee awards · staff appreciation · office humor · printable awards · team awards · work party games · funny work award · office party · award certificate
 ```
+
+If both listings share a primary keyword Etsy buries one of them, so these are
+deliberately disjoint from `marketing/etsy-christmas-awards-kit.md`.
 
 ## Description
 
@@ -68,6 +69,8 @@ funny certificate · instant download · editable template · coworker gift
 > Print at home on any printer, or send the PDFs to a print shop. Yours to keep and reuse
 > every year — rewrite the awards and the citations to suit your own office.
 >
+> **A note on the format.** The Awards Maker is a single HTML file — you open it in Chrome, Safari or Edge like a web page. There is nothing to install, no Canva account, no subscription, and it works with the internet switched off. If you can open a browser you can use it. Every certificate is also included as a ready-to-print image if you'd rather skip the maker entirely.
+>
 > **PLEASE NOTE**
 >
 > This is a digital download. No physical item is shipped. Because files can't be returned,
@@ -104,30 +107,29 @@ Upload in this order. Etsy uses the first as the search-grid thumbnail.
 Still worth adding later: a photo of a printed certificate on an actual desk. A real-world
 shot outperforms every render, and you can take it on a phone once you print one.
 
-## Pricing — launch at $18, raise to $24
+## Pricing — $14.99, provisional on the live grid
 
-**This reverses the earlier $24 recommendation.** Reasoning in
-[`playbooks/will-this-sell.md`](../playbooks/will-this-sell.md).
+**Corrected twice now, and this one is against real listings rather than category averages.**
 
-Etsy boosts a new listing for 14–21 days, and ranking inside that window is driven by
-conversion rate and sales velocity. Early sales are worth more than early margin, because
-ranking compounds for months and $6 doesn't.
+Live party-award listings cluster at **$6–$12**: $6 for 47 office holiday awards, $6.50 for
+24 funny office awards, $8.25 for 200 Canva awards, $10 for 50 editable Christmas awards. A
+$30/150-award listing exists and has almost no reviews. **Awards are not in the $12–$40
+business-template band I originally placed them in.**
 
-| | At $24 | At $18 |
-|---|---:|---:|
-| You keep per sale | $21.27 | $15.72 |
-| Likely sales in the boost window | 2–3 | 8–10 |
+$14.99 sits above the cluster without being triple it. The kit genuinely carries more — 38
+certificates, a host's script, a ballot, name tents, emails and a working editor — but that
+only justifies a premium if the listing *shows* it. A flat page-one screenshot at $14.99
+loses to $6.99 every time, which is why photo 1 is now printed certificates on a desk.
 
-Ten sales and ten reviews put a listing somewhere three sales never will. **Raise to $24
-once you have roughly ten reviews** — that's when the premium becomes defensible to a buyer
-looking at $9 alternatives.
+**This is provisional.** Open the live grid before publishing:
 
-$18 is still well above the $8–15 template packs, which is right: the kit contains a script,
-a ballot and a working maker, and none of them do.
+| What you see in the top organic row | Do |
+|---|---|
+| $5–$8 with 400+ reviews | Drop to **$9.99**. The premium needs a visible reason we don't have yet. |
+| $15–$25 Canva bundles | **Hold $14.99**, or go to $18. |
 
-**If it hasn't sold in 30 days, still don't cut the price first.** Check impressions.
-Unfindable is a more common failure than overpriced — but at $24 with no reviews, price is a
-genuine suspect, which is exactly why we start lower.
+Test against the grid; don't theorise from a blog table.
+
 
 ## Why this is listing #1
 
