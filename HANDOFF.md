@@ -166,24 +166,35 @@ anything, do not "improve" any copy, and do not touch a design — this is a che
 cleanup. Show me the final output.
 ```
 
-### Prompt C — the second listing
+### Prompt C — finish the classroom listing
+
+**Partly done already.** `design/certs_school.py` exists and renders 12 classroom
+certificates, and the listing copy — title, 13 non-overlapping tags, description — is written
+in `marketing/etsy-teacher-awards-kit.md`. What's missing is the packaged product.
+
 ```
-Create a second Etsy listing for the SAME kit aimed at teachers instead of offices:
-end-of-year classroom awards. Follow the exact structure of
-marketing/etsy-office-awards-kit.md.
+Read marketing/etsy-teacher-awards-kit.md, then finish the three things its
+"What's left to build" section lists:
+
+1. Classroom documents — a teacher's script and a blank certificate. Follow the pattern in
+   kit/build_documents.py. The office kit's Ballot, Name Tents and announcement emails do
+   not transfer; a classroom needs different paperwork.
+2. A --school flag on kit/build_kit.py that packages manifest-school.json plus those
+   documents as Classroom-Awards-Kit.zip. Cohort selection is already manifest-driven —
+   do not go back to globbing design/out.
+3. A classroom variant in kit/build_listing_images.py. Photo 1 must be printed
+   certificates with DIGITAL DOWNLOAD on the image, like the office hero.
 
 Rules from AGENTS.md apply: US English, exactly 13 tags, every tag 20 characters or fewer,
-no invented numbers.
+no invented numbers. Every classroom award must be about a situation, never a child's
+ability, effort or behavior — the reasoning is in the certs_school.py docstring.
 
-Write 12 new classroom certificates into design/certs_school.py, following the pattern in
-design/certs_office.py exactly. Keep the deadpan voice — dry and specific, never zany.
-Then run it and show me the new PNGs.
-
-Do not touch the existing cohorts.
+Do not set a price; that waits on the live-grid numbers. Do not touch the other cohorts.
+Run python3 verify.py when you're done.
 ```
 
-*Why this one: the kit is already built. A second audience is a second listing for a few
-hours of work, and Etsy ranks listings, not shops — two listings is two chances to be found.*
+*Why this one: the kit machinery already exists. A third audience is a third listing for
+about a day, and Etsy ranks listings, not shops.*
 
 ### Prompt D — after the first sale
 ```

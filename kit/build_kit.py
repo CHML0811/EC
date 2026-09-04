@@ -9,6 +9,7 @@ kit/Office-Awards-Kit.zip. The zip is a build artifact and is not committed; eve
 needed to rebuild it is.
 """
 
+import json
 import pathlib
 import shutil
 import subprocess
@@ -19,6 +20,10 @@ ROOT = pathlib.Path(__file__).resolve().parent
 REPO = ROOT.parent
 DIST = ROOT / "dist"
 ZIP = ROOT / "Office-Awards-Kit.zip"
+
+# Which cohorts belong in THIS kit. The classroom set (manifest-school.json) is
+# deliberately absent — it is a different product for a different buyer.
+KIT_MANIFESTS = ["manifest.json", "manifest-christmas.json", "manifest-office.json"]
 
 DOCS = ["Start-Here.pdf", "Hosts-Script.pdf", "Ballot.pdf", "Name-Tents.pdf",
         "Announcement.pdf"]
@@ -47,8 +52,20 @@ def main() -> None:
     if certs.exists():
         shutil.rmtree(certs)
     certs.mkdir()
-    pngs = sorted((REPO / "design" / "out").glob("bma-*.png"))
-    for p in pngs:
+
+    # Named from the manifests, NOT globbed. This used to take every bma-*.png in
+    # design/out, so adding a cohort for a different audience silently swept it into this
+    # kit — the classroom set did exactly that — and the listing's "38 certificates"
+    # stopped being true without anything failing.
+    out = REPO / "design" / "out"
+    pngs = []
+    for name in KIT_MANIFESTS:
+        entries = json.loads((out / name).read_text(encoding="utf-8"))
+        pngs += [out / e["file"] for e in entries]
+    missing = [p.name for p in pngs if not p.exists()]
+    if missing:
+        raise SystemExit(f"manifest names {len(missing)} file(s) that don't exist: {missing[:3]}")
+    for p in sorted(pngs):
         shutil.copy2(p, certs / p.name)
 
     print("Packaging…")

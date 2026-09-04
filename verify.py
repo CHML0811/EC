@@ -15,6 +15,7 @@ pointing at a file somebody renamed.
 """
 
 import argparse
+import json
 import pathlib
 import re
 import subprocess
@@ -59,6 +60,7 @@ def check_env() -> None:
 # --------------------------------------------------------------- sources
 BUILD_SCRIPTS = [
     "design/generate_certificates.py", "design/certs_christmas.py", "design/certs_office.py",
+    "design/certs_school.py",
     "design/generate_mockups.py", "design/generate_crops.py",
     "kit/build_awards_maker.py", "kit/build_documents.py", "kit/build_kit.py",
     "kit/build_listing_images.py", "site/build_storefront.py", "store/upload_to_shopify.py",
@@ -159,8 +161,29 @@ def check_artifacts(full: bool) -> None:
         warn("(that's expected on a fresh clone; artifacts are gitignored)")
         return
 
-    certs = sorted((ROOT / "design" / "out").glob("bma-*.png"))
-    check(len(certs) == 38, f"38 certificates rendered (found {len(certs)})")
+    # Count per cohort, not by globbing every PNG. The repo carries more certificates than
+    # the kit ships: the classroom set is a separate product for a separate buyer, and a
+    # flat count of design/out made adding one look like a failure.
+    out = ROOT / "design" / "out"
+    expected = {"manifest.json": 8, "manifest-christmas.json": 8,
+                "manifest-office.json": 22, "manifest-school.json": 12}
+    counts, ok = {}, True
+    for name, want in expected.items():
+        path = out / name
+        if not path.exists():
+            ok = False
+            counts[name] = "missing"
+            continue
+        entries = json.loads(path.read_text(encoding="utf-8"))
+        got = sum(1 for e in entries if (out / e["file"]).exists())
+        counts[name] = got
+        ok = ok and got == want
+    kit_total = sum(expected[n] for n in
+                    ("manifest.json", "manifest-christmas.json", "manifest-office.json"))
+    detail = ", ".join(f"{name.removesuffix('.json').removeprefix('manifest-')}={got}"
+                       for name, got in counts.items())
+    check(ok, f"all cohorts rendered — {kit_total} in the kit, "
+              f"{expected['manifest-school.json']} classroom ({detail})")
 
     with zipfile.ZipFile(zip_path) as z:
         names = z.namelist()
