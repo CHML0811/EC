@@ -12,8 +12,14 @@ inflatable suits. That direction is archived. The store now sells one digital do
 line of printed certificates, and the refund terms for those are completely different from
 the terms for apparel. Do not restore the old text.
 
-**Contact address.** Everything below uses the store's registered Shopify email. If you set up
-a `support@` alias on a real domain later, change it in one place here and re-run the push.
+**Contact address.** The policies below say `support@example.com`. That is a deliberate
+placeholder: `upload_to_shopify.py` refuses to publish it and substitutes the address in
+`SHOPIFY_SUPPORT_EMAIL` instead, so a real inbox never has to live in this repository.
+
+```bash
+export SHOPIFY_SUPPORT_EMAIL=your-real@address.com
+python3 store/upload_to_shopify.py --policies --execute
+```
 
 ---
 
@@ -30,7 +36,7 @@ simply wasn't as funny as you hoped, email us within 30 days of delivery and we'
 you. You don't need to explain the joke.
 
 **How it works**
-1. Email us with your order number.
+1. Email **support@example.com** with your order number.
 2. We reply within 1 business day.
 3. Refunds go back to your original payment method within 5–10 business days.
 
@@ -98,8 +104,8 @@ checkout), our print partner for physical orders, shipping carriers, and our ema
 
 **Marketing.** Opt-in only. Every email has an unsubscribe link that works immediately.
 
-**Your rights.** Email us to access, correct, export, or delete your data. We'll respond
-within 30 days. If you're in California (CCPA) or the EU/UK (GDPR), you have additional
+**Your rights.** Email **support@example.com** to access, correct, export, or delete your
+data. We'll respond within 30 days. If you're in California (CCPA) or the EU/UK (GDPR), you have additional
 rights and we'll honor them.
 
 **Cookies.** We use cookies for the cart, checkout, and analytics. You can block them in your
@@ -146,6 +152,8 @@ amount you paid for it.
 
 **Governing law.** Hong Kong SAR, without prejudice to consumer rights you hold in your own
 jurisdiction.
+
+**Contact.** support@example.com
 
 ---
 
@@ -226,15 +234,15 @@ Only if we made the error. Custom text you supplied — including its typos — 
 Yes, $14.95. Duties are set by your country and aren't included.
 
 **Can I order for a whole department, or in bulk?**
-Yes — email us. We do bulk and wholesale for offices, schools, and events, and a department
+Yes — email **support@example.com**. We do bulk and wholesale for offices, schools, and events, and a department
 order is a lot cheaper per head than it looks.
 
 ---
 
 ## Setup notes
 
-- **Contact address.** The push uses the store's registered Shopify email. If you'd rather not
-  publish a personal address, set up `support@` on a real domain and change it here.
+- **Contact address.** `support@example.com` is a placeholder and the uploader will not
+  publish it. Set `SHOPIFY_SUPPORT_EMAIL`, or set up a real `support@` alias and edit it here.
 - Shopify: **Settings → Policies** for the four policies · **Online Store → Pages** for
   About and FAQ.
 - Link About and FAQ in the footer menu; policies auto-link at checkout.
