@@ -86,10 +86,33 @@ then three variants. No ads until a listing converts.
 Advanced $399 → Basic $39. **Saves $360 every month.** Nothing in this project uses an
 Advanced feature.
 
-### 6 · Fill the Shopify store — ~10 min, optional
-Etsy is the sales channel; Shopify is the brand home and the bulk-order desk. When you want
-it looking real, one command does the whole thing — 16 products with images, prices,
-variants, all four policies and both pages:
+### 6 · Finish the Shopify store — ~10 min, optional
+
+**Mostly done already.** The catalog was pushed to `fbapgj-si.myshopify.com` through the
+Shopify connector: **17 products** (the Office Awards Kit plus all 16 certificate prints),
+each with images on Shopify's CDN and three priced variants ($32 / $42 / $58), plus the
+**About** and **FAQ** pages. Everything is **DRAFT** — nothing is buyable yet, on purpose.
+
+Three things are left, and they all need you:
+
+1. **Policies.** The connector's token lacks `write_legal_policies`, so the four policies
+   were rejected. Paste them from `store/policies-and-pages.md` into **Settings → Policies**
+   (about 4 minutes), or create a custom app token and run
+   `python3 store/upload_to_shopify.py --policies --execute`.
+2. **Digital delivery.** Shopify does not deliver files on its own. Install the free
+   first-party **Digital Downloads** app and attach `kit/Office-Awards-Kit.zip` to the kit
+   product. **Until you do this, activating that product means a buyer pays and gets
+   nothing.**
+3. **Shop name.** The store is still called "My Store" in **Settings → Store details**.
+   There is no API for this. Rename it to *The Bureau of Minor Achievements*.
+
+Then flip products from Draft to Active when you're ready to sell.
+
+There are also **8 leftover DRAFT products from the archived "Deadpan Goods" direction**
+(inflatable shark suit, camo shorts, window silhouettes). They're invisible to customers.
+Delete them when convenient — that was left to you rather than done automatically.
+
+To re-run or extend the catalog from scratch, one command still does the whole thing:
 
 ```bash
 # Shopify admin → Settings → Apps and sales channels → Develop apps → Create an app
@@ -218,9 +241,9 @@ Judge on **3-second retention**, not likes. Under 50% kill it, over 70% make fiv
 ## What's genuinely unfinished
 
 - **Etsy account and the listing.** The only thing standing between this and revenue.
-- **Shopify store contents.** `store/upload_to_shopify.py` does this in one command but has
-  never been run against a live store — start it with `--limit 1 --execute`. Low priority;
-  Etsy is the sales channel, Shopify is just the brand home.
+- **Shopify policies, digital delivery, and the shop name.** The catalog and pages are done;
+  see step 6. The kit product must not go Active before the Digital Downloads app is wired
+  up, or a buyer pays and receives nothing.
 - **Printify.** Not started. Not needed until the physical line goes live.
 - **Bulk shipping math.** The departmental tiers on the storefront assume one parcel.
   Printify bills per item. **Verify in their calculator before promoting those tiers.**

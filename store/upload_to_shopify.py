@@ -21,11 +21,17 @@ Dry run is the default on purpose. Nothing is sent until --execute.
 Idempotent: products are matched on handle and skipped if they already exist, so a run
 that dies halfway can simply be run again. Use --force to update matched products anyway.
 
-⚠️  This has NOT been run against a live store — no API token was available while it was
-written. The mutations it uses (stagedUploadsCreate, productCreate, productVariantsBulkUpdate,
-shopPolicyUpdate, pageCreate) were schema-validated against the Admin API earlier, and the
-staged-upload path was executed successfully for real. Treat the first run as a test: start
-with `--products --limit 1 --execute`, look at the product in admin, then do the rest.
+Status: the product and page paths have now been run against the live store
+(fbapgj-si.myshopify.com) via the Shopify connector — 17 products with images and three
+priced variants each, plus the About and FAQ pages. Two bugs that only showed up against a
+real store are fixed here: productCreate returns ONE variant rather than fanning out the
+option values, and the listing parser used to swallow the copy from the section after the
+last listing.
+
+⚠️  Still untested from this script directly: policies. The connector's token lacks
+`write_legal_policies`, so shopPolicyUpdate was rejected there. A custom app token with that
+scope should work — that is what this script is for. Start with `--policies --execute` and
+check Settings → Policies afterwards.
 """
 
 import argparse
@@ -107,11 +113,15 @@ def parse_listings(path: pathlib.Path, extra_tags: list[str]) -> list[dict]:
     """Read the Etsy listing docs so titles and tags have exactly one source of truth."""
     out, cur = [], None
     for line in path.read_text(encoding="utf-8").splitlines():
-        m = re.match(r"^## \d+ · .+ — `bma-(.+)\.png`", line)
-        if m:
+        if line.startswith("## "):
+            # Any h2 closes the current listing. Sections like `## Bundle — ...` and
+            # `## Publishing checklist` are not listings, but they do carry blockquotes,
+            # and without this the last listing swallowed their copy.
             if cur:
                 out.append(cur)
-            cur = {"slug": m.group(1), "title": "", "tags": [], "desc": []}
+            m = re.match(r"^## \d+ · .+ — `bma-(.+)\.png`", line)
+            cur = ({"slug": m.group(1), "title": "", "tags": [], "desc": []}
+                   if m else None)
             continue
         if not cur:
             continue
@@ -128,8 +138,16 @@ def parse_listings(path: pathlib.Path, extra_tags: list[str]) -> list[dict]:
     return out
 
 
+BOLD = re.compile(r"\*\*(.+?)\*\*")
+
+
 def to_html(lines: list[str]) -> str:
-    """Blockquote copy → HTML. Bullet runs become one list; everything else a paragraph."""
+    """Blockquote copy → HTML. Bullet runs become one list; everything else a paragraph.
+
+    Inline `**bold**` is converted too — the Christmas listings put the shipping cutoff in
+    bold, and without this it reached the storefront as literal asterisks.
+    """
+    lines = [BOLD.sub(r"<strong>\1</strong>", ln) for ln in lines]
     html, bullets = [], []
 
     def flush():
@@ -209,6 +227,14 @@ mutation Prices($productId: ID!, $variants: [ProductVariantsBulkInput!]!) {
   }
 }"""
 
+ADD_VARIANTS = """
+mutation AddVariants($productId: ID!, $variants: [ProductVariantsBulkInput!]!) {
+  productVariantsBulkCreate(productId: $productId, variants: $variants) {
+    productVariants { id title price }
+    userErrors { field message }
+  }
+}"""
+
 
 def push_products(api: Shopify, limit: int | None, force: bool, n_images: int) -> None:
     items = []
@@ -256,12 +282,27 @@ def push_products(api: Shopify, limit: int | None, force: bool, n_images: int) -
         if not api.execute:
             continue
         prod = data["productCreate"]["product"]
-        # options auto-generate the variants; a second call attaches the prices
+
+        # productCreate does NOT fan the option values out into variants — it returns a
+        # single variant on the first value ("8x10 Print"). Verified against a live store:
+        # without this the other two sizes never exist and the product sells at one price.
         by_title = {v["title"]: v["id"] for v in prod["variants"]["nodes"]}
+        missing = [(n, p) for n, p in PRICES if n not in by_title]
+        if missing:
+            made = api(ADD_VARIANTS, {"productId": prod["id"], "variants": [
+                {"price": p, "optionValues": [{"optionName": "Size", "name": n}]}
+                for n, p in missing
+            ]}, "productVariantsBulkCreate")
+            for v in made["productVariantsBulkCreate"]["productVariants"]:
+                by_title[v["title"]] = v["id"]
+
+        # the one variant productCreate did make still carries no price
         updates = [{"id": by_title[n], "price": p} for n, p in PRICES if n in by_title]
         if updates:
             api(SET_PRICES, {"productId": prod["id"], "variants": updates}, "prices")
-        print(f"    created, {len(updates)} prices set")
+        if len(by_title) != len(PRICES):
+            print(f"    ! only {len(by_title)}/{len(PRICES)} variants — check this product")
+        print(f"    created, {len(by_title)} variants, {len(updates)} prices set")
 
 
 # ----------------------------------------------------------------- policies
@@ -345,14 +386,17 @@ def md_to_html(lines: list[str]) -> str:
     return "".join(html)
 
 
-PLACEHOLDER = re.compile(r"[\w.+-]+@deadpangoods\.com")
+# Any address on a domain we don't own. The policies were rewritten for the Bureau and now
+# carry the store's real inbox, so this normally finds nothing — it stays as a guard against
+# a placeholder creeping back in.
+PLACEHOLDER = re.compile(r"[\w.+-]+@(?:deadpangoods|example)\.com")
 
 
 def fix_email(html: str, real: str | None) -> tuple[str, bool]:
-    """The written policies use a domain that doesn't exist yet.
+    """Catch any support address on a domain that doesn't exist.
 
-    Publishing them as-is points customers at an inbox nobody reads, which is worse than
-    having no policy. Substitute a real address if one was supplied, else report it.
+    Publishing one points customers at an inbox nobody reads, which is worse than having no
+    policy at all. Substitute a real address if one was supplied, else report it.
     """
     if not PLACEHOLDER.search(html):
         return html, False
@@ -376,9 +420,9 @@ def push_policies(api: Shopify, real_email: str | None, allow_placeholder: bool)
             flagged.append(name)
 
     if flagged and not allow_placeholder:
-        print(f"  ⚠️  {', '.join(flagged)} still contain support@deadpangoods.com,")
-        print("      which is a placeholder — no mailbox exists behind it. Customers who")
-        print("      email it get silence, and Etsy/Shopify both expect a reachable address.")
+        print(f"  ⚠️  {', '.join(flagged)} name a support address on a domain we don't own,")
+        print("      so no mailbox exists behind it. Customers who email it get silence,")
+        print("      and Etsy/Shopify both expect a reachable address.")
         print("      Fix with:  SHOPIFY_SUPPORT_EMAIL=you@real.com  (or --allow-placeholder-email)")
         return
 
