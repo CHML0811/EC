@@ -71,7 +71,7 @@ Long term: **[long-term-brand-strategy.md](playbooks/long-term-brand-strategy.md
 | Artwork | 38 certificates · 182 listing images · all generated, no camera |
 | Shopify | `fbapgj-si.myshopify.com` · **USD** · Advanced plan (**downgrade to Basic — saves $360/mo**) |
 | Shopify catalog | ✅ **17 products live in admin** — the kit + 16 prints, images and prices set, all DRAFT |
-| Shopify pages | ✅ About and FAQ published |
+| Shopify pages | ✅ About and FAQ published · 4 collections · main and footer menus wired |
 | Shopify policies | ❌ Blocked — the connector's token lacks `write_legal_policies`. Paste them in, or use a custom app token |
 | Shipping | ✅ US $5.95, free over $60 · Rest of World $14.95 |
 | Etsy | ❌ **Not created. This is the only thing blocking revenue.** |

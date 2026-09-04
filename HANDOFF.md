@@ -91,7 +91,14 @@ Advanced feature.
 **Mostly done already.** The catalog was pushed to `fbapgj-si.myshopify.com` through the
 Shopify connector: **17 products** (the Office Awards Kit plus all 16 certificate prints),
 each with images on Shopify's CDN and three priced variants ($32 / $42 / $58), plus the
-**About** and **FAQ** pages. Everything is **DRAFT** — nothing is buyable yet, on purpose.
+**About** and **FAQ** pages, **four collections** (Digital Downloads · Office & Coworkers ·
+Christmas & Secret Santa · Family & Milestones) and both **navigation menus**. Everything is
+**DRAFT** — nothing is buyable yet, on purpose.
+
+Two settings that only bite once a real order arrives were also fixed, because the defaults
+are wrong for this catalog: the kit variant no longer **requires shipping** (it's a file), and
+all 32 print variants created in the second API call had come back **inventory-tracked at
+quantity zero**, which would have shown 11x14 and Framed as sold out on every product.
 
 Three things are left, and they all need you:
 

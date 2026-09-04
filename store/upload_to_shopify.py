@@ -23,10 +23,11 @@ that dies halfway can simply be run again. Use --force to update matched product
 
 Status: the product and page paths have now been run against the live store
 (fbapgj-si.myshopify.com) via the Shopify connector — 17 products with images and three
-priced variants each, plus the About and FAQ pages. Two bugs that only showed up against a
+priced variants each, plus the About and FAQ pages. Three bugs that only showed up against a
 real store are fixed here: productCreate returns ONE variant rather than fanning out the
-option values, and the listing parser used to swallow the copy from the section after the
-last listing.
+option values; bulk-created variants default to tracked inventory at quantity zero, so two
+of every three sizes read as sold out; and the listing parser used to swallow the copy from
+the section after the last listing.
 
 ⚠️  Still untested from this script directly: policies. The connector's token lacks
 `write_legal_policies`, so shopPolicyUpdate was rejected there. A custom app token with that
@@ -289,8 +290,12 @@ def push_products(api: Shopify, limit: int | None, force: bool, n_images: int) -
         by_title = {v["title"]: v["id"] for v in prod["variants"]["nodes"]}
         missing = [(n, p) for n, p in PRICES if n not in by_title]
         if missing:
+            # tracked defaults to TRUE on bulk-created variants, unlike the one productCreate
+            # makes. Against a live store that left 11x14 and Framed reading "sold out" at
+            # quantity 0 on every product. These are print-on-demand; nothing to count.
             made = api(ADD_VARIANTS, {"productId": prod["id"], "variants": [
-                {"price": p, "optionValues": [{"optionName": "Size", "name": n}]}
+                {"price": p, "optionValues": [{"optionName": "Size", "name": n}],
+                 "inventoryItem": {"tracked": False}}
                 for n, p in missing
             ]}, "productVariantsBulkCreate")
             for v in made["productVariantsBulkCreate"]["productVariants"]:
