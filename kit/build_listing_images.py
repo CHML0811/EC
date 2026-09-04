@@ -51,20 +51,28 @@ def page(w, h, css, body):
     return m.page(w, h, css, body)
 
 
-def scene_hero(xmas: bool = False) -> str:
+HEROES = {
+    "office":    ("bma-o-punctuality.png", "bma-o-email-meeting.png",
+                  "Funny Office<br>Awards", "38 printable award certificates"),
+    "christmas": ("bma-x-secret-santa.png", "bma-x-office-party.png",
+                  "Christmas Office<br>Party Awards",
+                  "38 printable certificates &middot; 8 for Christmas"),
+    "school":    ("bma-s-expertise.png", "bma-s-kindness.png",
+                  "End of Year<br>Class Awards",
+                  "12 printable certificates &middot; every child gets one"),
+}
+
+
+def scene_hero(variant: str = "office") -> str:
     """Photo 1. A printed certificate on a desk, not a flat page.
 
     Buyers can't hold a file. The listings that win the click show the thing printed and
     sitting somewhere real, with DIGITAL DOWNLOAD stated on the image so nobody expects a
     parcel. A screenshot of page one loses to that every time.
     """
-    art = (REPO / "design" / "out" /
-           ("bma-x-secret-santa.png" if xmas else "bma-o-punctuality.png")).as_uri()
-    under = (REPO / "design" / "out" /
-             ("bma-x-office-party.png" if xmas else "bma-o-email-meeting.png")).as_uri()
-    head = "Christmas Office<br>Party Awards" if xmas else "Funny Office<br>Awards"
-    sub = ("38 printable certificates &middot; 8 for Christmas"
-           if xmas else "38 printable award certificates")
+    top, bottom, head, sub = HEROES[variant]
+    art = (REPO / "design" / "out" / top).as_uri()
+    under = (REPO / "design" / "out" / bottom).as_uri()
     css = f"""
   /* a desk, not a photo studio — a warm surface, real shadows, nothing pretending to be a
      photograph. The certificate is the only sharp thing on the page. */
@@ -98,15 +106,22 @@ def scene_hero(xmas: bool = False) -> str:
     return page(SQ, SQ, css, body)
 
 
-def scene_grid(slugs) -> str:
+def scene_grid(slugs, head: str = "38 different awards",
+               foot: str = "Nobody has to be left out — which is the one thing<br>"
+                           "that ruins an office awards ceremony.") -> str:
+    # 4-across tiles are far taller than 8-across, so a 12-tile grid overflows the fixed
+    # 2000px sheet and clips the footer. Cap its width so three rows fit with the caption.
+    cols, gap, width = (8, 18, "100%") if len(slugs) > 20 else (4, 30, "1480px")
     css = f"""
   body{{background:{PAPER};padding:120px 110px;display:flex;flex-direction:column;
     justify-content:space-between;text-align:center}}
   .eyebrow{{font-size:30px;letter-spacing:12px;color:{RED};text-transform:uppercase}}
   h2{{margin-top:22px;font-size:104px;font-weight:700;text-transform:uppercase;
     letter-spacing:-2px}}
-  /* 8 wide fits 38 tiles in 5 rows; 7 wide needs 6 and the last row falls off the sheet */
-  .grid{{display:grid;grid-template-columns:repeat(8,1fr);gap:18px;justify-items:center}}
+  /* 8 wide fits 38 tiles in 5 rows; 7 wide needs 6 and the last row falls off the sheet.
+     A 12-tile set wants 4 across, or the tiles end up postage stamps in one thin band. */
+  .grid{{display:grid;grid-template-columns:repeat({cols},1fr);gap:{gap}px;
+    justify-items:center;width:{width};margin:0 auto}}
   .grid img{{width:100%;aspect-ratio:4/5;object-fit:cover;border:1px solid rgba(0,0,0,.2);
     box-shadow:5px 6px 14px rgba(28,24,16,.16)}}
   .foot{{font-size:36px;line-height:1.45;opacity:.72}}
@@ -117,11 +132,10 @@ def scene_grid(slugs) -> str:
     body = f"""
 <div>
   <div class="eyebrow">Enough for everyone</div>
-  <h2>38 different awards</h2>
+  <h2>{head}</h2>
 </div>
 <div class="grid">{tiles}</div>
-<div class="foot">Nobody has to be left out — which is the one thing<br>
-  that ruins an office awards ceremony.</div>"""
+<div class="foot">{foot}</div>"""
     return page(SQ, SQ, css, body)
 
 
@@ -144,12 +158,13 @@ def scene_shot(img_b64: str, eyebrow: str, head: str, sub: str) -> str:
     return page(SQ, SQ, css, body)
 
 
-def scene_promise() -> str:
+def scene_promise(last: tuple[str, str] | None = None) -> str:
     items = [
         ("Instant download", "Files arrive the moment you pay. No shipping, no waiting."),
         ("Works offline", "The maker is one HTML file. No account, no subscription, no app."),
         ("Print at home", "Any printer, any paper. Or send the PDF to a print shop."),
-        ("Use it every year", "Yours forever. Rename the awards, change the citations."),
+        last or ("Use it every year",
+                 "Yours forever. Rename the awards, change the citations."),
     ]
     css = f"""
   body{{background:{PAPER};padding:150px 140px;display:flex;flex-direction:column;
@@ -179,7 +194,9 @@ def scene_promise() -> str:
 
 def main() -> None:
     # --christmas builds only the seasonal hero for listing #2; everything else is shared
+    # with listing #1. --school is a different product and needs its own four.
     xmas = "--christmas" in sys.argv
+    school = "--school" in sys.argv
     OUT.mkdir(parents=True, exist_ok=True)
     TMP.mkdir(parents=True, exist_ok=True)
     chrome = g.find_chrome()
@@ -194,22 +211,49 @@ def main() -> None:
              f"--window-size={w},{h}", f"--screenshot={OUT / (name + '.png')}", src.as_uri()],
             check=True, capture_output=True)
 
+    mans = (["manifest-school.json"] if school else
+            ["manifest.json", "manifest-christmas.json", "manifest-office.json"])
     slugs = []
-    for man in ("manifest.json", "manifest-christmas.json", "manifest-office.json"):
+    for man in mans:
         p = REPO / "design" / "out" / man
         if p.exists():
             slugs += [c["slug"] for c in json.loads(p.read_text(encoding="utf-8"))]
 
-    # screenshots of the real thing — the maker, and the script
+    # a screenshot of the real maker — each kit ships its own, carrying only its own designs
+    maker_src = ROOT / ("dist-school" if school else "dist") / "AwardsMaker.html"
+    if not maker_src.exists():
+        raise SystemExit(f"{maker_src} not built — run: python3 kit/build_kit.py"
+                         f"{' --school' if school else ''}")
     maker = TMP / "_maker.png"
     subprocess.run(
         [chrome, "--headless", "--disable-gpu", "--no-sandbox", "--hide-scrollbars",
          "--virtual-time-budget=4000", "--window-size=1500,1000",
-         f"--screenshot={maker}", (ROOT / "dist" / "AwardsMaker.html").resolve().as_uri()],
+         f"--screenshot={maker}", maker_src.resolve().as_uri()],
         check=True, capture_output=True)
 
+    if school:
+        shot(scene_hero("school"), "kit-s1-hero")
+        shot(scene_grid(slugs, head="12 different awards",
+                        foot="Every child gets one — and none of them are<br>"
+                             "about how clever, quick or well-behaved they are."),
+             "kit-s2-grid")
+        shot(scene_shot(base64.b64encode(maker.read_bytes()).decode(),
+                        "Included: the maker",
+                        "Type the names.<br>Press print.",
+                        "12 awards, any class size. Works in any browser, offline."),
+             "kit-s3-maker")
+        shot(scene_promise(last=("Safe to read out loud",
+                                 "Every award is about a situation, never about a "
+                                 "child's ability, effort or behavior.")),
+             "kit-s4-promise")
+        for name in ("kit-s1-hero", "kit-s2-grid", "kit-s3-maker", "kit-s4-promise"):
+            f = OUT / f"{name}.png"
+            print(f"  {f.name:<22} {f.stat().st_size/1024:6.0f} KB")
+        print("\n4 classroom listing images -> use in this order for listing #3")
+        return
+
     if xmas:
-        shot(scene_hero(xmas=True), "kit-x1-hero")
+        shot(scene_hero("christmas"), "kit-x1-hero")
         p = OUT / "kit-x1-hero.png"
         print(f"  {p.name:<22} {p.stat().st_size/1024:6.0f} KB")
         print("\nChristmas hero -> use as image 1 of listing #2")
@@ -224,9 +268,13 @@ def main() -> None:
          "kit-3-maker")
     shot(scene_promise(), "kit-4-promise")
 
-    for p in sorted(OUT.glob("*.png")):
-        print(f"  {p.name:<22} {p.stat().st_size/1024:6.0f} KB")
-    print(f"\n{len(list(OUT.glob('*.png')))} listing images -> {OUT}")
+    # report what this run built, not everything sitting in the directory — the school and
+    # Christmas variants live here too, and counting them made an office run overstate itself
+    built = ["kit-1-hero", "kit-2-grid", "kit-3-maker", "kit-4-promise"]
+    for name in built:
+        f = OUT / f"{name}.png"
+        print(f"  {f.name:<22} {f.stat().st_size/1024:6.0f} KB")
+    print(f"\n{len(built)} listing images -> {OUT}")
 
 
 if __name__ == "__main__":

@@ -166,35 +166,41 @@ anything, do not "improve" any copy, and do not touch a design — this is a che
 cleanup. Show me the final output.
 ```
 
-### Prompt C — finish the classroom listing
+### Prompt C — a fourth cohort
 
-**Partly done already.** `design/certs_school.py` exists and renders 12 classroom
-certificates, and the listing copy — title, 13 non-overlapping tags, description — is written
-in `marketing/etsy-teacher-awards-kit.md`. What's missing is the packaged product.
+**Listing #3 is already built.** The classroom kit is complete — 12 certificates, a teacher's
+script, its own zip and its own four listing images. It needs a price and nothing else. Copy:
+`marketing/etsy-teacher-awards-kit.md`. Build: `python3 kit/build_kit.py --school`.
+
+The next cheapest audience is **bridal shower**, which `playbooks/etsy-market-fit.md` ranks
+highest of the six — wedding is Etsy's top price band. But it needs a different palette, and
+that decision is gated on the live-grid numbers, so don't start it blind.
 
 ```
-Read marketing/etsy-teacher-awards-kit.md, then finish the three things its
-"What's left to build" section lists:
+Read playbooks/etsy-market-fit.md and marketing/etsy-teacher-awards-kit.md, then build a
+bridal shower cohort the same way the classroom one was built:
 
-1. Classroom documents — a teacher's script and a blank certificate. Follow the pattern in
-   kit/build_documents.py. The office kit's Ballot, Name Tents and announcement emails do
-   not transfer; a classroom needs different paperwork.
-2. A --school flag on kit/build_kit.py that packages manifest-school.json plus those
-   documents as Classroom-Awards-Kit.zip. Cohort selection is already manifest-driven —
-   do not go back to globbing design/out.
-3. A classroom variant in kit/build_listing_images.py. Photo 1 must be printed
-   certificates with DIGITAL DOWNLOAD on the image, like the office hero.
+1. 12 certificates in design/certs_bridal.py, following design/certs_school.py exactly.
+2. A "bridal" entry in the KITS dict in kit/build_kit.py, with its own documents.
+3. A bridal variant in kit/build_listing_images.py.
+4. Listing copy in marketing/etsy-bridal-awards-kit.md.
+
+IMPORTANT — the palette is different. Cream and oxblood is right for an office, where the
+joke depends on looking like real paperwork. It is wrong for a bridal shower, which runs
+warm and decorative. The colors are five constants at the top of
+design/generate_certificates.py and the frame is CSS; give this cohort its own visual world
+while keeping the deadpan citations.
 
 Rules from AGENTS.md apply: US English, exactly 13 tags, every tag 20 characters or fewer,
-no invented numbers. Every classroom award must be about a situation, never a child's
-ability, effort or behavior — the reasoning is in the certs_school.py docstring.
+no invented numbers, and no tag shared with any of the three existing listings.
 
-Do not set a price; that waits on the live-grid numbers. Do not touch the other cohorts.
+Do not set a price without the live-grid numbers. Do not touch the other cohorts — cohort
+selection is manifest-driven, so do not go back to globbing design/out.
 Run python3 verify.py when you're done.
 ```
 
-*Why this one: the kit machinery already exists. A third audience is a third listing for
-about a day, and Etsy ranks listings, not shops.*
+*Why this one: the machinery is now proven across two audiences. A fourth is about a day,
+and Etsy ranks listings, not shops.*
 
 ### Prompt D — after the first sale
 ```

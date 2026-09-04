@@ -3,5 +3,7 @@ design/.build-mockups/
 __pycache__/
 *.pyc
 kit/dist/
+kit/dist-school/
 kit/.build-listing/
 kit/Office-Awards-Kit.zip
+kit/Classroom-Awards-Kit.zip

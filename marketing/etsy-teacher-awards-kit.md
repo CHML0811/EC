@@ -1,21 +1,20 @@
 # Etsy listing #3 — End of Year Classroom Awards
 
-**Status: half built. Do not publish this yet.**
+**Status: built and ready to publish — except the price.**
 
 | | |
 |---|---|
-| 12 classroom certificates | ✅ Written and rendered — `design/certs_school.py` → `bma-s-*.png` |
+| 12 classroom certificates | ✅ `design/certs_school.py` → `bma-s-*.png` |
+| Classroom documents | ✅ Start Here, Teacher's Script, Blank Certificate |
+| The packaged download | ✅ `python3 kit/build_kit.py --school` → **2.8 MB** |
+| Listing images | ✅ `kit/listing/kit-s1…s4` |
 | Listing copy | ✅ Below |
-| The packaged download | ❌ Doesn't exist. There is no `Classroom-Awards-Kit.zip`. |
-| Classroom documents | ❌ The office kit's Host's Script is written for a room of adults |
-| Listing images | ❌ Not generated for this cohort |
+| Price | ❌ **Waiting on the live grid.** See below. |
 
 Cohorts 1–3 are in `kit/Office-Awards-Kit.zip`; the classroom set is deliberately **not**,
-because it's a different product for a different buyer. `kit/build_kit.py` now names its
-cohorts from the manifests instead of globbing `design/out`, so this set stays out of the
-office kit until someone deliberately packages it.
-
-**What's left is about a day**, and it's listed at the bottom.
+because it's a different product for a different buyer. The two kits share no certificates
+and each ships its own Awards Maker carrying only its own designs — a teacher scrolling past
+"Permanent Audio Only" is a worse product, not a bigger one.
 
 ---
 
@@ -115,6 +114,20 @@ three listings — if two listings share a primary keyword, Etsy buries one of t
 Digital, automatic renewal, **Paper & Party Supplies → Paper → Stationery**, personalization
 off, no production partner. Same as listings #1 and #2.
 
+**File to upload:** `kit/Classroom-Awards-Kit.zip` — 2.8 MB, well inside Etsy's 20 MB cap.
+Build it with `python3 kit/build_kit.py --school`.
+
+## Listing images — `kit/listing/`
+
+Upload in this order. Build with `python3 kit/build_listing_images.py --school`.
+
+| # | File | Job |
+|---|---|---|
+| 1 | `kit-s1-hero.png` | Printed certificates on a desk with **DIGITAL DOWNLOAD** on the image |
+| 2 | `kit-s3-maker.png` | The maker. The thing no competitor has — show it before the count |
+| 3 | `kit-s2-grid.png` | All 12 at once, titles legible at full size |
+| 4 | `kit-s4-promise.png` | Instant, offline, printable — and *safe to read out loud* |
+
 ## Price — decide it against the live grid, not this file
 
 The educational band runs **$3–20** and skews low. Twelve certificates is fewer than the
@@ -125,9 +138,10 @@ waiting on live-grid data; adding a second guess compounds the error. When you c
 `funny teacher awards printable` — one of the four searches already on your list — read the
 top row's price and file count, and price this against that.
 
-The lever that would justify the top of the band is a **teacher's version of the script**:
-what to say for each award, in a classroom, in front of parents. That's the same thing that
-makes the office kit worth more than a folder of PNGs.
+What argues for the top of the band is the **teacher's script**, which is now in the zip:
+what to say for each award, in a classroom, in front of parents, including the five things
+that go wrong. That's the same thing that makes the office kit worth more than a folder of
+PNGs — so lead the listing with it, not with the number twelve.
 
 ## Timing
 
@@ -138,15 +152,23 @@ is time-critical and ready.
 
 Order: Christmas this week → office refresh → this, whenever there's a spare day.
 
-## What's left to build
+## What's actually in the download
 
-1. **Classroom documents** — a teacher's script, and a blank certificate. The office kit's
-   Ballot, Name Tents and announcement emails don't transfer; a classroom needs different
-   paperwork. `kit/build_documents.py` is the pattern.
-2. **`kit/build_kit.py --school`** — package `manifest-school.json` plus those documents as
-   `Classroom-Awards-Kit.zip`. The manifest selection is already in place for this.
-3. **Listing images** — `kit/build_listing_images.py` with a classroom variant. Photo 1 must
-   be printed certificates with **DIGITAL DOWNLOAD** on the image, same as the office hero.
-4. **A price**, once the live grid is in.
+| File | What it's for |
+|---|---|
+| `AwardsMaker.html` | Type the names, press print. 12 designs, offline, no account |
+| `Start-Here.pdf` | What's in the folder, and the ten-minute path to the last day |
+| `Teachers-Script.pdf` | **The differentiator.** What to say for each award, in front of parents |
+| `Blank-Certificate.pdf` | For the award only this class would understand |
+| `certificates/` | All 12 as ready-to-print 300dpi images |
 
-Steps 1–3 are a day's work and need no account, no supplier and no spend.
+The teacher's script is the product, for the same reason the host's script is in the office
+kit. Anyone can sell twelve PNGs. The buyer's real problem is standing at the front on the
+last day and reading something out loud that lands as warm rather than as a joke at a child's
+expense — including the five things that go wrong, which the script covers by name.
+
+## The only thing left
+
+**A price.** Everything else is built. Don't guess it — read the top row of
+`funny teacher awards printable`, which is already on your list of four searches, and price
+against what's actually there.

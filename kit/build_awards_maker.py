@@ -3,6 +3,7 @@
 Build AwardsMaker.html — the offline certificate maker that ships inside the kit.
 
     python3 kit/build_awards_maker.py kit/dist/AwardsMaker.html
+    python3 kit/build_awards_maker.py kit/dist-school/AwardsMaker.html --school
 
 One self-contained HTML file. The buyer opens it in any browser, types names, and prints.
 No account, no software, no internet — which is the whole pitch against a Canva template.
@@ -26,15 +27,24 @@ import sys
 ROOT = pathlib.Path(__file__).resolve().parent
 DESIGN = ROOT.parent / "design"
 MANIFESTS = ["manifest.json", "manifest-christmas.json", "manifest-office.json"]
+GROUPS = {"": "General occasions", "x-": "Christmas & gift exchange", "o-": "Office awards"}
+
+# Each kit gets its own maker. The classroom set is a separate product for a separate buyer,
+# so its maker carries only classroom awards — a teacher scrolling past "Permanent Audio
+# Only" is a worse product, not a bigger one.
+PRESETS = {
+    "office": (MANIFESTS, GROUPS),
+    "school": (["manifest-school.json"], {"s-": "Classroom awards"}),
+}
 
 # The sheet is authored at 300dpi (2400x3000 = 8x10in) to match the print artwork, then
 # scaled down for both screen and paper. 8in at 96 CSS dpi is 768px, so 768/2400 = 0.32.
 PRINT_SCALE = 0.32
 
 
-def collect() -> list:
+def collect(manifests: list[str] | None = None) -> list:
     out = []
-    for m in MANIFESTS:
+    for m in manifests or MANIFESTS:
         p = DESIGN / "out" / m
         if not p.exists():
             continue
@@ -44,12 +54,12 @@ def collect() -> list:
     return out
 
 
-def build() -> str:
-    certs = collect()
-    groups = {"": "General occasions", "x-": "Christmas & gift exchange", "o-": "Office awards"}
+def build(manifests: list[str] | None = None, groups: dict | None = None) -> str:
+    certs = collect(manifests)
+    groups = groups or GROUPS
+    prefixes = sorted((p for p in groups if p), key=len, reverse=True)
     for c in certs:
-        c["group"] = ("x-" if c["slug"].startswith("x-")
-                      else "o-" if c["slug"].startswith("o-") else "")
+        c["group"] = next((p for p in prefixes if c["slug"].startswith(p)), "")
     return (TEMPLATE
             .replace("/*DATA*/", json.dumps(certs, ensure_ascii=False))
             .replace("/*GROUPS*/", json.dumps(groups, ensure_ascii=False))
@@ -412,12 +422,17 @@ render();
 
 
 def main() -> None:
-    if len(sys.argv) != 2:
+    args = [a for a in sys.argv[1:] if not a.startswith("--")]
+    flags = [a for a in sys.argv[1:] if a.startswith("--")]
+    kit = "school" if "--school" in flags else "office"
+    if len(args) != 1 or set(flags) - {"--school"}:
         sys.exit(__doc__)
-    out = pathlib.Path(sys.argv[1])
+    manifests, groups = PRESETS[kit]
+    out = pathlib.Path(args[0])
     out.parent.mkdir(parents=True, exist_ok=True)
-    out.write_text(build(), encoding="utf-8")
-    print(f"{out}  {out.stat().st_size/1024:.0f} KB  ({len(collect())} designs)")
+    out.write_text(build(manifests, groups), encoding="utf-8")
+    print(f"{out}  {out.stat().st_size/1024:.0f} KB  "
+          f"({len(collect(manifests))} designs, {kit} kit)")
 
 
 if __name__ == "__main__":

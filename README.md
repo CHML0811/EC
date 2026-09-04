@@ -32,7 +32,7 @@ and **38 certificates** as physical prints ($32–58 via Printify, built and wai
 | 📦 **[Etsy cohort 1](marketing/etsy-cohort-1.md)** | 8 listings — titles, 13 tags each, descriptions, pricing ladder |
 | 🎄 **[Christmas awards listing](marketing/etsy-christmas-awards-kit.md)** | **Listing #2 — same zip, seasonal keywords.** An hour's work. **Publish this week.** |
 | 🎄 **[Etsy cohort 2 — Christmas prints](marketing/etsy-cohort-2-christmas.md)** | 8 physical Secret Santa listings, for when the Printify line goes live. |
-| 🍎 **[Classroom awards listing](marketing/etsy-teacher-awards-kit.md)** | **Listing #3 — half built.** 12 certificates rendered; the zip and docs aren't. A day's work. |
+| 🍎 **[Classroom awards listing](marketing/etsy-teacher-awards-kit.md)** | **Listing #3 — built.** 12 awards, teacher's script, own zip and images. Needs a price. |
 | ⚡ **[Paste sheet](store/paste-sheet.html)** | Every field in the order Etsy asks, with copy buttons. **Open this while you set up.** |
 | 🔧 **[Shopify uploader](store/upload_to_shopify.py)** | `python3 store/upload_to_shopify.py --all --execute` — 16 products, images, prices, policies, pages. One command, no connector. |
 | 🖨️ **[Printify setup spec](store/printify-setup-spec.md)** | Exactly which blank, provider, sizes and prices. Only needed for the physical line. |
@@ -95,6 +95,7 @@ marketing/    office-awards-kit · etsy-cohort-1 · etsy-cohort-2 · video-playb
 design/       generate_certificates.py + certs_christmas + certs_office + certs_school → out/*.png
               generate_mockups.py → mockups/*.png · generate_crops.py → crops/*.png
 kit/          build_kit.py → Office-Awards-Kit.zip (maker + 5 PDFs + 38 certificates)
+              build_kit.py --school → Classroom-Awards-Kit.zip (maker + 3 PDFs + 12)
 store/        upload_to_shopify.py · product-data · policies-and-pages · paste-sheet
 ```
 
