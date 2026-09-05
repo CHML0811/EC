@@ -1,20 +1,35 @@
 Read AGENTS.md at the repo root before changing anything. It is the source of truth for
 this project: what it sells, the voice, every build command, and the bugs already fixed.
+Then read TODO.md — the ordered task list, with paste-ready prompts.
 
 Hard rules:
 - Never invent a number — no fake review counts, sales figures or "as seen in".
+- Never invent a price. Two prices are deliberately unset pending live Etsy grid data.
+  Leave them unset and say so rather than guessing.
 - US English in all buyer-facing copy. Etsy tag matching is literal: "personalised" and
   "personalized" are different tags, and US buyers type the z.
 - Etsy tags: exactly 13, each 20 characters or fewer. Over 20 is silently rejected.
+- No tag shared between two listings — a shared primary keyword means Etsy buries one.
 - No AI-generated humans in marketing, and never text-to-video for anything showing a
   certificate — video models mangle typography and this product is typography.
-- No new SKUs before 10 sales (see playbooks/product-decision.md).
+- No new product TYPES before 10 sales (mugs, apparel, sourced goods). More listings of
+  what already exists is not a new SKU — that distinction is the whole growth plan.
 - No brands, characters, logos or licensed material in any design.
+- Classroom awards are about situations, never about a child's ability, effort, behavior
+  or appearance. They get read out in front of parents.
+
+Two structural rules the build depends on:
+- Buyer-facing copy lives in marketing/*.md only. store/etsy-launch-console.html is
+  GENERATED — edit the markdown, then run python3 store/build_launch_console.py.
+- Cohorts are named from manifests in the KITS dict in kit/build_kit.py, never globbed.
+  Globbing once swept a whole cohort into the wrong product and nothing failed.
 
 Voice: deadpan bureaucracy. The joke works because the document refuses to admit there is
 one. Never explain it. No exclamation marks in product copy. Specific beats clever.
 
 Build: Python 3 + headless Chrome, no dependencies. If Chrome isn't found, set CHROME.
+Run python3 verify.py before and after any change — 15 checks, non-zero on failure.
 
-Nothing has sold yet. Before building anything new, ask whether it gets the Office Awards
-Kit listed on Etsy faster. If not, it waits.
+Nothing has sold yet. Before building anything new, ask whether it gets a listing live
+faster. If not, it waits. Building is easy and listing is boring; that asymmetry is the
+main risk to this project.

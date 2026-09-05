@@ -3,21 +3,32 @@ description: Bureau of Minor Achievements — project rules, always applied
 alwaysApply: true
 ---
 
-# Read AGENTS.md first
+# Read AGENTS.md first, then TODO.md
 
 `AGENTS.md` at the repo root is the single source of truth: what this business sells, the
-voice, every build command, and the bugs already found and fixed. Read it before changing
-anything. This file only restates the rules that must never be broken.
+voice, every build command, and the bugs already found and fixed. `TODO.md` is the ordered
+task list with paste-ready prompts. Read both before changing anything. This file only
+restates the rules that must never be broken.
 
 ## Never
 
 - **Invent a number.** No fake review counts, sales figures, or "as seen in".
+- **Invent a price.** Two are deliberately unset pending live Etsy grid data. Leave them
+  unset and say so.
 - **Use British spelling in buyer-facing copy.** Etsy tag matching is literal —
   `personalised` and `personalized` are different tags, and US buyers type the z.
-- **Exceed 20 characters on an Etsy tag**, or ship fewer than 13. Over 20 is silently rejected.
+- **Exceed 20 characters on an Etsy tag**, ship fewer than 13, or reuse a tag across two
+  listings. Over 20 is silently rejected, and a shared primary keyword means Etsy buries one
+  of the two listings.
 - **Put AI-generated humans in marketing**, or use text-to-video for anything showing a
   certificate. Video models mangle typography and this product *is* typography.
-- **Add new SKUs before 10 sales.** Reasoning is in `playbooks/product-decision.md`.
+- **Add new product TYPES before 10 sales** (mugs, apparel, sourced goods). More listings of
+  what already exists is not a new SKU; that distinction is the growth plan.
+- **Write a classroom award about a child** rather than a situation. Never ability, effort,
+  behavior or appearance — these are read out in front of parents.
+- **Hand-edit `store/etsy-launch-console.html`.** It is generated from `marketing/*.md`.
+- **Glob `design/out` to pick certificates.** Cohorts are named from manifests in the `KITS`
+  dict in `kit/build_kit.py`. Globbing once swept a cohort into the wrong product silently.
 - **Use a brand, character, logo or licensed anything** in a design.
 
 ## The voice
@@ -37,13 +48,14 @@ Python 3 + headless Chrome. No dependencies, nothing to install. If Chrome isn't
 `export CHROME=/path/to/chrome`.
 
 ```bash
-python3 design/generate_certificates.py && python3 design/certs_christmas.py \
-  && python3 design/certs_office.py     # 38 certificates
-python3 kit/build_kit.py                # → kit/Office-Awards-Kit.zip, the product
+python3 kit/build_kit.py             # → kit/Office-Awards-Kit.zip    (38 certificates)
+python3 kit/build_kit.py --school    # → kit/Classroom-Awards-Kit.zip (12 certificates)
+python3 store/build_launch_console.py   # → the console, from marketing/*.md
+python3 verify.py                    # 15 checks — run before and after any change
 ```
 
 ## The one thing that matters
 
 Nothing has sold yet. Every file here is preparation. The only action that changes that is
-publishing the Office Awards Kit on Etsy. Before building anything new, ask whether it gets
-that listing live faster — if not, it waits.
+publishing on Etsy. Before building anything new, ask whether it gets a listing live faster —
+if not, it waits. Building is easy and listing is boring; that asymmetry is the main risk.
