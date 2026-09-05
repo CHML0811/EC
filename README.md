@@ -20,7 +20,7 @@ and **38 certificates** as physical prints ($32–58 via Printify, built and wai
 
 | | |
 |---|---|
-| 🚀 **[Etsy launch console](store/etsy-launch-console.html)** | Nine steps, every field with a copy button. **Open this next to the Etsy tab.** |
+| 🚀 **[Etsy launch console](store/etsy-launch-console.html)** | **All three listings**, nine steps each, every field with a copy button. Generated from the listing docs by `store/build_launch_console.py`. **Open this next to the Etsy tab.** |
 | 🎯 **[Etsy market fit](playbooks/etsy-market-fit.md)** | Who buys on Etsy, what earns most, and the cheapest expansions from here. |
 | ❓ **[Will this actually sell?](playbooks/will-this-sell.md)** | What I verified vs assumed, the number I never got, and how to check it free in 15 min. |
 | 💰 **[Etsy or our own site?](playbooks/where-to-sell.md)** | Real fee numbers, and why Etsy's cut is customer acquisition rather than a platform fee. |

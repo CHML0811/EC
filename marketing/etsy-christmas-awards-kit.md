@@ -18,7 +18,7 @@ is two chances to be found.
 Christmas Office Party Awards | Holiday Employee Certificates Printable | Work Secret Santa Game | Instant Download
 ```
 
-125 characters. Front-loaded with **office christmas party** — the seasonal phrase with
+115 characters. Front-loaded with **office christmas party** — the seasonal phrase with
 buying intent. Everything after it earns its place: "awards", "certificates", "host script"
 (our differentiator), "printable", "instant download".
 

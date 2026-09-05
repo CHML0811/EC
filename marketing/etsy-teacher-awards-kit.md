@@ -46,7 +46,7 @@ whoever edits it next.
 Classroom Awards Printable | 12 End of Year Student Certificates | Funny Class Superlatives | Instant Download
 ```
 
-109 characters. Front-loaded with **classroom awards**; "end of year" and "last day of
+110 characters. Front-loaded with **classroom awards**; "end of year" and "last day of
 school" are the seasonal phrases that carry intent in May and June.
 
 ## Tags — 13, none over 20 characters, zero overlap with listings #1 and #2

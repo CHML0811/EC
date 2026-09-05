@@ -63,7 +63,9 @@ BUILD_SCRIPTS = [
     "design/certs_school.py",
     "design/generate_mockups.py", "design/generate_crops.py",
     "kit/build_awards_maker.py", "kit/build_documents.py", "kit/build_kit.py",
-    "kit/build_listing_images.py", "site/build_storefront.py", "store/upload_to_shopify.py",
+    "kit/build_listing_images.py", "kit/build_school_documents.py",
+    "site/build_storefront.py", "store/upload_to_shopify.py",
+    "store/build_launch_console.py",
 ]
 KEY_DOCS = ["README.md", "AGENTS.md", "HANDOFF.md", "CLAUDE.md",
             "marketing/etsy-office-awards-kit.md", "playbooks/first-seller-strategy.md"]
@@ -128,6 +130,31 @@ def check_listings() -> None:
 
 # --------------------------------------------------------------- doc links
 LINK = re.compile(r"\[[^\]]+\]\((?!https?:|#|mailto:)([^)#]+)")
+
+
+def check_console() -> None:
+    """The console is generated from the listing docs; stale output is a silent failure.
+
+    It drifted badly once — the published copy still carried an old title, an old tag set
+    and a price that had changed twice — so regenerate into a temp file and diff.
+    """
+    print("\nLaunch console")
+    live = ROOT / "store" / "etsy-launch-console.html"
+    if not live.exists():
+        check(False, "store/etsy-launch-console.html exists")
+        return
+    before = live.read_text(encoding="utf-8")
+    r = subprocess.run([sys.executable, "store/build_launch_console.py"], cwd=ROOT,
+                       capture_output=True, text=True)
+    if not check(r.returncode == 0, "console builds from the listing docs",
+                 (r.stderr or r.stdout)[-500:]):
+        return
+    after = live.read_text(encoding="utf-8")
+    if before != after:
+        live.write_text(after, encoding="utf-8")   # keep the fresh one; it is the correct one
+    check(before == after,
+          "console matches the listing docs",
+          "It was stale and has just been regenerated — commit store/etsy-launch-console.html")
 
 
 def check_links() -> None:
@@ -214,6 +241,7 @@ def main() -> None:
     check_sources()
     check_listings()
     check_links()
+    check_console()
     check_artifacts(a.full)
 
     failed = results.count(False)

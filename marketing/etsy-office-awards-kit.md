@@ -13,7 +13,7 @@ live the hour the Etsy account exists — which is the whole reason it's first.
 Funny Office Awards Printable | 38 Employee Certificates PDF | Work Party Superlatives | Instant Download
 ```
 
-131 characters. **Changed** — it used to lead with "38 Printable Employee Award
+105 characters. **Changed** — it used to lead with "38 Printable Employee Award
 Certificates". Competitors sell packs of 101, 84 and 50, so leading with 38 put our weakest
 number first. It now leads with the **ceremony and the host script**, which none of them
 appear to include. Reasoning: [`playbooks/will-this-sell.md`](../playbooks/will-this-sell.md).

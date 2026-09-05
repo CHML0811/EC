@@ -53,8 +53,13 @@ nobody else can do it for you. Shop name: **Bureau of Minor Achievements** (or
 
 ### 3 · Publish the Office Awards Kit — ~20 min
 **Open [`store/etsy-launch-console.html`](store/etsy-launch-console.html) in a browser and
-work down it beside the Etsy tab.** Nine steps, every field with a copy button, in the order
-Etsy asks for them. Progress saves in the browser so you can stop halfway.
+work down it beside the Etsy tab.** It now carries **all three listings** behind a switcher —
+office, Christmas, classroom — nine steps each, every field with a copy button, in the order
+Etsy asks for them. Progress saves per listing, so you can stop halfway.
+
+It is generated from the listing docs (`python3 store/build_launch_console.py`), so the copy
+can't drift out of sync with `marketing/*.md` the way it did before. `verify.py` fails if it
+has.
 
 The same content in plain markdown: **`marketing/etsy-office-awards-kit.md`**.
 
